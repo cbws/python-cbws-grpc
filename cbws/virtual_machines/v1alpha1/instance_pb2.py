@@ -22,7 +22,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
   syntax='proto3',
   serialized_options=b'\n\"xyz.cbws.virtual_machines.v1alpha1P\001Z;github.com/cbws/go-cbws-grpc/cbws/virtual-machines/v1alpha1\312\002\"Cbws\\VirtualMachines\\Grpc\\V1alpha1\342\002+Cbws\\VirtualMachines\\Grpc\\V1alpha1\\Metadata',
   create_key=_descriptor._internal_create_key,
-  serialized_pb=b'\n-cbws/virtual_machines/v1alpha1/instance.proto\x12\x1e\x63\x62ws.virtual_machines.v1alpha1\x1a\x36\x63\x62ws/virtual_machines/affinity/v1alpha1/affinity.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\"\xc6\x05\n\x08Instance\x12\x11\n\x04name\x18\x01 \x01(\tB\x03\xe0\x41\x05\x12\x13\n\x06parent\x18\x02 \x01(\tB\x03\xe0\x41\x05\x12\x15\n\x08hostname\x18\x03 \x01(\tB\x03\xe0\x41\x02\x12\x10\n\x03\x63pu\x18\x04 \x01(\x03\x42\x03\xe0\x41\x02\x12\x13\n\x06memory\x18\x05 \x01(\x03\x42\x03\xe0\x41\x02\x12\x16\n\troot_disk\x18\x06 \x01(\x03\x42\x03\xe0\x41\x02\x12\x14\n\x07\x61\x64\x64ress\x18\x07 \x01(\tB\x03\xe0\x41\x03\x12\x15\n\x08ssh_keys\x18\t \x03(\tB\x03\xe0\x41\x01\x12\x42\n\x05state\x18\x08 \x01(\x0e\x32..cbws.virtual_machines.v1alpha1.Instance.StateB\x03\xe0\x41\x03\x12H\n\x08\x61\x66\x66inity\x18\n \x01(\x0b\x32\x31.cbws.virtual_machines.affinity.v1alpha1.AffinityB\x03\xe0\x41\x01\x12I\n\x06labels\x18\x0b \x03(\x0b\x32\x34.cbws.virtual_machines.v1alpha1.Instance.LabelsEntryB\x03\xe0\x41\x01\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xc6\x01\n\x05State\x12\x15\n\x11STATE_UNSPECIFIED\x10\x00\x12\x16\n\x12STATE_PROVISIONING\x10\x01\x12\x11\n\rSTATE_STAGING\x10\x02\x12\x11\n\rSTATE_RUNNING\x10\x03\x12\x12\n\x0eSTATE_STOPPING\x10\x04\x12\x14\n\x10STATE_SUSPENDING\x10\x05\x12\x13\n\x0fSTATE_SUSPENDED\x10\x06\x12\x13\n\x0fSTATE_REPAIRING\x10\x07\x12\x14\n\x10STATE_TERMINATED\x10\x08:>\xea\x41;\n\x14vm.cbws.xyz/Instance\x12#projects/{project}/instances/{name}B\xb6\x01\n\"xyz.cbws.virtual_machines.v1alpha1P\x01Z;github.com/cbws/go-cbws-grpc/cbws/virtual-machines/v1alpha1\xca\x02\"Cbws\\VirtualMachines\\Grpc\\V1alpha1\xe2\x02+Cbws\\VirtualMachines\\Grpc\\V1alpha1\\Metadatab\x06proto3'
+  serialized_pb=b'\n-cbws/virtual_machines/v1alpha1/instance.proto\x12\x1e\x63\x62ws.virtual_machines.v1alpha1\x1a\x36\x63\x62ws/virtual_machines/affinity/v1alpha1/affinity.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\"\xb2\x07\n\x08Instance\x12\x11\n\x04name\x18\x01 \x01(\tB\x03\xe0\x41\x05\x12\x13\n\x06parent\x18\x02 \x01(\tB\x03\xe0\x41\x05\x12\x15\n\x08hostname\x18\x03 \x01(\tB\x03\xe0\x41\x02\x12\x10\n\x03\x63pu\x18\x04 \x01(\x03\x42\x03\xe0\x41\x02\x12\x13\n\x06memory\x18\x05 \x01(\x03\x42\x03\xe0\x41\x02\x12\x16\n\troot_disk\x18\x06 \x01(\x03\x42\x03\xe0\x41\x02\x12\x14\n\x07\x61\x64\x64ress\x18\x07 \x01(\tB\x03\xe0\x41\x03\x12\x1f\n\x12\x61\x64\x64itional_address\x18\x0c \x03(\tB\x03\xe0\x41\x03\x12\x15\n\x08ssh_keys\x18\t \x03(\tB\x03\xe0\x41\x01\x12\x18\n\x0b\x63i_username\x18\r \x01(\tB\x03\xe0\x41\x01\x12\x18\n\x0b\x63i_password\x18\x0e \x01(\tB\x03\xe0\x41\x04\x12\x18\n\x0b\x63i_userdata\x18\x10 \x01(\tB\x03\xe0\x41\x04\x12K\n\x07options\x18\x11 \x03(\x0b\x32\x35.cbws.virtual_machines.v1alpha1.Instance.OptionsEntryB\x03\xe0\x41\x04\x12\x42\n\x05state\x18\x08 \x01(\x0e\x32..cbws.virtual_machines.v1alpha1.Instance.StateB\x03\xe0\x41\x03\x12H\n\x08\x61\x66\x66inity\x18\n \x01(\x0b\x32\x31.cbws.virtual_machines.affinity.v1alpha1.AffinityB\x03\xe0\x41\x01\x12I\n\x06labels\x18\x0b \x03(\x0b\x32\x34.cbws.virtual_machines.v1alpha1.Instance.LabelsEntryB\x03\xe0\x41\x01\x1a.\n\x0cOptionsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\x1a-\n\x0bLabelsEntry\x12\x0b\n\x03key\x18\x01 \x01(\t\x12\r\n\x05value\x18\x02 \x01(\t:\x02\x38\x01\"\xc6\x01\n\x05State\x12\x15\n\x11STATE_UNSPECIFIED\x10\x00\x12\x16\n\x12STATE_PROVISIONING\x10\x01\x12\x11\n\rSTATE_STAGING\x10\x02\x12\x11\n\rSTATE_RUNNING\x10\x03\x12\x12\n\x0eSTATE_STOPPING\x10\x04\x12\x14\n\x10STATE_SUSPENDING\x10\x05\x12\x13\n\x0fSTATE_SUSPENDED\x10\x06\x12\x13\n\x0fSTATE_REPAIRING\x10\x07\x12\x14\n\x10STATE_TERMINATED\x10\x08:>\xea\x41;\n\x14vm.cbws.xyz/Instance\x12#projects/{project}/instances/{name}B\xb6\x01\n\"xyz.cbws.virtual_machines.v1alpha1P\x01Z;github.com/cbws/go-cbws-grpc/cbws/virtual-machines/v1alpha1\xca\x02\"Cbws\\VirtualMachines\\Grpc\\V1alpha1\xe2\x02+Cbws\\VirtualMachines\\Grpc\\V1alpha1\\Metadatab\x06proto3'
   ,
   dependencies=[cbws_dot_virtual__machines_dot_affinity_dot_v1alpha1_dot_affinity__pb2.DESCRIPTOR,google_dot_api_dot_field__behavior__pb2.DESCRIPTOR,google_dot_api_dot_resource__pb2.DESCRIPTOR,])
 
@@ -83,11 +83,49 @@ _INSTANCE_STATE = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   serialized_options=None,
-  serialized_start=646,
-  serialized_end=844,
+  serialized_start=882,
+  serialized_end=1080,
 )
 _sym_db.RegisterEnumDescriptor(_INSTANCE_STATE)
 
+
+_INSTANCE_OPTIONSENTRY = _descriptor.Descriptor(
+  name='OptionsEntry',
+  full_name='cbws.virtual_machines.v1alpha1.Instance.OptionsEntry',
+  filename=None,
+  file=DESCRIPTOR,
+  containing_type=None,
+  create_key=_descriptor._internal_create_key,
+  fields=[
+    _descriptor.FieldDescriptor(
+      name='key', full_name='cbws.virtual_machines.v1alpha1.Instance.OptionsEntry.key', index=0,
+      number=1, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='value', full_name='cbws.virtual_machines.v1alpha1.Instance.OptionsEntry.value', index=1,
+      number=2, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=None, file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+  ],
+  extensions=[
+  ],
+  nested_types=[],
+  enum_types=[
+  ],
+  serialized_options=b'8\001',
+  is_extendable=False,
+  syntax='proto3',
+  extension_ranges=[],
+  oneofs=[
+  ],
+  serialized_start=786,
+  serialized_end=832,
+)
 
 _INSTANCE_LABELSENTRY = _descriptor.Descriptor(
   name='LabelsEntry',
@@ -123,8 +161,8 @@ _INSTANCE_LABELSENTRY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=598,
-  serialized_end=643,
+  serialized_start=834,
+  serialized_end=879,
 )
 
 _INSTANCE = _descriptor.Descriptor(
@@ -185,28 +223,63 @@ _INSTANCE = _descriptor.Descriptor(
       is_extension=False, extension_scope=None,
       serialized_options=b'\340A\003', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='ssh_keys', full_name='cbws.virtual_machines.v1alpha1.Instance.ssh_keys', index=7,
+      name='additional_address', full_name='cbws.virtual_machines.v1alpha1.Instance.additional_address', index=7,
+      number=12, type=9, cpp_type=9, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\340A\003', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='ssh_keys', full_name='cbws.virtual_machines.v1alpha1.Instance.ssh_keys', index=8,
       number=9, type=9, cpp_type=9, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\340A\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='state', full_name='cbws.virtual_machines.v1alpha1.Instance.state', index=8,
+      name='ci_username', full_name='cbws.virtual_machines.v1alpha1.Instance.ci_username', index=9,
+      number=13, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\340A\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='ci_password', full_name='cbws.virtual_machines.v1alpha1.Instance.ci_password', index=10,
+      number=14, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\340A\004', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='ci_userdata', full_name='cbws.virtual_machines.v1alpha1.Instance.ci_userdata', index=11,
+      number=16, type=9, cpp_type=9, label=1,
+      has_default_value=False, default_value=b"".decode('utf-8'),
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\340A\004', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='options', full_name='cbws.virtual_machines.v1alpha1.Instance.options', index=12,
+      number=17, type=11, cpp_type=10, label=3,
+      has_default_value=False, default_value=[],
+      message_type=None, enum_type=None, containing_type=None,
+      is_extension=False, extension_scope=None,
+      serialized_options=b'\340A\004', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
+    _descriptor.FieldDescriptor(
+      name='state', full_name='cbws.virtual_machines.v1alpha1.Instance.state', index=13,
       number=8, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\340A\003', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='affinity', full_name='cbws.virtual_machines.v1alpha1.Instance.affinity', index=9,
+      name='affinity', full_name='cbws.virtual_machines.v1alpha1.Instance.affinity', index=14,
       number=10, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       serialized_options=b'\340A\001', file=DESCRIPTOR,  create_key=_descriptor._internal_create_key),
     _descriptor.FieldDescriptor(
-      name='labels', full_name='cbws.virtual_machines.v1alpha1.Instance.labels', index=10,
+      name='labels', full_name='cbws.virtual_machines.v1alpha1.Instance.labels', index=15,
       number=11, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -215,7 +288,7 @@ _INSTANCE = _descriptor.Descriptor(
   ],
   extensions=[
   ],
-  nested_types=[_INSTANCE_LABELSENTRY, ],
+  nested_types=[_INSTANCE_OPTIONSENTRY, _INSTANCE_LABELSENTRY, ],
   enum_types=[
     _INSTANCE_STATE,
   ],
@@ -226,10 +299,12 @@ _INSTANCE = _descriptor.Descriptor(
   oneofs=[
   ],
   serialized_start=198,
-  serialized_end=908,
+  serialized_end=1144,
 )
 
+_INSTANCE_OPTIONSENTRY.containing_type = _INSTANCE
 _INSTANCE_LABELSENTRY.containing_type = _INSTANCE
+_INSTANCE.fields_by_name['options'].message_type = _INSTANCE_OPTIONSENTRY
 _INSTANCE.fields_by_name['state'].enum_type = _INSTANCE_STATE
 _INSTANCE.fields_by_name['affinity'].message_type = cbws_dot_virtual__machines_dot_affinity_dot_v1alpha1_dot_affinity__pb2._AFFINITY
 _INSTANCE.fields_by_name['labels'].message_type = _INSTANCE_LABELSENTRY
@@ -238,6 +313,13 @@ DESCRIPTOR.message_types_by_name['Instance'] = _INSTANCE
 _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 
 Instance = _reflection.GeneratedProtocolMessageType('Instance', (_message.Message,), {
+
+  'OptionsEntry' : _reflection.GeneratedProtocolMessageType('OptionsEntry', (_message.Message,), {
+    'DESCRIPTOR' : _INSTANCE_OPTIONSENTRY,
+    '__module__' : 'cbws.virtual_machines.v1alpha1.instance_pb2'
+    # @@protoc_insertion_point(class_scope:cbws.virtual_machines.v1alpha1.Instance.OptionsEntry)
+    })
+  ,
 
   'LabelsEntry' : _reflection.GeneratedProtocolMessageType('LabelsEntry', (_message.Message,), {
     'DESCRIPTOR' : _INSTANCE_LABELSENTRY,
@@ -250,10 +332,12 @@ Instance = _reflection.GeneratedProtocolMessageType('Instance', (_message.Messag
   # @@protoc_insertion_point(class_scope:cbws.virtual_machines.v1alpha1.Instance)
   })
 _sym_db.RegisterMessage(Instance)
+_sym_db.RegisterMessage(Instance.OptionsEntry)
 _sym_db.RegisterMessage(Instance.LabelsEntry)
 
 
 DESCRIPTOR._options = None
+_INSTANCE_OPTIONSENTRY._options = None
 _INSTANCE_LABELSENTRY._options = None
 _INSTANCE.fields_by_name['name']._options = None
 _INSTANCE.fields_by_name['parent']._options = None
@@ -262,7 +346,12 @@ _INSTANCE.fields_by_name['cpu']._options = None
 _INSTANCE.fields_by_name['memory']._options = None
 _INSTANCE.fields_by_name['root_disk']._options = None
 _INSTANCE.fields_by_name['address']._options = None
+_INSTANCE.fields_by_name['additional_address']._options = None
 _INSTANCE.fields_by_name['ssh_keys']._options = None
+_INSTANCE.fields_by_name['ci_username']._options = None
+_INSTANCE.fields_by_name['ci_password']._options = None
+_INSTANCE.fields_by_name['ci_userdata']._options = None
+_INSTANCE.fields_by_name['options']._options = None
 _INSTANCE.fields_by_name['state']._options = None
 _INSTANCE.fields_by_name['affinity']._options = None
 _INSTANCE.fields_by_name['labels']._options = None
