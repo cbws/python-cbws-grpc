@@ -1,0 +1,28 @@
+[build-system]
+requires = ["hatchling", "hatch-vcs"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cbws-grpc"
+description = "Generated gRPC client libraries for CBWS"
+readme = "README.md"
+license = "Apache-2.0"
+license-files = ["LICENSE"]
+authors = [{ name = "CBWS", email = "cbws@cbws.xyz" }]
+requires-python = ">=3.9"
+dynamic = ["version"]
+dependencies = [
+    "googleapis-common-protos>=1.69.2",
+    "grpcio>=1.78.1",
+    "protobuf>=6.30.2,<8",
+]
+
+[project.urls]
+Source = "https://github.com/cbws/python-cbws-grpc"
+Protos = "https://github.com/cbws/protobufs"
+
+[tool.hatch.version]
+source = "vcs"
+
+[tool.hatch.build.targets.wheel]
+packages = ["cbws"]
