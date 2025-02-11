@@ -26,7 +26,7 @@ from google.api import field_behavior_pb2 as google_dot_api_dot_field__behavior_
 from google.api import resource_pb2 as google_dot_api_dot_resource__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n(cbws/compute/v1alpha1/machine_type.proto\x12\x15\x63\x62ws.compute.v1alpha1\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\"\x86\x02\n\x0bMachineType\x12\x18\n\x04name\x18\x01 \x01(\tB\x04\xe2\x41\x01\x03R\x04name\x12\x18\n\x04zone\x18\x03 \x01(\tB\x04\xe2\x41\x01\x03R\x04zone\x12\x16\n\x03\x63pu\x18\x04 \x01(\x05\x42\x04\xe2\x41\x01\x03R\x03\x63pu\x12!\n\tmemory_mb\x18\x05 \x01(\x05\x42\x04\xe2\x41\x01\x03R\x08memoryMb\x12\x30\n\x11\x65phemeral_disk_gb\x18\x06 \x01(\x05\x42\x04\xe2\x41\x01\x03R\x0f\x65phemeralDiskGb:V\xea\x41S\n\x1c\x63ompute.cbws.xyz/MachineType\x12\x33projects/{project}/zones/{zone}/machinesType/{name}B\xa3\x01\n\x19\x63om.cbws.compute.v1alpha1B\x10MachineTypeProtoP\x01\xa2\x02\x03\x43\x43X\xaa\x02\x15\x43\x62ws.Compute.V1alpha1\xca\x02\x15\x43\x62ws\\Compute\\V1alpha1\xe2\x02!Cbws\\Compute\\V1alpha1\\GPBMetadata\xea\x02\x17\x43\x62ws::Compute::V1alpha1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n(cbws/compute/v1alpha1/machine_type.proto\x12\x15\x63\x62ws.compute.v1alpha1\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\"\xf5\x01\n\x0bMachineType\x12\x18\n\x04name\x18\x01 \x01(\tB\x04\xe2\x41\x01\x03R\x04name\x12\x18\n\x04zone\x18\x03 \x01(\tB\x04\xe2\x41\x01\x03R\x04zone\x12\x16\n\x03\x63pu\x18\x04 \x01(\x05\x42\x04\xe2\x41\x01\x03R\x03\x63pu\x12!\n\tmemory_mb\x18\x05 \x01(\x05\x42\x04\xe2\x41\x01\x03R\x08memoryMb\x12\x30\n\x11\x65phemeral_disk_gb\x18\x06 \x01(\x05\x42\x04\xe2\x41\x01\x03R\x0f\x65phemeralDiskGb:E\xea\x41\x42\n\x1e\x63ompute.cbws.cloud/MachineType\x12 zones/{zone}/machinesType/{name}B\xa3\x01\n\x19\x63om.cbws.compute.v1alpha1B\x10MachineTypeProtoP\x01\xa2\x02\x03\x43\x43X\xaa\x02\x15\x43\x62ws.Compute.V1alpha1\xca\x02\x15\x43\x62ws\\Compute\\V1alpha1\xe2\x02!Cbws\\Compute\\V1alpha1\\GPBMetadata\xea\x02\x17\x43\x62ws::Compute::V1alpha1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -45,7 +45,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_MACHINETYPE'].fields_by_name['ephemeral_disk_gb']._loaded_options = None
   _globals['_MACHINETYPE'].fields_by_name['ephemeral_disk_gb']._serialized_options = b'\342A\001\003'
   _globals['_MACHINETYPE']._loaded_options = None
-  _globals['_MACHINETYPE']._serialized_options = b'\352AS\n\034compute.cbws.xyz/MachineType\0223projects/{project}/zones/{zone}/machinesType/{name}'
+  _globals['_MACHINETYPE']._serialized_options = b'\352AB\n\036compute.cbws.cloud/MachineType\022 zones/{zone}/machinesType/{name}'
   _globals['_MACHINETYPE']._serialized_start=128
-  _globals['_MACHINETYPE']._serialized_end=390
+  _globals['_MACHINETYPE']._serialized_end=373
 # @@protoc_insertion_point(module_scope)
