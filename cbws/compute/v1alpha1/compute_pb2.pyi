@@ -56,10 +56,12 @@ class CreateMachineResponse(_message.Message):
     def __init__(self) -> None: ...
 
 class CreateMachineMetadata(_message.Message):
-    __slots__ = ("state",)
+    __slots__ = ("state", "machine")
     STATE_FIELD_NUMBER: _ClassVar[int]
+    MACHINE_FIELD_NUMBER: _ClassVar[int]
     state: _machine_pb2.Machine.State
-    def __init__(self, state: _Optional[_Union[_machine_pb2.Machine.State, str]] = ...) -> None: ...
+    machine: _machine_pb2.Machine
+    def __init__(self, state: _Optional[_Union[_machine_pb2.Machine.State, str]] = ..., machine: _Optional[_Union[_machine_pb2.Machine, _Mapping]] = ...) -> None: ...
 
 class StopMachineRequest(_message.Message):
     __slots__ = ("name",)
