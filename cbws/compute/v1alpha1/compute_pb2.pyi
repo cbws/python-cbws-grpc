@@ -41,6 +41,22 @@ class GetMachineRequest(_message.Message):
     read_mask: _field_mask_pb2.FieldMask
     def __init__(self, name: _Optional[str] = ..., read_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
+class RequestMachineConsoleRequest(_message.Message):
+    __slots__ = ("name",)
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    def __init__(self, name: _Optional[str] = ...) -> None: ...
+
+class RequestMachineConsoleResponse(_message.Message):
+    __slots__ = ("protocol", "type", "url")
+    PROTOCOL_FIELD_NUMBER: _ClassVar[int]
+    TYPE_FIELD_NUMBER: _ClassVar[int]
+    URL_FIELD_NUMBER: _ClassVar[int]
+    protocol: str
+    type: str
+    url: str
+    def __init__(self, protocol: _Optional[str] = ..., type: _Optional[str] = ..., url: _Optional[str] = ...) -> None: ...
+
 class CreateMachineRequest(_message.Message):
     __slots__ = ("parent", "machine_id", "machine")
     PARENT_FIELD_NUMBER: _ClassVar[int]

@@ -31,7 +31,7 @@ from google.longrunning import operations_pb2 as google_dot_longrunning_dot_oper
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#cbws/compute/v1alpha1/compute.proto\x12\x15\x63\x62ws.compute.v1alpha1\x1a#cbws/compute/v1alpha1/machine.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\x1a#google/longrunning/operations.proto\x1a google/protobuf/field_mask.proto\"\xd8\x01\n\x13ListMachinesRequest\x12:\n\x06parent\x18\x01 \x01(\tB\"\xe2\x41\x01\x02\xfa\x41\x1b\n\x19projects.cbws.xyz/ProjectR\x06parent\x12!\n\tpage_size\x18\x02 \x01(\x05\x42\x04\xe2\x41\x01\x01R\x08pageSize\x12#\n\npage_token\x18\x03 \x01(\tB\x04\xe2\x41\x01\x01R\tpageToken\x12=\n\tread_mask\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe2\x41\x01\x01R\x08readMask\"z\n\x14ListMachinesResponse\x12:\n\x08machines\x18\x01 \x03(\x0b\x32\x1e.cbws.compute.v1alpha1.MachineR\x08machines\x12&\n\x0fnext_page_token\x18\x02 \x01(\tR\rnextPageToken\"\x8b\x01\n\x11GetMachineRequest\x12\x37\n\x04name\x18\x01 \x01(\tB#\xe2\x41\x01\x02\xfa\x41\x1c\n\x1a\x63ompute.cbws.cloud/MachineR\x04name\x12=\n\tread_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe2\x41\x01\x01R\x08readMask\"\xb7\x01\n\x14\x43reateMachineRequest\x12:\n\x06parent\x18\x01 \x01(\tB\"\xe2\x41\x01\x02\xfa\x41\x1b\n\x19projects.cbws.xyz/ProjectR\x06parent\x12#\n\nmachine_id\x18\x02 \x01(\tB\x04\xe2\x41\x01\x02R\tmachineId\x12>\n\x07machine\x18\x03 \x01(\x0b\x32\x1e.cbws.compute.v1alpha1.MachineB\x04\xe2\x41\x01\x02R\x07machine\"\x17\n\x15\x43reateMachineResponse\"\x99\x01\n\x15\x43reateMachineMetadata\x12@\n\x05state\x18\x04 \x01(\x0e\x32$.cbws.compute.v1alpha1.Machine.StateB\x04\xe2\x41\x01\x03R\x05state\x12>\n\x07machine\x18\x05 \x01(\x0b\x32\x1e.cbws.compute.v1alpha1.MachineB\x04\xe2\x41\x01\x03R\x07machine\"M\n\x12StopMachineRequest\x12\x37\n\x04name\x18\x01 \x01(\tB#\xe2\x41\x01\x02\xfa\x41\x1c\n\x1a\x63ompute.cbws.cloud/MachineR\x04name\"\x15\n\x13StopMachineResponse\"\x15\n\x13StopMachineMetadata\"N\n\x13StartMachineRequest\x12\x37\n\x04name\x18\x01 \x01(\tB#\xe2\x41\x01\x02\xfa\x41\x1c\n\x1a\x63ompute.cbws.cloud/MachineR\x04name\"\x16\n\x14StartMachineResponse\"\x16\n\x14StartMachineMetadata\"N\n\x13ResetMachineRequest\x12\x37\n\x04name\x18\x01 \x01(\tB#\xe2\x41\x01\x02\xfa\x41\x1c\n\x1a\x63ompute.cbws.cloud/MachineR\x04name\"\x16\n\x14ResetMachineResponse\"\x16\n\x14ResetMachineMetadata\"O\n\x14\x44\x65leteMachineRequest\x12\x37\n\x04name\x18\x01 \x01(\tB#\xe2\x41\x01\x02\xfa\x41\x1c\n\x1a\x63ompute.cbws.cloud/MachineR\x04name\"\x17\n\x15\x44\x65leteMachineMetadata2\xa0\x0b\n\x0e\x43omputeService\x12\xa0\x01\n\x0cListMachines\x12*.cbws.compute.v1alpha1.ListMachinesRequest\x1a+.cbws.compute.v1alpha1.ListMachinesResponse\"7\xda\x41\x06parent\x82\xd3\xe4\x93\x02(\x12&/v1alpha1/{parent=projects/*}/machines\x12\x8d\x01\n\nGetMachine\x12(.cbws.compute.v1alpha1.GetMachineRequest\x1a\x1e.cbws.compute.v1alpha1.Machine\"5\xda\x41\x04name\x82\xd3\xe4\x93\x02(\x12&/v1alpha1/{name=projects/*/machines/*}\x12\xe4\x01\n\rCreateMachine\x12+.cbws.compute.v1alpha1.CreateMachineRequest\x1a\x1d.google.longrunning.Operation\"\x86\x01\xca\x41\x36\n\x07Machine\x12+cbws.compute.v1alpha1.CreateMachineMetadata\xda\x41\x19parent,machine,machine_id\x82\xd3\xe4\x93\x02+\" /v1/{parent=projects/*}/machines:\x07machine\x12\xd2\x01\n\x0bStopMachine\x12).cbws.compute.v1alpha1.StopMachineRequest\x1a\x1d.google.longrunning.Operation\"y\xca\x41@\n\x13StopMachineResponse\x12)cbws.compute.v1alpha1.StopMachineMetadata\x82\xd3\xe4\x93\x02\x30\"%/v1/{name=projects/*/machines/*}:stop:\x07machine\x12\xd7\x01\n\x0cStartMachine\x12*.cbws.compute.v1alpha1.StartMachineRequest\x1a\x1d.google.longrunning.Operation\"|\xca\x41\x42\n\x14StartMachineResponse\x12*cbws.compute.v1alpha1.StartMachineMetadata\x82\xd3\xe4\x93\x02\x31\"&/v1/{name=projects/*/machines/*}:start:\x07machine\x12\xd7\x01\n\x0cResetMachine\x12*.cbws.compute.v1alpha1.ResetMachineRequest\x1a\x1d.google.longrunning.Operation\"|\xca\x41\x42\n\x14ResetMachineResponse\x12*cbws.compute.v1alpha1.ResetMachineMetadata\x82\xd3\xe4\x93\x02\x31\"&/v1/{name=projects/*/machines/*}:reset:\x07machine\x12\xd3\x01\n\rDeleteMachine\x12+.cbws.compute.v1alpha1.DeleteMachineRequest\x1a\x1d.google.longrunning.Operation\"v\xca\x41\x44\n\x15google.protobuf.Empty\x12+cbws.compute.v1alpha1.DeleteMachineMetadata\xda\x41\x04name\x82\xd3\xe4\x93\x02\"* /v1/{name=projects/*/machines/*}\x1a\x15\xca\x41\x12\x63ompute.cbws.cloudB\x9f\x01\n\x19\x63om.cbws.compute.v1alpha1B\x0c\x43omputeProtoP\x01\xa2\x02\x03\x43\x43X\xaa\x02\x15\x43\x62ws.Compute.V1alpha1\xca\x02\x15\x43\x62ws\\Compute\\V1alpha1\xe2\x02!Cbws\\Compute\\V1alpha1\\GPBMetadata\xea\x02\x17\x43\x62ws::Compute::V1alpha1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#cbws/compute/v1alpha1/compute.proto\x12\x15\x63\x62ws.compute.v1alpha1\x1a#cbws/compute/v1alpha1/machine.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\x1a#google/longrunning/operations.proto\x1a google/protobuf/field_mask.proto\"\xd8\x01\n\x13ListMachinesRequest\x12:\n\x06parent\x18\x01 \x01(\tB\"\xe2\x41\x01\x02\xfa\x41\x1b\n\x19projects.cbws.xyz/ProjectR\x06parent\x12!\n\tpage_size\x18\x02 \x01(\x05\x42\x04\xe2\x41\x01\x01R\x08pageSize\x12#\n\npage_token\x18\x03 \x01(\tB\x04\xe2\x41\x01\x01R\tpageToken\x12=\n\tread_mask\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe2\x41\x01\x01R\x08readMask\"z\n\x14ListMachinesResponse\x12:\n\x08machines\x18\x01 \x03(\x0b\x32\x1e.cbws.compute.v1alpha1.MachineR\x08machines\x12&\n\x0fnext_page_token\x18\x02 \x01(\tR\rnextPageToken\"\x8b\x01\n\x11GetMachineRequest\x12\x37\n\x04name\x18\x01 \x01(\tB#\xe2\x41\x01\x02\xfa\x41\x1c\n\x1a\x63ompute.cbws.cloud/MachineR\x04name\x12=\n\tread_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe2\x41\x01\x01R\x08readMask\"W\n\x1cRequestMachineConsoleRequest\x12\x37\n\x04name\x18\x01 \x01(\tB#\xe2\x41\x01\x02\xfa\x41\x1c\n\x1a\x63ompute.cbws.cloud/MachineR\x04name\"a\n\x1dRequestMachineConsoleResponse\x12\x1a\n\x08protocol\x18\x01 \x01(\tR\x08protocol\x12\x12\n\x04type\x18\x02 \x01(\tR\x04type\x12\x10\n\x03url\x18\x03 \x01(\tR\x03url\"\xb7\x01\n\x14\x43reateMachineRequest\x12:\n\x06parent\x18\x01 \x01(\tB\"\xe2\x41\x01\x02\xfa\x41\x1b\n\x19projects.cbws.xyz/ProjectR\x06parent\x12#\n\nmachine_id\x18\x02 \x01(\tB\x04\xe2\x41\x01\x02R\tmachineId\x12>\n\x07machine\x18\x03 \x01(\x0b\x32\x1e.cbws.compute.v1alpha1.MachineB\x04\xe2\x41\x01\x02R\x07machine\"\x17\n\x15\x43reateMachineResponse\"\x99\x01\n\x15\x43reateMachineMetadata\x12@\n\x05state\x18\x04 \x01(\x0e\x32$.cbws.compute.v1alpha1.Machine.StateB\x04\xe2\x41\x01\x03R\x05state\x12>\n\x07machine\x18\x05 \x01(\x0b\x32\x1e.cbws.compute.v1alpha1.MachineB\x04\xe2\x41\x01\x03R\x07machine\"M\n\x12StopMachineRequest\x12\x37\n\x04name\x18\x01 \x01(\tB#\xe2\x41\x01\x02\xfa\x41\x1c\n\x1a\x63ompute.cbws.cloud/MachineR\x04name\"\x15\n\x13StopMachineResponse\"\x15\n\x13StopMachineMetadata\"N\n\x13StartMachineRequest\x12\x37\n\x04name\x18\x01 \x01(\tB#\xe2\x41\x01\x02\xfa\x41\x1c\n\x1a\x63ompute.cbws.cloud/MachineR\x04name\"\x16\n\x14StartMachineResponse\"\x16\n\x14StartMachineMetadata\"N\n\x13ResetMachineRequest\x12\x37\n\x04name\x18\x01 \x01(\tB#\xe2\x41\x01\x02\xfa\x41\x1c\n\x1a\x63ompute.cbws.cloud/MachineR\x04name\"\x16\n\x14ResetMachineResponse\"\x16\n\x14ResetMachineMetadata\"O\n\x14\x44\x65leteMachineRequest\x12\x37\n\x04name\x18\x01 \x01(\tB#\xe2\x41\x01\x02\xfa\x41\x1c\n\x1a\x63ompute.cbws.cloud/MachineR\x04name\"\x17\n\x15\x44\x65leteMachineMetadata2\xdc\x0c\n\x0e\x43omputeService\x12\xa0\x01\n\x0cListMachines\x12*.cbws.compute.v1alpha1.ListMachinesRequest\x1a+.cbws.compute.v1alpha1.ListMachinesResponse\"7\xda\x41\x06parent\x82\xd3\xe4\x93\x02(\x12&/v1alpha1/{parent=projects/*}/machines\x12\x8d\x01\n\nGetMachine\x12(.cbws.compute.v1alpha1.GetMachineRequest\x1a\x1e.cbws.compute.v1alpha1.Machine\"5\xda\x41\x04name\x82\xd3\xe4\x93\x02(\x12&/v1alpha1/{name=projects/*/machines/*}\x12\xb9\x01\n\x15RequestMachineConsole\x12\x33.cbws.compute.v1alpha1.RequestMachineConsoleRequest\x1a\x34.cbws.compute.v1alpha1.RequestMachineConsoleResponse\"5\xda\x41\x04name\x82\xd3\xe4\x93\x02(\x12&/v1alpha1/{name=projects/*/machines/*}\x12\xe4\x01\n\rCreateMachine\x12+.cbws.compute.v1alpha1.CreateMachineRequest\x1a\x1d.google.longrunning.Operation\"\x86\x01\xca\x41\x36\n\x07Machine\x12+cbws.compute.v1alpha1.CreateMachineMetadata\xda\x41\x19parent,machine,machine_id\x82\xd3\xe4\x93\x02+\" /v1/{parent=projects/*}/machines:\x07machine\x12\xd2\x01\n\x0bStopMachine\x12).cbws.compute.v1alpha1.StopMachineRequest\x1a\x1d.google.longrunning.Operation\"y\xca\x41@\n\x13StopMachineResponse\x12)cbws.compute.v1alpha1.StopMachineMetadata\x82\xd3\xe4\x93\x02\x30\"%/v1/{name=projects/*/machines/*}:stop:\x07machine\x12\xd7\x01\n\x0cStartMachine\x12*.cbws.compute.v1alpha1.StartMachineRequest\x1a\x1d.google.longrunning.Operation\"|\xca\x41\x42\n\x14StartMachineResponse\x12*cbws.compute.v1alpha1.StartMachineMetadata\x82\xd3\xe4\x93\x02\x31\"&/v1/{name=projects/*/machines/*}:start:\x07machine\x12\xd7\x01\n\x0cResetMachine\x12*.cbws.compute.v1alpha1.ResetMachineRequest\x1a\x1d.google.longrunning.Operation\"|\xca\x41\x42\n\x14ResetMachineResponse\x12*cbws.compute.v1alpha1.ResetMachineMetadata\x82\xd3\xe4\x93\x02\x31\"&/v1/{name=projects/*/machines/*}:reset:\x07machine\x12\xd3\x01\n\rDeleteMachine\x12+.cbws.compute.v1alpha1.DeleteMachineRequest\x1a\x1d.google.longrunning.Operation\"v\xca\x41\x44\n\x15google.protobuf.Empty\x12+cbws.compute.v1alpha1.DeleteMachineMetadata\xda\x41\x04name\x82\xd3\xe4\x93\x02\"* /v1/{name=projects/*/machines/*}\x1a\x15\xca\x41\x12\x63ompute.cbws.cloudB\x9f\x01\n\x19\x63om.cbws.compute.v1alpha1B\x0c\x43omputeProtoP\x01\xa2\x02\x03\x43\x43X\xaa\x02\x15\x43\x62ws.Compute.V1alpha1\xca\x02\x15\x43\x62ws\\Compute\\V1alpha1\xe2\x02!Cbws\\Compute\\V1alpha1\\GPBMetadata\xea\x02\x17\x43\x62ws::Compute::V1alpha1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -51,6 +51,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETMACHINEREQUEST'].fields_by_name['name']._serialized_options = b'\342A\001\002\372A\034\n\032compute.cbws.cloud/Machine'
   _globals['_GETMACHINEREQUEST'].fields_by_name['read_mask']._loaded_options = None
   _globals['_GETMACHINEREQUEST'].fields_by_name['read_mask']._serialized_options = b'\342A\001\001'
+  _globals['_REQUESTMACHINECONSOLEREQUEST'].fields_by_name['name']._loaded_options = None
+  _globals['_REQUESTMACHINECONSOLEREQUEST'].fields_by_name['name']._serialized_options = b'\342A\001\002\372A\034\n\032compute.cbws.cloud/Machine'
   _globals['_CREATEMACHINEREQUEST'].fields_by_name['parent']._loaded_options = None
   _globals['_CREATEMACHINEREQUEST'].fields_by_name['parent']._serialized_options = b'\342A\001\002\372A\033\n\031projects.cbws.xyz/Project'
   _globals['_CREATEMACHINEREQUEST'].fields_by_name['machine_id']._loaded_options = None
@@ -75,6 +77,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_COMPUTESERVICE'].methods_by_name['ListMachines']._serialized_options = b'\332A\006parent\202\323\344\223\002(\022&/v1alpha1/{parent=projects/*}/machines'
   _globals['_COMPUTESERVICE'].methods_by_name['GetMachine']._loaded_options = None
   _globals['_COMPUTESERVICE'].methods_by_name['GetMachine']._serialized_options = b'\332A\004name\202\323\344\223\002(\022&/v1alpha1/{name=projects/*/machines/*}'
+  _globals['_COMPUTESERVICE'].methods_by_name['RequestMachineConsole']._loaded_options = None
+  _globals['_COMPUTESERVICE'].methods_by_name['RequestMachineConsole']._serialized_options = b'\332A\004name\202\323\344\223\002(\022&/v1alpha1/{name=projects/*/machines/*}'
   _globals['_COMPUTESERVICE'].methods_by_name['CreateMachine']._loaded_options = None
   _globals['_COMPUTESERVICE'].methods_by_name['CreateMachine']._serialized_options = b'\312A6\n\007Machine\022+cbws.compute.v1alpha1.CreateMachineMetadata\332A\031parent,machine,machine_id\202\323\344\223\002+\" /v1/{parent=projects/*}/machines:\007machine'
   _globals['_COMPUTESERVICE'].methods_by_name['StopMachine']._loaded_options = None
@@ -91,34 +95,38 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LISTMACHINESRESPONSE']._serialized_end=626
   _globals['_GETMACHINEREQUEST']._serialized_start=629
   _globals['_GETMACHINEREQUEST']._serialized_end=768
-  _globals['_CREATEMACHINEREQUEST']._serialized_start=771
-  _globals['_CREATEMACHINEREQUEST']._serialized_end=954
-  _globals['_CREATEMACHINERESPONSE']._serialized_start=956
-  _globals['_CREATEMACHINERESPONSE']._serialized_end=979
-  _globals['_CREATEMACHINEMETADATA']._serialized_start=982
-  _globals['_CREATEMACHINEMETADATA']._serialized_end=1135
-  _globals['_STOPMACHINEREQUEST']._serialized_start=1137
-  _globals['_STOPMACHINEREQUEST']._serialized_end=1214
-  _globals['_STOPMACHINERESPONSE']._serialized_start=1216
-  _globals['_STOPMACHINERESPONSE']._serialized_end=1237
-  _globals['_STOPMACHINEMETADATA']._serialized_start=1239
-  _globals['_STOPMACHINEMETADATA']._serialized_end=1260
-  _globals['_STARTMACHINEREQUEST']._serialized_start=1262
-  _globals['_STARTMACHINEREQUEST']._serialized_end=1340
-  _globals['_STARTMACHINERESPONSE']._serialized_start=1342
-  _globals['_STARTMACHINERESPONSE']._serialized_end=1364
-  _globals['_STARTMACHINEMETADATA']._serialized_start=1366
-  _globals['_STARTMACHINEMETADATA']._serialized_end=1388
-  _globals['_RESETMACHINEREQUEST']._serialized_start=1390
-  _globals['_RESETMACHINEREQUEST']._serialized_end=1468
-  _globals['_RESETMACHINERESPONSE']._serialized_start=1470
-  _globals['_RESETMACHINERESPONSE']._serialized_end=1492
-  _globals['_RESETMACHINEMETADATA']._serialized_start=1494
-  _globals['_RESETMACHINEMETADATA']._serialized_end=1516
-  _globals['_DELETEMACHINEREQUEST']._serialized_start=1518
-  _globals['_DELETEMACHINEREQUEST']._serialized_end=1597
-  _globals['_DELETEMACHINEMETADATA']._serialized_start=1599
-  _globals['_DELETEMACHINEMETADATA']._serialized_end=1622
-  _globals['_COMPUTESERVICE']._serialized_start=1625
-  _globals['_COMPUTESERVICE']._serialized_end=3065
+  _globals['_REQUESTMACHINECONSOLEREQUEST']._serialized_start=770
+  _globals['_REQUESTMACHINECONSOLEREQUEST']._serialized_end=857
+  _globals['_REQUESTMACHINECONSOLERESPONSE']._serialized_start=859
+  _globals['_REQUESTMACHINECONSOLERESPONSE']._serialized_end=956
+  _globals['_CREATEMACHINEREQUEST']._serialized_start=959
+  _globals['_CREATEMACHINEREQUEST']._serialized_end=1142
+  _globals['_CREATEMACHINERESPONSE']._serialized_start=1144
+  _globals['_CREATEMACHINERESPONSE']._serialized_end=1167
+  _globals['_CREATEMACHINEMETADATA']._serialized_start=1170
+  _globals['_CREATEMACHINEMETADATA']._serialized_end=1323
+  _globals['_STOPMACHINEREQUEST']._serialized_start=1325
+  _globals['_STOPMACHINEREQUEST']._serialized_end=1402
+  _globals['_STOPMACHINERESPONSE']._serialized_start=1404
+  _globals['_STOPMACHINERESPONSE']._serialized_end=1425
+  _globals['_STOPMACHINEMETADATA']._serialized_start=1427
+  _globals['_STOPMACHINEMETADATA']._serialized_end=1448
+  _globals['_STARTMACHINEREQUEST']._serialized_start=1450
+  _globals['_STARTMACHINEREQUEST']._serialized_end=1528
+  _globals['_STARTMACHINERESPONSE']._serialized_start=1530
+  _globals['_STARTMACHINERESPONSE']._serialized_end=1552
+  _globals['_STARTMACHINEMETADATA']._serialized_start=1554
+  _globals['_STARTMACHINEMETADATA']._serialized_end=1576
+  _globals['_RESETMACHINEREQUEST']._serialized_start=1578
+  _globals['_RESETMACHINEREQUEST']._serialized_end=1656
+  _globals['_RESETMACHINERESPONSE']._serialized_start=1658
+  _globals['_RESETMACHINERESPONSE']._serialized_end=1680
+  _globals['_RESETMACHINEMETADATA']._serialized_start=1682
+  _globals['_RESETMACHINEMETADATA']._serialized_end=1704
+  _globals['_DELETEMACHINEREQUEST']._serialized_start=1706
+  _globals['_DELETEMACHINEREQUEST']._serialized_end=1785
+  _globals['_DELETEMACHINEMETADATA']._serialized_start=1787
+  _globals['_DELETEMACHINEMETADATA']._serialized_end=1810
+  _globals['_COMPUTESERVICE']._serialized_start=1813
+  _globals['_COMPUTESERVICE']._serialized_end=3441
 # @@protoc_insertion_point(module_scope)

@@ -28,6 +28,11 @@ class ComputeServiceStub(object):
                 request_serializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.GetMachineRequest.SerializeToString,
                 response_deserializer=cbws_dot_compute_dot_v1alpha1_dot_machine__pb2.Machine.FromString,
                 _registered_method=True)
+        self.RequestMachineConsole = channel.unary_unary(
+                '/cbws.compute.v1alpha1.ComputeService/RequestMachineConsole',
+                request_serializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.RequestMachineConsoleRequest.SerializeToString,
+                response_deserializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.RequestMachineConsoleResponse.FromString,
+                _registered_method=True)
         self.CreateMachine = channel.unary_unary(
                 '/cbws.compute.v1alpha1.ComputeService/CreateMachine',
                 request_serializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.CreateMachineRequest.SerializeToString,
@@ -69,6 +74,14 @@ class ComputeServiceServicer(object):
 
     def GetMachine(self, request, context):
         """Gets a machine.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def RequestMachineConsole(self, request, context):
+        """Returns a URL that opens the console of a running machine in a browser.
+        A stopped machine has no console.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -122,6 +135,11 @@ def add_ComputeServiceServicer_to_server(servicer, server):
                     servicer.GetMachine,
                     request_deserializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.GetMachineRequest.FromString,
                     response_serializer=cbws_dot_compute_dot_v1alpha1_dot_machine__pb2.Machine.SerializeToString,
+            ),
+            'RequestMachineConsole': grpc.unary_unary_rpc_method_handler(
+                    servicer.RequestMachineConsole,
+                    request_deserializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.RequestMachineConsoleRequest.FromString,
+                    response_serializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.RequestMachineConsoleResponse.SerializeToString,
             ),
             'CreateMachine': grpc.unary_unary_rpc_method_handler(
                     servicer.CreateMachine,
@@ -205,6 +223,33 @@ class ComputeService(object):
             '/cbws.compute.v1alpha1.ComputeService/GetMachine',
             cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.GetMachineRequest.SerializeToString,
             cbws_dot_compute_dot_v1alpha1_dot_machine__pb2.Machine.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def RequestMachineConsole(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/cbws.compute.v1alpha1.ComputeService/RequestMachineConsole',
+            cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.RequestMachineConsoleRequest.SerializeToString,
+            cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.RequestMachineConsoleResponse.FromString,
             options,
             channel_credentials,
             insecure,
