@@ -135,6 +135,22 @@ class ReinstallMachineMetadata(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
 
+class ResizeMachineRequest(_message.Message):
+    __slots__ = ("name", "type")
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    TYPE_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    type: str
+    def __init__(self, name: _Optional[str] = ..., type: _Optional[str] = ...) -> None: ...
+
+class ResizeMachineResponse(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class ResizeMachineMetadata(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
 class DeleteMachineRequest(_message.Message):
     __slots__ = ("name",)
     NAME_FIELD_NUMBER: _ClassVar[int]

@@ -58,6 +58,11 @@ class ComputeServiceStub(object):
                 request_serializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.ReinstallMachineRequest.SerializeToString,
                 response_deserializer=google_dot_longrunning_dot_operations__pb2.Operation.FromString,
                 _registered_method=True)
+        self.ResizeMachine = channel.unary_unary(
+                '/cbws.compute.v1alpha1.ComputeService/ResizeMachine',
+                request_serializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.ResizeMachineRequest.SerializeToString,
+                response_deserializer=google_dot_longrunning_dot_operations__pb2.Operation.FromString,
+                _registered_method=True)
         self.DeleteMachine = channel.unary_unary(
                 '/cbws.compute.v1alpha1.ComputeService/DeleteMachine',
                 request_serializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.DeleteMachineRequest.SerializeToString,
@@ -129,6 +134,14 @@ class ComputeServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ResizeMachine(self, request, context):
+        """Changes a machine to another machine type in the same zone. The machine
+        is turned off and on again.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def DeleteMachine(self, request, context):
         """Deletes a machine and its disk.
         """
@@ -177,6 +190,11 @@ def add_ComputeServiceServicer_to_server(servicer, server):
             'ReinstallMachine': grpc.unary_unary_rpc_method_handler(
                     servicer.ReinstallMachine,
                     request_deserializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.ReinstallMachineRequest.FromString,
+                    response_serializer=google_dot_longrunning_dot_operations__pb2.Operation.SerializeToString,
+            ),
+            'ResizeMachine': grpc.unary_unary_rpc_method_handler(
+                    servicer.ResizeMachine,
+                    request_deserializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.ResizeMachineRequest.FromString,
                     response_serializer=google_dot_longrunning_dot_operations__pb2.Operation.SerializeToString,
             ),
             'DeleteMachine': grpc.unary_unary_rpc_method_handler(
@@ -402,6 +420,33 @@ class ComputeService(object):
             target,
             '/cbws.compute.v1alpha1.ComputeService/ReinstallMachine',
             cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.ReinstallMachineRequest.SerializeToString,
+            google_dot_longrunning_dot_operations__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ResizeMachine(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/cbws.compute.v1alpha1.ComputeService/ResizeMachine',
+            cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.ResizeMachineRequest.SerializeToString,
             google_dot_longrunning_dot_operations__pb2.Operation.FromString,
             options,
             channel_credentials,
