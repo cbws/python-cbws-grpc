@@ -1,3 +1,4 @@
+from cbws.compute.v1alpha1 import image_pb2 as _image_pb2
 from cbws.compute.v1alpha1 import machine_pb2 as _machine_pb2
 from cbws.compute.v1alpha1 import machine_type_pb2 as _machine_type_pb2
 from google.api import annotations_pb2 as _annotations_pb2
@@ -195,9 +196,9 @@ class ListImagesRequest(_message.Message):
     def __init__(self, parent: _Optional[str] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., read_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
 class ListImagesResponse(_message.Message):
-    __slots__ = ("machine_types", "next_page_token")
-    MACHINE_TYPES_FIELD_NUMBER: _ClassVar[int]
+    __slots__ = ("images", "next_page_token")
+    IMAGES_FIELD_NUMBER: _ClassVar[int]
     NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
-    machine_types: _containers.RepeatedCompositeFieldContainer[_machine_type_pb2.MachineType]
+    images: _containers.RepeatedCompositeFieldContainer[_image_pb2.Image]
     next_page_token: str
-    def __init__(self, machine_types: _Optional[_Iterable[_Union[_machine_type_pb2.MachineType, _Mapping]]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
+    def __init__(self, images: _Optional[_Iterable[_Union[_image_pb2.Image, _Mapping]]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
