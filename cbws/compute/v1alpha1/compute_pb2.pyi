@@ -1,4 +1,5 @@
 from cbws.compute.v1alpha1 import machine_pb2 as _machine_pb2
+from cbws.compute.v1alpha1 import machine_type_pb2 as _machine_type_pb2
 from google.api import annotations_pb2 as _annotations_pb2
 from google.api import client_pb2 as _client_pb2
 from google.api import field_behavior_pb2 as _field_behavior_pb2
@@ -160,3 +161,43 @@ class DeleteMachineRequest(_message.Message):
 class DeleteMachineMetadata(_message.Message):
     __slots__ = ()
     def __init__(self) -> None: ...
+
+class ListMachineTypesRequest(_message.Message):
+    __slots__ = ("parent", "page_size", "page_token", "read_mask")
+    PARENT_FIELD_NUMBER: _ClassVar[int]
+    PAGE_SIZE_FIELD_NUMBER: _ClassVar[int]
+    PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
+    READ_MASK_FIELD_NUMBER: _ClassVar[int]
+    parent: str
+    page_size: int
+    page_token: str
+    read_mask: _field_mask_pb2.FieldMask
+    def __init__(self, parent: _Optional[str] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., read_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
+
+class ListMachineTypesResponse(_message.Message):
+    __slots__ = ("machine_types", "next_page_token")
+    MACHINE_TYPES_FIELD_NUMBER: _ClassVar[int]
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
+    machine_types: _containers.RepeatedCompositeFieldContainer[_machine_type_pb2.MachineType]
+    next_page_token: str
+    def __init__(self, machine_types: _Optional[_Iterable[_Union[_machine_type_pb2.MachineType, _Mapping]]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
+
+class ListImagesRequest(_message.Message):
+    __slots__ = ("parent", "page_size", "page_token", "read_mask")
+    PARENT_FIELD_NUMBER: _ClassVar[int]
+    PAGE_SIZE_FIELD_NUMBER: _ClassVar[int]
+    PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
+    READ_MASK_FIELD_NUMBER: _ClassVar[int]
+    parent: str
+    page_size: int
+    page_token: str
+    read_mask: _field_mask_pb2.FieldMask
+    def __init__(self, parent: _Optional[str] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ..., read_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
+
+class ListImagesResponse(_message.Message):
+    __slots__ = ("machine_types", "next_page_token")
+    MACHINE_TYPES_FIELD_NUMBER: _ClassVar[int]
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
+    machine_types: _containers.RepeatedCompositeFieldContainer[_machine_type_pb2.MachineType]
+    next_page_token: str
+    def __init__(self, machine_types: _Optional[_Iterable[_Union[_machine_type_pb2.MachineType, _Mapping]]] = ..., next_page_token: _Optional[str] = ...) -> None: ...

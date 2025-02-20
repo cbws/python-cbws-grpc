@@ -23,6 +23,7 @@ _sym_db = _symbol_database.Default()
 
 
 from cbws.compute.v1alpha1 import machine_pb2 as cbws_dot_compute_dot_v1alpha1_dot_machine__pb2
+from cbws.compute.v1alpha1 import machine_type_pb2 as cbws_dot_compute_dot_v1alpha1_dot_machine__type__pb2
 from google.api import annotations_pb2 as google_dot_api_dot_annotations__pb2
 from google.api import client_pb2 as google_dot_api_dot_client__pb2
 from google.api import field_behavior_pb2 as google_dot_api_dot_field__behavior__pb2
@@ -31,7 +32,7 @@ from google.longrunning import operations_pb2 as google_dot_longrunning_dot_oper
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#cbws/compute/v1alpha1/compute.proto\x12\x15\x63\x62ws.compute.v1alpha1\x1a#cbws/compute/v1alpha1/machine.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\x1a#google/longrunning/operations.proto\x1a google/protobuf/field_mask.proto\"\xd8\x01\n\x13ListMachinesRequest\x12:\n\x06parent\x18\x01 \x01(\tB\"\xe2\x41\x01\x02\xfa\x41\x1b\n\x19projects.cbws.xyz/ProjectR\x06parent\x12!\n\tpage_size\x18\x02 \x01(\x05\x42\x04\xe2\x41\x01\x01R\x08pageSize\x12#\n\npage_token\x18\x03 \x01(\tB\x04\xe2\x41\x01\x01R\tpageToken\x12=\n\tread_mask\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe2\x41\x01\x01R\x08readMask\"z\n\x14ListMachinesResponse\x12:\n\x08machines\x18\x01 \x03(\x0b\x32\x1e.cbws.compute.v1alpha1.MachineR\x08machines\x12&\n\x0fnext_page_token\x18\x02 \x01(\tR\rnextPageToken\"\x8b\x01\n\x11GetMachineRequest\x12\x37\n\x04name\x18\x01 \x01(\tB#\xe2\x41\x01\x02\xfa\x41\x1c\n\x1a\x63ompute.cbws.cloud/MachineR\x04name\x12=\n\tread_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe2\x41\x01\x01R\x08readMask\"W\n\x1cRequestMachineConsoleRequest\x12\x37\n\x04name\x18\x01 \x01(\tB#\xe2\x41\x01\x02\xfa\x41\x1c\n\x1a\x63ompute.cbws.cloud/MachineR\x04name\"a\n\x1dRequestMachineConsoleResponse\x12\x1a\n\x08protocol\x18\x01 \x01(\tR\x08protocol\x12\x12\n\x04type\x18\x02 \x01(\tR\x04type\x12\x10\n\x03url\x18\x03 \x01(\tR\x03url\"\xb7\x01\n\x14\x43reateMachineRequest\x12:\n\x06parent\x18\x01 \x01(\tB\"\xe2\x41\x01\x02\xfa\x41\x1b\n\x19projects.cbws.xyz/ProjectR\x06parent\x12#\n\nmachine_id\x18\x02 \x01(\tB\x04\xe2\x41\x01\x02R\tmachineId\x12>\n\x07machine\x18\x03 \x01(\x0b\x32\x1e.cbws.compute.v1alpha1.MachineB\x04\xe2\x41\x01\x02R\x07machine\"\x17\n\x15\x43reateMachineResponse\"\x99\x01\n\x15\x43reateMachineMetadata\x12@\n\x05state\x18\x04 \x01(\x0e\x32$.cbws.compute.v1alpha1.Machine.StateB\x04\xe2\x41\x01\x03R\x05state\x12>\n\x07machine\x18\x05 \x01(\x0b\x32\x1e.cbws.compute.v1alpha1.MachineB\x04\xe2\x41\x01\x03R\x07machine\"M\n\x12StopMachineRequest\x12\x37\n\x04name\x18\x01 \x01(\tB#\xe2\x41\x01\x02\xfa\x41\x1c\n\x1a\x63ompute.cbws.cloud/MachineR\x04name\"\x15\n\x13StopMachineResponse\"\x15\n\x13StopMachineMetadata\"N\n\x13StartMachineRequest\x12\x37\n\x04name\x18\x01 \x01(\tB#\xe2\x41\x01\x02\xfa\x41\x1c\n\x1a\x63ompute.cbws.cloud/MachineR\x04name\"\x16\n\x14StartMachineResponse\"\x16\n\x14StartMachineMetadata\"N\n\x13ResetMachineRequest\x12\x37\n\x04name\x18\x01 \x01(\tB#\xe2\x41\x01\x02\xfa\x41\x1c\n\x1a\x63ompute.cbws.cloud/MachineR\x04name\"\x16\n\x14ResetMachineResponse\"\x16\n\x14ResetMachineMetadata\"R\n\x17ReinstallMachineRequest\x12\x37\n\x04name\x18\x01 \x01(\tB#\xe2\x41\x01\x02\xfa\x41\x1c\n\x1a\x63ompute.cbws.cloud/MachineR\x04name\"\x1a\n\x18ReinstallMachineResponse\"\x1a\n\x18ReinstallMachineMetadata\"i\n\x14ResizeMachineRequest\x12\x37\n\x04name\x18\x01 \x01(\tB#\xe2\x41\x01\x02\xfa\x41\x1c\n\x1a\x63ompute.cbws.cloud/MachineR\x04name\x12\x18\n\x04type\x18\x02 \x01(\tB\x04\xe2\x41\x01\x04R\x04type\"\x17\n\x15ResizeMachineResponse\"\x17\n\x15ResizeMachineMetadata\"O\n\x14\x44\x65leteMachineRequest\x12\x37\n\x04name\x18\x01 \x01(\tB#\xe2\x41\x01\x02\xfa\x41\x1c\n\x1a\x63ompute.cbws.cloud/MachineR\x04name\"\x17\n\x15\x44\x65leteMachineMetadata2\xaa\x10\n\x0e\x43omputeService\x12\xa0\x01\n\x0cListMachines\x12*.cbws.compute.v1alpha1.ListMachinesRequest\x1a+.cbws.compute.v1alpha1.ListMachinesResponse\"7\xda\x41\x06parent\x82\xd3\xe4\x93\x02(\x12&/v1alpha1/{parent=projects/*}/machines\x12\x8d\x01\n\nGetMachine\x12(.cbws.compute.v1alpha1.GetMachineRequest\x1a\x1e.cbws.compute.v1alpha1.Machine\"5\xda\x41\x04name\x82\xd3\xe4\x93\x02(\x12&/v1alpha1/{name=projects/*/machines/*}\x12\xb9\x01\n\x15RequestMachineConsole\x12\x33.cbws.compute.v1alpha1.RequestMachineConsoleRequest\x1a\x34.cbws.compute.v1alpha1.RequestMachineConsoleResponse\"5\xda\x41\x04name\x82\xd3\xe4\x93\x02(\x12&/v1alpha1/{name=projects/*/machines/*}\x12\xe4\x01\n\rCreateMachine\x12+.cbws.compute.v1alpha1.CreateMachineRequest\x1a\x1d.google.longrunning.Operation\"\x86\x01\xca\x41\x36\n\x07Machine\x12+cbws.compute.v1alpha1.CreateMachineMetadata\xda\x41\x19parent,machine,machine_id\x82\xd3\xe4\x93\x02+\" /v1/{parent=projects/*}/machines:\x07machine\x12\xd2\x01\n\x0bStopMachine\x12).cbws.compute.v1alpha1.StopMachineRequest\x1a\x1d.google.longrunning.Operation\"y\xca\x41@\n\x13StopMachineResponse\x12)cbws.compute.v1alpha1.StopMachineMetadata\x82\xd3\xe4\x93\x02\x30\"%/v1/{name=projects/*/machines/*}:stop:\x07machine\x12\xd7\x01\n\x0cStartMachine\x12*.cbws.compute.v1alpha1.StartMachineRequest\x1a\x1d.google.longrunning.Operation\"|\xca\x41\x42\n\x14StartMachineResponse\x12*cbws.compute.v1alpha1.StartMachineMetadata\x82\xd3\xe4\x93\x02\x31\"&/v1/{name=projects/*/machines/*}:start:\x07machine\x12\xd7\x01\n\x0cResetMachine\x12*.cbws.compute.v1alpha1.ResetMachineRequest\x1a\x1d.google.longrunning.Operation\"|\xca\x41\x42\n\x14ResetMachineResponse\x12*cbws.compute.v1alpha1.ResetMachineMetadata\x82\xd3\xe4\x93\x02\x31\"&/v1/{name=projects/*/machines/*}:reset:\x07machine\x12\xec\x01\n\x10ReinstallMachine\x12..cbws.compute.v1alpha1.ReinstallMachineRequest\x1a\x1d.google.longrunning.Operation\"\x88\x01\xca\x41J\n\x18ReinstallMachineResponse\x12.cbws.compute.v1alpha1.ReinstallMachineMetadata\x82\xd3\xe4\x93\x02\x35\"*/v1/{name=projects/*/machines/*}:reinstall:\x07machine\x12\xdc\x01\n\rResizeMachine\x12+.cbws.compute.v1alpha1.ResizeMachineRequest\x1a\x1d.google.longrunning.Operation\"\x7f\xca\x41\x44\n\x15ResizeMachineResponse\x12+cbws.compute.v1alpha1.ResizeMachineMetadata\x82\xd3\xe4\x93\x02\x32\"\'/v1/{name=projects/*/machines/*}:resize:\x07machine\x12\xd3\x01\n\rDeleteMachine\x12+.cbws.compute.v1alpha1.DeleteMachineRequest\x1a\x1d.google.longrunning.Operation\"v\xca\x41\x44\n\x15google.protobuf.Empty\x12+cbws.compute.v1alpha1.DeleteMachineMetadata\xda\x41\x04name\x82\xd3\xe4\x93\x02\"* /v1/{name=projects/*/machines/*}\x1a\x15\xca\x41\x12\x63ompute.cbws.cloudB\x9f\x01\n\x19\x63om.cbws.compute.v1alpha1B\x0c\x43omputeProtoP\x01\xa2\x02\x03\x43\x43X\xaa\x02\x15\x43\x62ws.Compute.V1alpha1\xca\x02\x15\x43\x62ws\\Compute\\V1alpha1\xe2\x02!Cbws\\Compute\\V1alpha1\\GPBMetadata\xea\x02\x17\x43\x62ws::Compute::V1alpha1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#cbws/compute/v1alpha1/compute.proto\x12\x15\x63\x62ws.compute.v1alpha1\x1a#cbws/compute/v1alpha1/machine.proto\x1a(cbws/compute/v1alpha1/machine_type.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\x1a#google/longrunning/operations.proto\x1a google/protobuf/field_mask.proto\"\xd8\x01\n\x13ListMachinesRequest\x12:\n\x06parent\x18\x01 \x01(\tB\"\xe2\x41\x01\x02\xfa\x41\x1b\n\x19projects.cbws.xyz/ProjectR\x06parent\x12!\n\tpage_size\x18\x02 \x01(\x05\x42\x04\xe2\x41\x01\x01R\x08pageSize\x12#\n\npage_token\x18\x03 \x01(\tB\x04\xe2\x41\x01\x01R\tpageToken\x12=\n\tread_mask\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe2\x41\x01\x01R\x08readMask\"z\n\x14ListMachinesResponse\x12:\n\x08machines\x18\x01 \x03(\x0b\x32\x1e.cbws.compute.v1alpha1.MachineR\x08machines\x12&\n\x0fnext_page_token\x18\x02 \x01(\tR\rnextPageToken\"\x8b\x01\n\x11GetMachineRequest\x12\x37\n\x04name\x18\x01 \x01(\tB#\xe2\x41\x01\x02\xfa\x41\x1c\n\x1a\x63ompute.cbws.cloud/MachineR\x04name\x12=\n\tread_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe2\x41\x01\x01R\x08readMask\"W\n\x1cRequestMachineConsoleRequest\x12\x37\n\x04name\x18\x01 \x01(\tB#\xe2\x41\x01\x02\xfa\x41\x1c\n\x1a\x63ompute.cbws.cloud/MachineR\x04name\"a\n\x1dRequestMachineConsoleResponse\x12\x1a\n\x08protocol\x18\x01 \x01(\tR\x08protocol\x12\x12\n\x04type\x18\x02 \x01(\tR\x04type\x12\x10\n\x03url\x18\x03 \x01(\tR\x03url\"\xb7\x01\n\x14\x43reateMachineRequest\x12:\n\x06parent\x18\x01 \x01(\tB\"\xe2\x41\x01\x02\xfa\x41\x1b\n\x19projects.cbws.xyz/ProjectR\x06parent\x12#\n\nmachine_id\x18\x02 \x01(\tB\x04\xe2\x41\x01\x02R\tmachineId\x12>\n\x07machine\x18\x03 \x01(\x0b\x32\x1e.cbws.compute.v1alpha1.MachineB\x04\xe2\x41\x01\x02R\x07machine\"\x17\n\x15\x43reateMachineResponse\"\x99\x01\n\x15\x43reateMachineMetadata\x12@\n\x05state\x18\x04 \x01(\x0e\x32$.cbws.compute.v1alpha1.Machine.StateB\x04\xe2\x41\x01\x03R\x05state\x12>\n\x07machine\x18\x05 \x01(\x0b\x32\x1e.cbws.compute.v1alpha1.MachineB\x04\xe2\x41\x01\x03R\x07machine\"M\n\x12StopMachineRequest\x12\x37\n\x04name\x18\x01 \x01(\tB#\xe2\x41\x01\x02\xfa\x41\x1c\n\x1a\x63ompute.cbws.cloud/MachineR\x04name\"\x15\n\x13StopMachineResponse\"\x15\n\x13StopMachineMetadata\"N\n\x13StartMachineRequest\x12\x37\n\x04name\x18\x01 \x01(\tB#\xe2\x41\x01\x02\xfa\x41\x1c\n\x1a\x63ompute.cbws.cloud/MachineR\x04name\"\x16\n\x14StartMachineResponse\"\x16\n\x14StartMachineMetadata\"N\n\x13ResetMachineRequest\x12\x37\n\x04name\x18\x01 \x01(\tB#\xe2\x41\x01\x02\xfa\x41\x1c\n\x1a\x63ompute.cbws.cloud/MachineR\x04name\"\x16\n\x14ResetMachineResponse\"\x16\n\x14ResetMachineMetadata\"R\n\x17ReinstallMachineRequest\x12\x37\n\x04name\x18\x01 \x01(\tB#\xe2\x41\x01\x02\xfa\x41\x1c\n\x1a\x63ompute.cbws.cloud/MachineR\x04name\"\x1a\n\x18ReinstallMachineResponse\"\x1a\n\x18ReinstallMachineMetadata\"i\n\x14ResizeMachineRequest\x12\x37\n\x04name\x18\x01 \x01(\tB#\xe2\x41\x01\x02\xfa\x41\x1c\n\x1a\x63ompute.cbws.cloud/MachineR\x04name\x12\x18\n\x04type\x18\x02 \x01(\tB\x04\xe2\x41\x01\x04R\x04type\"\x17\n\x15ResizeMachineResponse\"\x17\n\x15ResizeMachineMetadata\"O\n\x14\x44\x65leteMachineRequest\x12\x37\n\x04name\x18\x01 \x01(\tB#\xe2\x41\x01\x02\xfa\x41\x1c\n\x1a\x63ompute.cbws.cloud/MachineR\x04name\"\x17\n\x15\x44\x65leteMachineMetadata\"\xda\x01\n\x17ListMachineTypesRequest\x12\x38\n\x06parent\x18\x01 \x01(\tB \xe2\x41\x01\x02\xfa\x41\x19\n\x17\x63ompute.cbws.cloud/ZoneR\x06parent\x12!\n\tpage_size\x18\x02 \x01(\x05\x42\x04\xe2\x41\x01\x01R\x08pageSize\x12#\n\npage_token\x18\x03 \x01(\tB\x04\xe2\x41\x01\x01R\tpageToken\x12=\n\tread_mask\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe2\x41\x01\x01R\x08readMask\"\x8b\x01\n\x18ListMachineTypesResponse\x12G\n\rmachine_types\x18\x01 \x03(\x0b\x32\".cbws.compute.v1alpha1.MachineTypeR\x0cmachineTypes\x12&\n\x0fnext_page_token\x18\x02 \x01(\tR\rnextPageToken\"\xd6\x01\n\x11ListImagesRequest\x12:\n\x06parent\x18\x01 \x01(\tB\"\xe2\x41\x01\x02\xfa\x41\x1b\n\x19projects.cbws.xyz/ProjectR\x06parent\x12!\n\tpage_size\x18\x02 \x01(\x05\x42\x04\xe2\x41\x01\x01R\x08pageSize\x12#\n\npage_token\x18\x03 \x01(\tB\x04\xe2\x41\x01\x01R\tpageToken\x12=\n\tread_mask\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe2\x41\x01\x01R\x08readMask\"\x85\x01\n\x12ListImagesResponse\x12G\n\rmachine_types\x18\x01 \x03(\x0b\x32\".cbws.compute.v1alpha1.MachineTypeR\x0cmachineTypes\x12&\n\x0fnext_page_token\x18\x02 \x01(\tR\rnextPageToken2\xee\x12\n\x0e\x43omputeService\x12\xa0\x01\n\x0cListMachines\x12*.cbws.compute.v1alpha1.ListMachinesRequest\x1a+.cbws.compute.v1alpha1.ListMachinesResponse\"7\xda\x41\x06parent\x82\xd3\xe4\x93\x02(\x12&/v1alpha1/{parent=projects/*}/machines\x12\x8d\x01\n\nGetMachine\x12(.cbws.compute.v1alpha1.GetMachineRequest\x1a\x1e.cbws.compute.v1alpha1.Machine\"5\xda\x41\x04name\x82\xd3\xe4\x93\x02(\x12&/v1alpha1/{name=projects/*/machines/*}\x12\xb9\x01\n\x15RequestMachineConsole\x12\x33.cbws.compute.v1alpha1.RequestMachineConsoleRequest\x1a\x34.cbws.compute.v1alpha1.RequestMachineConsoleResponse\"5\xda\x41\x04name\x82\xd3\xe4\x93\x02(\x12&/v1alpha1/{name=projects/*/machines/*}\x12\xe4\x01\n\rCreateMachine\x12+.cbws.compute.v1alpha1.CreateMachineRequest\x1a\x1d.google.longrunning.Operation\"\x86\x01\xca\x41\x36\n\x07Machine\x12+cbws.compute.v1alpha1.CreateMachineMetadata\xda\x41\x19parent,machine,machine_id\x82\xd3\xe4\x93\x02+\" /v1/{parent=projects/*}/machines:\x07machine\x12\xd2\x01\n\x0bStopMachine\x12).cbws.compute.v1alpha1.StopMachineRequest\x1a\x1d.google.longrunning.Operation\"y\xca\x41@\n\x13StopMachineResponse\x12)cbws.compute.v1alpha1.StopMachineMetadata\x82\xd3\xe4\x93\x02\x30\"%/v1/{name=projects/*/machines/*}:stop:\x07machine\x12\xd7\x01\n\x0cStartMachine\x12*.cbws.compute.v1alpha1.StartMachineRequest\x1a\x1d.google.longrunning.Operation\"|\xca\x41\x42\n\x14StartMachineResponse\x12*cbws.compute.v1alpha1.StartMachineMetadata\x82\xd3\xe4\x93\x02\x31\"&/v1/{name=projects/*/machines/*}:start:\x07machine\x12\xd7\x01\n\x0cResetMachine\x12*.cbws.compute.v1alpha1.ResetMachineRequest\x1a\x1d.google.longrunning.Operation\"|\xca\x41\x42\n\x14ResetMachineResponse\x12*cbws.compute.v1alpha1.ResetMachineMetadata\x82\xd3\xe4\x93\x02\x31\"&/v1/{name=projects/*/machines/*}:reset:\x07machine\x12\xec\x01\n\x10ReinstallMachine\x12..cbws.compute.v1alpha1.ReinstallMachineRequest\x1a\x1d.google.longrunning.Operation\"\x88\x01\xca\x41J\n\x18ReinstallMachineResponse\x12.cbws.compute.v1alpha1.ReinstallMachineMetadata\x82\xd3\xe4\x93\x02\x35\"*/v1/{name=projects/*/machines/*}:reinstall:\x07machine\x12\xdc\x01\n\rResizeMachine\x12+.cbws.compute.v1alpha1.ResizeMachineRequest\x1a\x1d.google.longrunning.Operation\"\x7f\xca\x41\x44\n\x15ResizeMachineResponse\x12+cbws.compute.v1alpha1.ResizeMachineMetadata\x82\xd3\xe4\x93\x02\x32\"\'/v1/{name=projects/*/machines/*}:resize:\x07machine\x12\xd3\x01\n\rDeleteMachine\x12+.cbws.compute.v1alpha1.DeleteMachineRequest\x1a\x1d.google.longrunning.Operation\"v\xca\x41\x44\n\x15google.protobuf.Empty\x12+cbws.compute.v1alpha1.DeleteMachineMetadata\xda\x41\x04name\x82\xd3\xe4\x93\x02\"* /v1/{name=projects/*/machines/*}\x12\xa6\x01\n\x10ListMachineTypes\x12..cbws.compute.v1alpha1.ListMachineTypesRequest\x1a/.cbws.compute.v1alpha1.ListMachineTypesResponse\"1\xda\x41\x06parent\x82\xd3\xe4\x93\x02\"\x12 /v1alpha1/{parent=zones/*}/types\x12\x98\x01\n\nListImages\x12(.cbws.compute.v1alpha1.ListImagesRequest\x1a).cbws.compute.v1alpha1.ListImagesResponse\"5\xda\x41\x06parent\x82\xd3\xe4\x93\x02&\x12$/v1alpha1/{parent=projects/*}/images\x1a\x15\xca\x41\x12\x63ompute.cbws.cloudB\x9f\x01\n\x19\x63om.cbws.compute.v1alpha1B\x0c\x43omputeProtoP\x01\xa2\x02\x03\x43\x43X\xaa\x02\x15\x43\x62ws.Compute.V1alpha1\xca\x02\x15\x43\x62ws\\Compute\\V1alpha1\xe2\x02!Cbws\\Compute\\V1alpha1\\GPBMetadata\xea\x02\x17\x43\x62ws::Compute::V1alpha1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -77,6 +78,22 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_RESIZEMACHINEREQUEST'].fields_by_name['type']._serialized_options = b'\342A\001\004'
   _globals['_DELETEMACHINEREQUEST'].fields_by_name['name']._loaded_options = None
   _globals['_DELETEMACHINEREQUEST'].fields_by_name['name']._serialized_options = b'\342A\001\002\372A\034\n\032compute.cbws.cloud/Machine'
+  _globals['_LISTMACHINETYPESREQUEST'].fields_by_name['parent']._loaded_options = None
+  _globals['_LISTMACHINETYPESREQUEST'].fields_by_name['parent']._serialized_options = b'\342A\001\002\372A\031\n\027compute.cbws.cloud/Zone'
+  _globals['_LISTMACHINETYPESREQUEST'].fields_by_name['page_size']._loaded_options = None
+  _globals['_LISTMACHINETYPESREQUEST'].fields_by_name['page_size']._serialized_options = b'\342A\001\001'
+  _globals['_LISTMACHINETYPESREQUEST'].fields_by_name['page_token']._loaded_options = None
+  _globals['_LISTMACHINETYPESREQUEST'].fields_by_name['page_token']._serialized_options = b'\342A\001\001'
+  _globals['_LISTMACHINETYPESREQUEST'].fields_by_name['read_mask']._loaded_options = None
+  _globals['_LISTMACHINETYPESREQUEST'].fields_by_name['read_mask']._serialized_options = b'\342A\001\001'
+  _globals['_LISTIMAGESREQUEST'].fields_by_name['parent']._loaded_options = None
+  _globals['_LISTIMAGESREQUEST'].fields_by_name['parent']._serialized_options = b'\342A\001\002\372A\033\n\031projects.cbws.xyz/Project'
+  _globals['_LISTIMAGESREQUEST'].fields_by_name['page_size']._loaded_options = None
+  _globals['_LISTIMAGESREQUEST'].fields_by_name['page_size']._serialized_options = b'\342A\001\001'
+  _globals['_LISTIMAGESREQUEST'].fields_by_name['page_token']._loaded_options = None
+  _globals['_LISTIMAGESREQUEST'].fields_by_name['page_token']._serialized_options = b'\342A\001\001'
+  _globals['_LISTIMAGESREQUEST'].fields_by_name['read_mask']._loaded_options = None
+  _globals['_LISTIMAGESREQUEST'].fields_by_name['read_mask']._serialized_options = b'\342A\001\001'
   _globals['_COMPUTESERVICE']._loaded_options = None
   _globals['_COMPUTESERVICE']._serialized_options = b'\312A\022compute.cbws.cloud'
   _globals['_COMPUTESERVICE'].methods_by_name['ListMachines']._loaded_options = None
@@ -99,56 +116,68 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_COMPUTESERVICE'].methods_by_name['ResizeMachine']._serialized_options = b'\312AD\n\025ResizeMachineResponse\022+cbws.compute.v1alpha1.ResizeMachineMetadata\202\323\344\223\0022\"\'/v1/{name=projects/*/machines/*}:resize:\007machine'
   _globals['_COMPUTESERVICE'].methods_by_name['DeleteMachine']._loaded_options = None
   _globals['_COMPUTESERVICE'].methods_by_name['DeleteMachine']._serialized_options = b'\312AD\n\025google.protobuf.Empty\022+cbws.compute.v1alpha1.DeleteMachineMetadata\332A\004name\202\323\344\223\002\"* /v1/{name=projects/*/machines/*}'
-  _globals['_LISTMACHINESREQUEST']._serialized_start=286
-  _globals['_LISTMACHINESREQUEST']._serialized_end=502
-  _globals['_LISTMACHINESRESPONSE']._serialized_start=504
-  _globals['_LISTMACHINESRESPONSE']._serialized_end=626
-  _globals['_GETMACHINEREQUEST']._serialized_start=629
-  _globals['_GETMACHINEREQUEST']._serialized_end=768
-  _globals['_REQUESTMACHINECONSOLEREQUEST']._serialized_start=770
-  _globals['_REQUESTMACHINECONSOLEREQUEST']._serialized_end=857
-  _globals['_REQUESTMACHINECONSOLERESPONSE']._serialized_start=859
-  _globals['_REQUESTMACHINECONSOLERESPONSE']._serialized_end=956
-  _globals['_CREATEMACHINEREQUEST']._serialized_start=959
-  _globals['_CREATEMACHINEREQUEST']._serialized_end=1142
-  _globals['_CREATEMACHINERESPONSE']._serialized_start=1144
-  _globals['_CREATEMACHINERESPONSE']._serialized_end=1167
-  _globals['_CREATEMACHINEMETADATA']._serialized_start=1170
-  _globals['_CREATEMACHINEMETADATA']._serialized_end=1323
-  _globals['_STOPMACHINEREQUEST']._serialized_start=1325
-  _globals['_STOPMACHINEREQUEST']._serialized_end=1402
-  _globals['_STOPMACHINERESPONSE']._serialized_start=1404
-  _globals['_STOPMACHINERESPONSE']._serialized_end=1425
-  _globals['_STOPMACHINEMETADATA']._serialized_start=1427
-  _globals['_STOPMACHINEMETADATA']._serialized_end=1448
-  _globals['_STARTMACHINEREQUEST']._serialized_start=1450
-  _globals['_STARTMACHINEREQUEST']._serialized_end=1528
-  _globals['_STARTMACHINERESPONSE']._serialized_start=1530
-  _globals['_STARTMACHINERESPONSE']._serialized_end=1552
-  _globals['_STARTMACHINEMETADATA']._serialized_start=1554
-  _globals['_STARTMACHINEMETADATA']._serialized_end=1576
-  _globals['_RESETMACHINEREQUEST']._serialized_start=1578
-  _globals['_RESETMACHINEREQUEST']._serialized_end=1656
-  _globals['_RESETMACHINERESPONSE']._serialized_start=1658
-  _globals['_RESETMACHINERESPONSE']._serialized_end=1680
-  _globals['_RESETMACHINEMETADATA']._serialized_start=1682
-  _globals['_RESETMACHINEMETADATA']._serialized_end=1704
-  _globals['_REINSTALLMACHINEREQUEST']._serialized_start=1706
-  _globals['_REINSTALLMACHINEREQUEST']._serialized_end=1788
-  _globals['_REINSTALLMACHINERESPONSE']._serialized_start=1790
-  _globals['_REINSTALLMACHINERESPONSE']._serialized_end=1816
-  _globals['_REINSTALLMACHINEMETADATA']._serialized_start=1818
-  _globals['_REINSTALLMACHINEMETADATA']._serialized_end=1844
-  _globals['_RESIZEMACHINEREQUEST']._serialized_start=1846
-  _globals['_RESIZEMACHINEREQUEST']._serialized_end=1951
-  _globals['_RESIZEMACHINERESPONSE']._serialized_start=1953
-  _globals['_RESIZEMACHINERESPONSE']._serialized_end=1976
-  _globals['_RESIZEMACHINEMETADATA']._serialized_start=1978
-  _globals['_RESIZEMACHINEMETADATA']._serialized_end=2001
-  _globals['_DELETEMACHINEREQUEST']._serialized_start=2003
-  _globals['_DELETEMACHINEREQUEST']._serialized_end=2082
-  _globals['_DELETEMACHINEMETADATA']._serialized_start=2084
-  _globals['_DELETEMACHINEMETADATA']._serialized_end=2107
-  _globals['_COMPUTESERVICE']._serialized_start=2110
-  _globals['_COMPUTESERVICE']._serialized_end=4200
+  _globals['_COMPUTESERVICE'].methods_by_name['ListMachineTypes']._loaded_options = None
+  _globals['_COMPUTESERVICE'].methods_by_name['ListMachineTypes']._serialized_options = b'\332A\006parent\202\323\344\223\002\"\022 /v1alpha1/{parent=zones/*}/types'
+  _globals['_COMPUTESERVICE'].methods_by_name['ListImages']._loaded_options = None
+  _globals['_COMPUTESERVICE'].methods_by_name['ListImages']._serialized_options = b'\332A\006parent\202\323\344\223\002&\022$/v1alpha1/{parent=projects/*}/images'
+  _globals['_LISTMACHINESREQUEST']._serialized_start=328
+  _globals['_LISTMACHINESREQUEST']._serialized_end=544
+  _globals['_LISTMACHINESRESPONSE']._serialized_start=546
+  _globals['_LISTMACHINESRESPONSE']._serialized_end=668
+  _globals['_GETMACHINEREQUEST']._serialized_start=671
+  _globals['_GETMACHINEREQUEST']._serialized_end=810
+  _globals['_REQUESTMACHINECONSOLEREQUEST']._serialized_start=812
+  _globals['_REQUESTMACHINECONSOLEREQUEST']._serialized_end=899
+  _globals['_REQUESTMACHINECONSOLERESPONSE']._serialized_start=901
+  _globals['_REQUESTMACHINECONSOLERESPONSE']._serialized_end=998
+  _globals['_CREATEMACHINEREQUEST']._serialized_start=1001
+  _globals['_CREATEMACHINEREQUEST']._serialized_end=1184
+  _globals['_CREATEMACHINERESPONSE']._serialized_start=1186
+  _globals['_CREATEMACHINERESPONSE']._serialized_end=1209
+  _globals['_CREATEMACHINEMETADATA']._serialized_start=1212
+  _globals['_CREATEMACHINEMETADATA']._serialized_end=1365
+  _globals['_STOPMACHINEREQUEST']._serialized_start=1367
+  _globals['_STOPMACHINEREQUEST']._serialized_end=1444
+  _globals['_STOPMACHINERESPONSE']._serialized_start=1446
+  _globals['_STOPMACHINERESPONSE']._serialized_end=1467
+  _globals['_STOPMACHINEMETADATA']._serialized_start=1469
+  _globals['_STOPMACHINEMETADATA']._serialized_end=1490
+  _globals['_STARTMACHINEREQUEST']._serialized_start=1492
+  _globals['_STARTMACHINEREQUEST']._serialized_end=1570
+  _globals['_STARTMACHINERESPONSE']._serialized_start=1572
+  _globals['_STARTMACHINERESPONSE']._serialized_end=1594
+  _globals['_STARTMACHINEMETADATA']._serialized_start=1596
+  _globals['_STARTMACHINEMETADATA']._serialized_end=1618
+  _globals['_RESETMACHINEREQUEST']._serialized_start=1620
+  _globals['_RESETMACHINEREQUEST']._serialized_end=1698
+  _globals['_RESETMACHINERESPONSE']._serialized_start=1700
+  _globals['_RESETMACHINERESPONSE']._serialized_end=1722
+  _globals['_RESETMACHINEMETADATA']._serialized_start=1724
+  _globals['_RESETMACHINEMETADATA']._serialized_end=1746
+  _globals['_REINSTALLMACHINEREQUEST']._serialized_start=1748
+  _globals['_REINSTALLMACHINEREQUEST']._serialized_end=1830
+  _globals['_REINSTALLMACHINERESPONSE']._serialized_start=1832
+  _globals['_REINSTALLMACHINERESPONSE']._serialized_end=1858
+  _globals['_REINSTALLMACHINEMETADATA']._serialized_start=1860
+  _globals['_REINSTALLMACHINEMETADATA']._serialized_end=1886
+  _globals['_RESIZEMACHINEREQUEST']._serialized_start=1888
+  _globals['_RESIZEMACHINEREQUEST']._serialized_end=1993
+  _globals['_RESIZEMACHINERESPONSE']._serialized_start=1995
+  _globals['_RESIZEMACHINERESPONSE']._serialized_end=2018
+  _globals['_RESIZEMACHINEMETADATA']._serialized_start=2020
+  _globals['_RESIZEMACHINEMETADATA']._serialized_end=2043
+  _globals['_DELETEMACHINEREQUEST']._serialized_start=2045
+  _globals['_DELETEMACHINEREQUEST']._serialized_end=2124
+  _globals['_DELETEMACHINEMETADATA']._serialized_start=2126
+  _globals['_DELETEMACHINEMETADATA']._serialized_end=2149
+  _globals['_LISTMACHINETYPESREQUEST']._serialized_start=2152
+  _globals['_LISTMACHINETYPESREQUEST']._serialized_end=2370
+  _globals['_LISTMACHINETYPESRESPONSE']._serialized_start=2373
+  _globals['_LISTMACHINETYPESRESPONSE']._serialized_end=2512
+  _globals['_LISTIMAGESREQUEST']._serialized_start=2515
+  _globals['_LISTIMAGESREQUEST']._serialized_end=2729
+  _globals['_LISTIMAGESRESPONSE']._serialized_start=2732
+  _globals['_LISTIMAGESRESPONSE']._serialized_end=2865
+  _globals['_COMPUTESERVICE']._serialized_start=2868
+  _globals['_COMPUTESERVICE']._serialized_end=5282
 # @@protoc_insertion_point(module_scope)

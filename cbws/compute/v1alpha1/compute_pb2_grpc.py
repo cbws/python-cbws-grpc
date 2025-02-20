@@ -68,6 +68,16 @@ class ComputeServiceStub(object):
                 request_serializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.DeleteMachineRequest.SerializeToString,
                 response_deserializer=google_dot_longrunning_dot_operations__pb2.Operation.FromString,
                 _registered_method=True)
+        self.ListMachineTypes = channel.unary_unary(
+                '/cbws.compute.v1alpha1.ComputeService/ListMachineTypes',
+                request_serializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.ListMachineTypesRequest.SerializeToString,
+                response_deserializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.ListMachineTypesResponse.FromString,
+                _registered_method=True)
+        self.ListImages = channel.unary_unary(
+                '/cbws.compute.v1alpha1.ComputeService/ListImages',
+                request_serializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.ListImagesRequest.SerializeToString,
+                response_deserializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.ListImagesResponse.FromString,
+                _registered_method=True)
 
 
 class ComputeServiceServicer(object):
@@ -149,6 +159,20 @@ class ComputeServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListMachineTypes(self, request, context):
+        """Lists the machine types offered in a zone, or in every zone.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def ListImages(self, request, context):
+        """Lists the images in a project.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ComputeServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -201,6 +225,16 @@ def add_ComputeServiceServicer_to_server(servicer, server):
                     servicer.DeleteMachine,
                     request_deserializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.DeleteMachineRequest.FromString,
                     response_serializer=google_dot_longrunning_dot_operations__pb2.Operation.SerializeToString,
+            ),
+            'ListMachineTypes': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListMachineTypes,
+                    request_deserializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.ListMachineTypesRequest.FromString,
+                    response_serializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.ListMachineTypesResponse.SerializeToString,
+            ),
+            'ListImages': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListImages,
+                    request_deserializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.ListImagesRequest.FromString,
+                    response_serializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.ListImagesResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -475,6 +509,60 @@ class ComputeService(object):
             '/cbws.compute.v1alpha1.ComputeService/DeleteMachine',
             cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.DeleteMachineRequest.SerializeToString,
             google_dot_longrunning_dot_operations__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListMachineTypes(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/cbws.compute.v1alpha1.ComputeService/ListMachineTypes',
+            cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.ListMachineTypesRequest.SerializeToString,
+            cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.ListMachineTypesResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListImages(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/cbws.compute.v1alpha1.ComputeService/ListImages',
+            cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.ListImagesRequest.SerializeToString,
+            cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.ListImagesResponse.FromString,
             options,
             channel_credentials,
             insecure,
