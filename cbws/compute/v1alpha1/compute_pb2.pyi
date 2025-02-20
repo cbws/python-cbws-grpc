@@ -183,6 +183,14 @@ class ListMachineTypesResponse(_message.Message):
     next_page_token: str
     def __init__(self, machine_types: _Optional[_Iterable[_Union[_machine_type_pb2.MachineType, _Mapping]]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
 
+class GetMachineTypeRequest(_message.Message):
+    __slots__ = ("name", "read_mask")
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    READ_MASK_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    read_mask: _field_mask_pb2.FieldMask
+    def __init__(self, name: _Optional[str] = ..., read_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
+
 class ListImagesRequest(_message.Message):
     __slots__ = ("parent", "page_size", "page_token", "read_mask")
     PARENT_FIELD_NUMBER: _ClassVar[int]
@@ -202,3 +210,11 @@ class ListImagesResponse(_message.Message):
     images: _containers.RepeatedCompositeFieldContainer[_image_pb2.Image]
     next_page_token: str
     def __init__(self, images: _Optional[_Iterable[_Union[_image_pb2.Image, _Mapping]]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
+
+class GetImageRequest(_message.Message):
+    __slots__ = ("name", "read_mask")
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    READ_MASK_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    read_mask: _field_mask_pb2.FieldMask
+    def __init__(self, name: _Optional[str] = ..., read_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
