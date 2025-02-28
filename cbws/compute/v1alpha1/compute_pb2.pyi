@@ -124,10 +124,12 @@ class ResetMachineMetadata(_message.Message):
     def __init__(self) -> None: ...
 
 class ReinstallMachineRequest(_message.Message):
-    __slots__ = ("name",)
+    __slots__ = ("name", "image")
     NAME_FIELD_NUMBER: _ClassVar[int]
+    IMAGE_FIELD_NUMBER: _ClassVar[int]
     name: str
-    def __init__(self, name: _Optional[str] = ...) -> None: ...
+    image: str
+    def __init__(self, name: _Optional[str] = ..., image: _Optional[str] = ...) -> None: ...
 
 class ReinstallMachineResponse(_message.Message):
     __slots__ = ()
