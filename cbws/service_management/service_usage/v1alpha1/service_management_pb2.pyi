@@ -40,10 +40,12 @@ class EnableServiceResponse(_message.Message):
     def __init__(self) -> None: ...
 
 class DisableServiceRequest(_message.Message):
-    __slots__ = ("name",)
+    __slots__ = ("name", "disable_dependent_services")
     NAME_FIELD_NUMBER: _ClassVar[int]
+    DISABLE_DEPENDENT_SERVICES_FIELD_NUMBER: _ClassVar[int]
     name: str
-    def __init__(self, name: _Optional[str] = ...) -> None: ...
+    disable_dependent_services: bool
+    def __init__(self, name: _Optional[str] = ..., disable_dependent_services: bool = ...) -> None: ...
 
 class DisableServiceMetadata(_message.Message):
     __slots__ = ()
