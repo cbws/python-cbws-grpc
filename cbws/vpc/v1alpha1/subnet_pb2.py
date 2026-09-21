@@ -27,7 +27,7 @@ from google.api import resource_pb2 as google_dot_api_dot_resource__pb2
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x63\x62ws/vpc/v1alpha1/subnet.proto\x12\x11\x63\x62ws.vpc.v1alpha1\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\x1a google/protobuf/field_mask.proto\"\xeb\x01\n\x06Subnet\x12\x18\n\x04name\x18\x01 \x01(\tB\x04\xe2\x41\x01\x05R\x04name\x12\x1c\n\x06parent\x18\x02 \x01(\tB\x04\xe2\x41\x01\x05R\x06parent\x12\x1c\n\x06prefix\x18\x03 \x01(\tB\x04\xe2\x41\x01\x05R\x06prefix\x12\x1e\n\x07gateway\x18\x04 \x01(\tB\x04\xe2\x41\x01\x05R\x07gateway:k\xea\x41h\n\x15vpc.cbws.cloud/Subnet\x12Oprojects/{project}/vpcs/{vpc}/privateNetworks/{privateNetwork}/subnets/{subnet}\"\xdb\x01\n\x12ListSubnetsRequest\x12>\n\x06parent\x18\x01 \x01(\tB&\xe2\x41\x01\x02\xfa\x41\x1f\n\x1dvpc.cbws.cloud/PrivateNetworkR\x06parent\x12!\n\tpage_size\x18\x02 \x01(\x05\x42\x04\xe2\x41\x01\x01R\x08pageSize\x12#\n\npage_token\x18\x03 \x01(\tB\x04\xe2\x41\x01\x01R\tpageToken\x12=\n\tread_mask\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe2\x41\x01\x01R\x08readMask\"r\n\x13ListSubnetsResponse\x12\x33\n\x07subnets\x18\x01 \x03(\x0b\x32\x19.cbws.vpc.v1alpha1.SubnetR\x07subnets\x12&\n\x0fnext_page_token\x18\x02 \x01(\tR\rnextPageToken\"\x85\x01\n\x10GetSubnetRequest\x12\x32\n\x04name\x18\x01 \x01(\tB\x1e\xe2\x41\x01\x02\xfa\x41\x17\n\x15vpc.cbws.cloud/SubnetR\x04name\x12=\n\tread_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe2\x41\x01\x01R\x08readMaskB\x8a\x01\n\x15\x63om.cbws.vpc.v1alpha1B\x0bSubnetProtoP\x01\xa2\x02\x03\x43VX\xaa\x02\x11\x43\x62ws.Vpc.V1alpha1\xca\x02\x11\x43\x62ws\\Vpc\\V1alpha1\xe2\x02\x1d\x43\x62ws\\Vpc\\V1alpha1\\GPBMetadata\xea\x02\x13\x43\x62ws::Vpc::V1alpha1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x63\x62ws/vpc/v1alpha1/subnet.proto\x12\x11\x63\x62ws.vpc.v1alpha1\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\x1a google/protobuf/field_mask.proto\"\xeb\x01\n\x06Subnet\x12\x18\n\x04name\x18\x01 \x01(\tB\x04\xe2\x41\x01\x05R\x04name\x12\x1c\n\x06parent\x18\x02 \x01(\tB\x04\xe2\x41\x01\x05R\x06parent\x12\x1c\n\x06prefix\x18\x03 \x01(\tB\x04\xe2\x41\x01\x05R\x06prefix\x12\x1e\n\x07gateway\x18\x04 \x01(\tB\x04\xe2\x41\x01\x05R\x07gateway:k\xea\x41h\n\x15vpc.cbws.cloud/Subnet\x12Oprojects/{project}/vpcs/{vpc}/privateNetworks/{privateNetwork}/subnets/{subnet}\"\xdb\x01\n\x12ListSubnetsRequest\x12>\n\x06parent\x18\x01 \x01(\tB&\xe2\x41\x01\x02\xfa\x41\x1f\n\x1dvpc.cbws.cloud/PrivateNetworkR\x06parent\x12!\n\tpage_size\x18\x02 \x01(\x05\x42\x04\xe2\x41\x01\x01R\x08pageSize\x12#\n\npage_token\x18\x03 \x01(\tB\x04\xe2\x41\x01\x01R\tpageToken\x12=\n\tread_mask\x18\x04 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe2\x41\x01\x01R\x08readMask\"r\n\x13ListSubnetsResponse\x12\x33\n\x07subnets\x18\x01 \x03(\x0b\x32\x19.cbws.vpc.v1alpha1.SubnetR\x07subnets\x12&\n\x0fnext_page_token\x18\x02 \x01(\tR\rnextPageToken\"\x85\x01\n\x10GetSubnetRequest\x12\x32\n\x04name\x18\x01 \x01(\tB\x1e\xe2\x41\x01\x02\xfa\x41\x17\n\x15vpc.cbws.cloud/SubnetR\x04name\x12=\n\tread_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe2\x41\x01\x01R\x08readMask\"\xb1\x01\n\x13\x43reateSubnetRequest\x12>\n\x06parent\x18\x01 \x01(\tB&\xe2\x41\x01\x02\xfa\x41\x1f\n\x1dvpc.cbws.cloud/PrivateNetworkR\x06parent\x12!\n\tsubnet_id\x18\x02 \x01(\tB\x04\xe2\x41\x01\x02R\x08subnetId\x12\x37\n\x06subnet\x18\x03 \x01(\x0b\x32\x19.cbws.vpc.v1alpha1.SubnetB\x04\xe2\x41\x01\x02R\x06subnet\"\x16\n\x14\x43reateSubnetResponse\"O\n\x14\x43reateSubnetMetadata\x12\x37\n\x06subnet\x18\x01 \x01(\x0b\x32\x19.cbws.vpc.v1alpha1.SubnetB\x04\xe2\x41\x01\x03R\x06subnet\"I\n\x13\x44\x65leteSubnetRequest\x12\x32\n\x04name\x18\x01 \x01(\tB\x1e\xe2\x41\x01\x02\xfa\x41\x17\n\x15vpc.cbws.cloud/SubnetR\x04name\"\x16\n\x14\x44\x65leteSubnetResponse\"\x16\n\x14\x44\x65leteSubnetMetadataB\x8a\x01\n\x15\x63om.cbws.vpc.v1alpha1B\x0bSubnetProtoP\x01\xa2\x02\x03\x43VX\xaa\x02\x11\x43\x62ws.Vpc.V1alpha1\xca\x02\x11\x43\x62ws\\Vpc\\V1alpha1\xe2\x02\x1d\x43\x62ws\\Vpc\\V1alpha1\\GPBMetadata\xea\x02\x13\x43\x62ws::Vpc::V1alpha1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -57,6 +57,16 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETSUBNETREQUEST'].fields_by_name['name']._serialized_options = b'\342A\001\002\372A\027\n\025vpc.cbws.cloud/Subnet'
   _globals['_GETSUBNETREQUEST'].fields_by_name['read_mask']._loaded_options = None
   _globals['_GETSUBNETREQUEST'].fields_by_name['read_mask']._serialized_options = b'\342A\001\001'
+  _globals['_CREATESUBNETREQUEST'].fields_by_name['parent']._loaded_options = None
+  _globals['_CREATESUBNETREQUEST'].fields_by_name['parent']._serialized_options = b'\342A\001\002\372A\037\n\035vpc.cbws.cloud/PrivateNetwork'
+  _globals['_CREATESUBNETREQUEST'].fields_by_name['subnet_id']._loaded_options = None
+  _globals['_CREATESUBNETREQUEST'].fields_by_name['subnet_id']._serialized_options = b'\342A\001\002'
+  _globals['_CREATESUBNETREQUEST'].fields_by_name['subnet']._loaded_options = None
+  _globals['_CREATESUBNETREQUEST'].fields_by_name['subnet']._serialized_options = b'\342A\001\002'
+  _globals['_CREATESUBNETMETADATA'].fields_by_name['subnet']._loaded_options = None
+  _globals['_CREATESUBNETMETADATA'].fields_by_name['subnet']._serialized_options = b'\342A\001\003'
+  _globals['_DELETESUBNETREQUEST'].fields_by_name['name']._loaded_options = None
+  _globals['_DELETESUBNETREQUEST'].fields_by_name['name']._serialized_options = b'\342A\001\002\372A\027\n\025vpc.cbws.cloud/Subnet'
   _globals['_SUBNET']._serialized_start=148
   _globals['_SUBNET']._serialized_end=383
   _globals['_LISTSUBNETSREQUEST']._serialized_start=386
@@ -65,4 +75,16 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_LISTSUBNETSRESPONSE']._serialized_end=721
   _globals['_GETSUBNETREQUEST']._serialized_start=724
   _globals['_GETSUBNETREQUEST']._serialized_end=857
+  _globals['_CREATESUBNETREQUEST']._serialized_start=860
+  _globals['_CREATESUBNETREQUEST']._serialized_end=1037
+  _globals['_CREATESUBNETRESPONSE']._serialized_start=1039
+  _globals['_CREATESUBNETRESPONSE']._serialized_end=1061
+  _globals['_CREATESUBNETMETADATA']._serialized_start=1063
+  _globals['_CREATESUBNETMETADATA']._serialized_end=1142
+  _globals['_DELETESUBNETREQUEST']._serialized_start=1144
+  _globals['_DELETESUBNETREQUEST']._serialized_end=1217
+  _globals['_DELETESUBNETRESPONSE']._serialized_start=1219
+  _globals['_DELETESUBNETRESPONSE']._serialized_end=1241
+  _globals['_DELETESUBNETMETADATA']._serialized_start=1243
+  _globals['_DELETESUBNETMETADATA']._serialized_end=1265
 # @@protoc_insertion_point(module_scope)

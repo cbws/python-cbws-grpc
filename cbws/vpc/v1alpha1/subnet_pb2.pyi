@@ -48,3 +48,37 @@ class GetSubnetRequest(_message.Message):
     name: str
     read_mask: _field_mask_pb2.FieldMask
     def __init__(self, name: _Optional[str] = ..., read_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
+
+class CreateSubnetRequest(_message.Message):
+    __slots__ = ("parent", "subnet_id", "subnet")
+    PARENT_FIELD_NUMBER: _ClassVar[int]
+    SUBNET_ID_FIELD_NUMBER: _ClassVar[int]
+    SUBNET_FIELD_NUMBER: _ClassVar[int]
+    parent: str
+    subnet_id: str
+    subnet: Subnet
+    def __init__(self, parent: _Optional[str] = ..., subnet_id: _Optional[str] = ..., subnet: _Optional[_Union[Subnet, _Mapping]] = ...) -> None: ...
+
+class CreateSubnetResponse(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class CreateSubnetMetadata(_message.Message):
+    __slots__ = ("subnet",)
+    SUBNET_FIELD_NUMBER: _ClassVar[int]
+    subnet: Subnet
+    def __init__(self, subnet: _Optional[_Union[Subnet, _Mapping]] = ...) -> None: ...
+
+class DeleteSubnetRequest(_message.Message):
+    __slots__ = ("name",)
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    def __init__(self, name: _Optional[str] = ...) -> None: ...
+
+class DeleteSubnetResponse(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
+
+class DeleteSubnetMetadata(_message.Message):
+    __slots__ = ()
+    def __init__(self) -> None: ...
