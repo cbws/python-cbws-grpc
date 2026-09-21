@@ -26,7 +26,7 @@ from google.api import field_behavior_pb2 as google_dot_api_dot_field__behavior_
 from google.api import resource_pb2 as google_dot_api_dot_resource__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&cbws/vpc/v1alpha1/privatenetwork.proto\x12\x11\x63\x62ws.vpc.v1alpha1\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\"\xa2\x01\n\x0ePrivateNetwork\x12\x18\n\x04name\x18\x01 \x01(\tB\x04\xe2\x41\x01\x05R\x04name\x12\x1c\n\x06parent\x18\x02 \x01(\tB\x04\xe2\x41\x01\x05R\x06parent:X\xea\x41U\n\x1dvpc.cbws.cloud/PrivateNetwork\x12\x34projects/{project}/vpcs/{vpc}/privateNetworks/{name}\"\x99\x01\n\x1aListPrivateNetworksRequest\x12\x33\n\x06parent\x18\x01 \x01(\tB\x1b\xe2\x41\x01\x02\xfa\x41\x14\n\x12vpc.cbws.cloud/VpcR\x06parent\x12!\n\tpage_size\x18\x02 \x01(\x05\x42\x04\xe2\x41\x01\x01R\x08pageSize\x12#\n\npage_token\x18\x03 \x01(\tB\x04\xe2\x41\x01\x01R\tpageToken\"\x93\x01\n\x1bListPrivateNetworksResponse\x12L\n\x10private_networks\x18\x01 \x03(\x0b\x32!.cbws.vpc.v1alpha1.PrivateNetworkR\x0fprivateNetworks\x12&\n\x0fnext_page_token\x18\x02 \x01(\tR\rnextPageToken\"V\n\x18GetPrivateNetworkRequest\x12:\n\x04name\x18\x01 \x01(\tB&\xe2\x41\x01\x02\xfa\x41\x1f\n\x1dvpc.cbws.cloud/PrivateNetworkR\x04name\"Y\n\x1b\x44\x65letePrivateNetworkRequest\x12:\n\x04name\x18\x01 \x01(\tB&\xe2\x41\x01\x02\xfa\x41\x1f\n\x1dvpc.cbws.cloud/PrivateNetworkR\x04name\"\x1e\n\x1c\x44\x65letePrivateNetworkMetadataB\x92\x01\n\x15\x63om.cbws.vpc.v1alpha1B\x13PrivatenetworkProtoP\x01\xa2\x02\x03\x43VX\xaa\x02\x11\x43\x62ws.Vpc.V1alpha1\xca\x02\x11\x43\x62ws\\Vpc\\V1alpha1\xe2\x02\x1d\x43\x62ws\\Vpc\\V1alpha1\\GPBMetadata\xea\x02\x13\x43\x62ws::Vpc::V1alpha1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n&cbws/vpc/v1alpha1/privatenetwork.proto\x12\x11\x63\x62ws.vpc.v1alpha1\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\"\xbc\x01\n\x0ePrivateNetwork\x12\x18\n\x04name\x18\x01 \x01(\tB\x04\xe2\x41\x01\x05R\x04name\x12\x1c\n\x06parent\x18\x02 \x01(\tB\x04\xe2\x41\x01\x05R\x06parent\x12\x18\n\x04zone\x18\x03 \x01(\tB\x04\xe2\x41\x01\x05R\x04zone:X\xea\x41U\n\x1dvpc.cbws.cloud/PrivateNetwork\x12\x34projects/{project}/vpcs/{vpc}/privateNetworks/{name}\"\x99\x01\n\x1aListPrivateNetworksRequest\x12\x33\n\x06parent\x18\x01 \x01(\tB\x1b\xe2\x41\x01\x02\xfa\x41\x14\n\x12vpc.cbws.cloud/VpcR\x06parent\x12!\n\tpage_size\x18\x02 \x01(\x05\x42\x04\xe2\x41\x01\x01R\x08pageSize\x12#\n\npage_token\x18\x03 \x01(\tB\x04\xe2\x41\x01\x01R\tpageToken\"\x93\x01\n\x1bListPrivateNetworksResponse\x12L\n\x10private_networks\x18\x01 \x03(\x0b\x32!.cbws.vpc.v1alpha1.PrivateNetworkR\x0fprivateNetworks\x12&\n\x0fnext_page_token\x18\x02 \x01(\tR\rnextPageToken\"V\n\x18GetPrivateNetworkRequest\x12:\n\x04name\x18\x01 \x01(\tB&\xe2\x41\x01\x02\xfa\x41\x1f\n\x1dvpc.cbws.cloud/PrivateNetworkR\x04name\"Y\n\x1b\x44\x65letePrivateNetworkRequest\x12:\n\x04name\x18\x01 \x01(\tB&\xe2\x41\x01\x02\xfa\x41\x1f\n\x1dvpc.cbws.cloud/PrivateNetworkR\x04name\"\x1e\n\x1c\x44\x65letePrivateNetworkMetadataB\x92\x01\n\x15\x63om.cbws.vpc.v1alpha1B\x13PrivatenetworkProtoP\x01\xa2\x02\x03\x43VX\xaa\x02\x11\x43\x62ws.Vpc.V1alpha1\xca\x02\x11\x43\x62ws\\Vpc\\V1alpha1\xe2\x02\x1d\x43\x62ws\\Vpc\\V1alpha1\\GPBMetadata\xea\x02\x13\x43\x62ws::Vpc::V1alpha1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -38,6 +38,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_PRIVATENETWORK'].fields_by_name['name']._serialized_options = b'\342A\001\005'
   _globals['_PRIVATENETWORK'].fields_by_name['parent']._loaded_options = None
   _globals['_PRIVATENETWORK'].fields_by_name['parent']._serialized_options = b'\342A\001\005'
+  _globals['_PRIVATENETWORK'].fields_by_name['zone']._loaded_options = None
+  _globals['_PRIVATENETWORK'].fields_by_name['zone']._serialized_options = b'\342A\001\005'
   _globals['_PRIVATENETWORK']._loaded_options = None
   _globals['_PRIVATENETWORK']._serialized_options = b'\352AU\n\035vpc.cbws.cloud/PrivateNetwork\0224projects/{project}/vpcs/{vpc}/privateNetworks/{name}'
   _globals['_LISTPRIVATENETWORKSREQUEST'].fields_by_name['parent']._loaded_options = None
@@ -51,15 +53,15 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_DELETEPRIVATENETWORKREQUEST'].fields_by_name['name']._loaded_options = None
   _globals['_DELETEPRIVATENETWORKREQUEST'].fields_by_name['name']._serialized_options = b'\342A\001\002\372A\037\n\035vpc.cbws.cloud/PrivateNetwork'
   _globals['_PRIVATENETWORK']._serialized_start=122
-  _globals['_PRIVATENETWORK']._serialized_end=284
-  _globals['_LISTPRIVATENETWORKSREQUEST']._serialized_start=287
-  _globals['_LISTPRIVATENETWORKSREQUEST']._serialized_end=440
-  _globals['_LISTPRIVATENETWORKSRESPONSE']._serialized_start=443
-  _globals['_LISTPRIVATENETWORKSRESPONSE']._serialized_end=590
-  _globals['_GETPRIVATENETWORKREQUEST']._serialized_start=592
-  _globals['_GETPRIVATENETWORKREQUEST']._serialized_end=678
-  _globals['_DELETEPRIVATENETWORKREQUEST']._serialized_start=680
-  _globals['_DELETEPRIVATENETWORKREQUEST']._serialized_end=769
-  _globals['_DELETEPRIVATENETWORKMETADATA']._serialized_start=771
-  _globals['_DELETEPRIVATENETWORKMETADATA']._serialized_end=801
+  _globals['_PRIVATENETWORK']._serialized_end=310
+  _globals['_LISTPRIVATENETWORKSREQUEST']._serialized_start=313
+  _globals['_LISTPRIVATENETWORKSREQUEST']._serialized_end=466
+  _globals['_LISTPRIVATENETWORKSRESPONSE']._serialized_start=469
+  _globals['_LISTPRIVATENETWORKSRESPONSE']._serialized_end=616
+  _globals['_GETPRIVATENETWORKREQUEST']._serialized_start=618
+  _globals['_GETPRIVATENETWORKREQUEST']._serialized_end=704
+  _globals['_DELETEPRIVATENETWORKREQUEST']._serialized_start=706
+  _globals['_DELETEPRIVATENETWORKREQUEST']._serialized_end=795
+  _globals['_DELETEPRIVATENETWORKMETADATA']._serialized_start=797
+  _globals['_DELETEPRIVATENETWORKMETADATA']._serialized_end=827
 # @@protoc_insertion_point(module_scope)

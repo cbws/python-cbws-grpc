@@ -9,12 +9,14 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class PrivateNetwork(_message.Message):
-    __slots__ = ("name", "parent")
+    __slots__ = ("name", "parent", "zone")
     NAME_FIELD_NUMBER: _ClassVar[int]
     PARENT_FIELD_NUMBER: _ClassVar[int]
+    ZONE_FIELD_NUMBER: _ClassVar[int]
     name: str
     parent: str
-    def __init__(self, name: _Optional[str] = ..., parent: _Optional[str] = ...) -> None: ...
+    zone: str
+    def __init__(self, name: _Optional[str] = ..., parent: _Optional[str] = ..., zone: _Optional[str] = ...) -> None: ...
 
 class ListPrivateNetworksRequest(_message.Message):
     __slots__ = ("parent", "page_size", "page_token")
