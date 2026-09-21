@@ -3,6 +3,7 @@
 import grpc
 
 from cbws.vpc.v1alpha1 import privatenetwork_pb2 as cbws_dot_vpc_dot_v1alpha1_dot_privatenetwork__pb2
+from cbws.vpc.v1alpha1 import subnet_pb2 as cbws_dot_vpc_dot_v1alpha1_dot_subnet__pb2
 from cbws.vpc.v1alpha1 import vpc_pb2 as cbws_dot_vpc_dot_v1alpha1_dot_vpc__pb2
 from google.longrunning import operations_pb2 as google_dot_longrunning_dot_operations__pb2
 
@@ -57,6 +58,16 @@ class VpcServiceStub(object):
                 '/cbws.vpc.v1alpha1.VpcService/DeletePrivateNetwork',
                 request_serializer=cbws_dot_vpc_dot_v1alpha1_dot_privatenetwork__pb2.DeletePrivateNetworkRequest.SerializeToString,
                 response_deserializer=google_dot_longrunning_dot_operations__pb2.Operation.FromString,
+                _registered_method=True)
+        self.ListSubnets = channel.unary_unary(
+                '/cbws.vpc.v1alpha1.VpcService/ListSubnets',
+                request_serializer=cbws_dot_vpc_dot_v1alpha1_dot_subnet__pb2.ListSubnetsRequest.SerializeToString,
+                response_deserializer=cbws_dot_vpc_dot_v1alpha1_dot_subnet__pb2.ListSubnetsResponse.FromString,
+                _registered_method=True)
+        self.GetSubnet = channel.unary_unary(
+                '/cbws.vpc.v1alpha1.VpcService/GetSubnet',
+                request_serializer=cbws_dot_vpc_dot_v1alpha1_dot_subnet__pb2.GetSubnetRequest.SerializeToString,
+                response_deserializer=cbws_dot_vpc_dot_v1alpha1_dot_subnet__pb2.Subnet.FromString,
                 _registered_method=True)
 
 
@@ -124,6 +135,21 @@ class VpcServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListSubnets(self, request, context):
+        """Lists the subnets of a private network. Requires
+        `vpc.cbws.cloud/Subnet/list` on the private network.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetSubnet(self, request, context):
+        """Gets a subnet. Requires `vpc.cbws.cloud/Subnet/get` on the subnet.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_VpcServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -156,6 +182,16 @@ def add_VpcServiceServicer_to_server(servicer, server):
                     servicer.DeletePrivateNetwork,
                     request_deserializer=cbws_dot_vpc_dot_v1alpha1_dot_privatenetwork__pb2.DeletePrivateNetworkRequest.FromString,
                     response_serializer=google_dot_longrunning_dot_operations__pb2.Operation.SerializeToString,
+            ),
+            'ListSubnets': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListSubnets,
+                    request_deserializer=cbws_dot_vpc_dot_v1alpha1_dot_subnet__pb2.ListSubnetsRequest.FromString,
+                    response_serializer=cbws_dot_vpc_dot_v1alpha1_dot_subnet__pb2.ListSubnetsResponse.SerializeToString,
+            ),
+            'GetSubnet': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetSubnet,
+                    request_deserializer=cbws_dot_vpc_dot_v1alpha1_dot_subnet__pb2.GetSubnetRequest.FromString,
+                    response_serializer=cbws_dot_vpc_dot_v1alpha1_dot_subnet__pb2.Subnet.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -332,6 +368,60 @@ class VpcService(object):
             '/cbws.vpc.v1alpha1.VpcService/DeletePrivateNetwork',
             cbws_dot_vpc_dot_v1alpha1_dot_privatenetwork__pb2.DeletePrivateNetworkRequest.SerializeToString,
             google_dot_longrunning_dot_operations__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListSubnets(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/cbws.vpc.v1alpha1.VpcService/ListSubnets',
+            cbws_dot_vpc_dot_v1alpha1_dot_subnet__pb2.ListSubnetsRequest.SerializeToString,
+            cbws_dot_vpc_dot_v1alpha1_dot_subnet__pb2.ListSubnetsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetSubnet(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/cbws.vpc.v1alpha1.VpcService/GetSubnet',
+            cbws_dot_vpc_dot_v1alpha1_dot_subnet__pb2.GetSubnetRequest.SerializeToString,
+            cbws_dot_vpc_dot_v1alpha1_dot_subnet__pb2.Subnet.FromString,
             options,
             channel_credentials,
             insecure,
