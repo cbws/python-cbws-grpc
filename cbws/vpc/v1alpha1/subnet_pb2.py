@@ -26,7 +26,7 @@ from google.api import field_behavior_pb2 as google_dot_api_dot_field__behavior_
 from google.api import resource_pb2 as google_dot_api_dot_resource__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x63\x62ws/vpc/v1alpha1/subnet.proto\x12\x11\x63\x62ws.vpc.v1alpha1\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\"\xe0\x01\n\x06Subnet\x12\x18\n\x04name\x18\x01 \x01(\tB\x04\xe2\x41\x01\x05R\x04name\x12\x1c\n\x06parent\x18\x02 \x01(\tB\x04\xe2\x41\x01\x05R\x06parent\x12\x1c\n\x06prefix\x18\x03 \x01(\tB\x04\xe2\x41\x01\x05R\x06prefix\x12\x1e\n\x07gateway\x18\x04 \x01(\tB\x04\xe2\x41\x01\x05R\x07gateway:`\xea\x41]\n\x15vpc.cbws.cloud/Subnet\x12\x44projects/{project}/privateNetworks/{privateNetwork}/subnets/{subnet}B\x8a\x01\n\x15\x63om.cbws.vpc.v1alpha1B\x0bSubnetProtoP\x01\xa2\x02\x03\x43VX\xaa\x02\x11\x43\x62ws.Vpc.V1alpha1\xca\x02\x11\x43\x62ws\\Vpc\\V1alpha1\xe2\x02\x1d\x43\x62ws\\Vpc\\V1alpha1\\GPBMetadata\xea\x02\x13\x43\x62ws::Vpc::V1alpha1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1e\x63\x62ws/vpc/v1alpha1/subnet.proto\x12\x11\x63\x62ws.vpc.v1alpha1\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\"\xeb\x01\n\x06Subnet\x12\x18\n\x04name\x18\x01 \x01(\tB\x04\xe2\x41\x01\x05R\x04name\x12\x1c\n\x06parent\x18\x02 \x01(\tB\x04\xe2\x41\x01\x05R\x06parent\x12\x1c\n\x06prefix\x18\x03 \x01(\tB\x04\xe2\x41\x01\x05R\x06prefix\x12\x1e\n\x07gateway\x18\x04 \x01(\tB\x04\xe2\x41\x01\x05R\x07gateway:k\xea\x41h\n\x15vpc.cbws.cloud/Subnet\x12Oprojects/{project}/vpcs/{vpc}/privateNetworks/{privateNetwork}/subnets/{subnet}B\x8a\x01\n\x15\x63om.cbws.vpc.v1alpha1B\x0bSubnetProtoP\x01\xa2\x02\x03\x43VX\xaa\x02\x11\x43\x62ws.Vpc.V1alpha1\xca\x02\x11\x43\x62ws\\Vpc\\V1alpha1\xe2\x02\x1d\x43\x62ws\\Vpc\\V1alpha1\\GPBMetadata\xea\x02\x13\x43\x62ws::Vpc::V1alpha1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -43,7 +43,7 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_SUBNET'].fields_by_name['gateway']._loaded_options = None
   _globals['_SUBNET'].fields_by_name['gateway']._serialized_options = b'\342A\001\005'
   _globals['_SUBNET']._loaded_options = None
-  _globals['_SUBNET']._serialized_options = b'\352A]\n\025vpc.cbws.cloud/Subnet\022Dprojects/{project}/privateNetworks/{privateNetwork}/subnets/{subnet}'
+  _globals['_SUBNET']._serialized_options = b'\352Ah\n\025vpc.cbws.cloud/Subnet\022Oprojects/{project}/vpcs/{vpc}/privateNetworks/{privateNetwork}/subnets/{subnet}'
   _globals['_SUBNET']._serialized_start=114
-  _globals['_SUBNET']._serialized_end=338
+  _globals['_SUBNET']._serialized_end=349
 # @@protoc_insertion_point(module_scope)
