@@ -2,6 +2,7 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
+from cbws.vpc.v1alpha1 import port_pb2 as cbws_dot_vpc_dot_v1alpha1_dot_port__pb2
 from cbws.vpc.v1alpha1 import privatenetwork_pb2 as cbws_dot_vpc_dot_v1alpha1_dot_privatenetwork__pb2
 from cbws.vpc.v1alpha1 import subnet_pb2 as cbws_dot_vpc_dot_v1alpha1_dot_subnet__pb2
 from cbws.vpc.v1alpha1 import vpc_pb2 as cbws_dot_vpc_dot_v1alpha1_dot_vpc__pb2
@@ -78,6 +79,16 @@ class VpcServiceStub(object):
                 '/cbws.vpc.v1alpha1.VpcService/DeleteSubnet',
                 request_serializer=cbws_dot_vpc_dot_v1alpha1_dot_subnet__pb2.DeleteSubnetRequest.SerializeToString,
                 response_deserializer=google_dot_longrunning_dot_operations__pb2.Operation.FromString,
+                _registered_method=True)
+        self.ListPorts = channel.unary_unary(
+                '/cbws.vpc.v1alpha1.VpcService/ListPorts',
+                request_serializer=cbws_dot_vpc_dot_v1alpha1_dot_port__pb2.ListPortsRequest.SerializeToString,
+                response_deserializer=cbws_dot_vpc_dot_v1alpha1_dot_port__pb2.ListPortsResponse.FromString,
+                _registered_method=True)
+        self.GetPort = channel.unary_unary(
+                '/cbws.vpc.v1alpha1.VpcService/GetPort',
+                request_serializer=cbws_dot_vpc_dot_v1alpha1_dot_port__pb2.GetPortRequest.SerializeToString,
+                response_deserializer=cbws_dot_vpc_dot_v1alpha1_dot_port__pb2.Port.FromString,
                 _registered_method=True)
 
 
@@ -177,6 +188,23 @@ class VpcServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListPorts(self, request, context):
+        """Lists ports, either the ports a project holds or the ports on a private
+        network. See
+        [ListPortsRequest.parent][cbws.vpc.v1alpha1.ListPortsRequest.parent].
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetPort(self, request, context):
+        """Gets a port. Requires `vpc.cbws.cloud/Port/get` on the port, or on the
+        private network it is attached to.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_VpcServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -229,6 +257,16 @@ def add_VpcServiceServicer_to_server(servicer, server):
                     servicer.DeleteSubnet,
                     request_deserializer=cbws_dot_vpc_dot_v1alpha1_dot_subnet__pb2.DeleteSubnetRequest.FromString,
                     response_serializer=google_dot_longrunning_dot_operations__pb2.Operation.SerializeToString,
+            ),
+            'ListPorts': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListPorts,
+                    request_deserializer=cbws_dot_vpc_dot_v1alpha1_dot_port__pb2.ListPortsRequest.FromString,
+                    response_serializer=cbws_dot_vpc_dot_v1alpha1_dot_port__pb2.ListPortsResponse.SerializeToString,
+            ),
+            'GetPort': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetPort,
+                    request_deserializer=cbws_dot_vpc_dot_v1alpha1_dot_port__pb2.GetPortRequest.FromString,
+                    response_serializer=cbws_dot_vpc_dot_v1alpha1_dot_port__pb2.Port.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -513,6 +551,60 @@ class VpcService(object):
             '/cbws.vpc.v1alpha1.VpcService/DeleteSubnet',
             cbws_dot_vpc_dot_v1alpha1_dot_subnet__pb2.DeleteSubnetRequest.SerializeToString,
             google_dot_longrunning_dot_operations__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListPorts(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/cbws.vpc.v1alpha1.VpcService/ListPorts',
+            cbws_dot_vpc_dot_v1alpha1_dot_port__pb2.ListPortsRequest.SerializeToString,
+            cbws_dot_vpc_dot_v1alpha1_dot_port__pb2.ListPortsResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetPort(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/cbws.vpc.v1alpha1.VpcService/GetPort',
+            cbws_dot_vpc_dot_v1alpha1_dot_port__pb2.GetPortRequest.SerializeToString,
+            cbws_dot_vpc_dot_v1alpha1_dot_port__pb2.Port.FromString,
             options,
             channel_credentials,
             insecure,

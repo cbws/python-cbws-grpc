@@ -1,3 +1,4 @@
+from cbws.vpc.v1alpha1 import port_pb2 as _port_pb2
 from cbws.vpc.v1alpha1 import privatenetwork_pb2 as _privatenetwork_pb2
 from cbws.vpc.v1alpha1 import subnet_pb2 as _subnet_pb2
 from cbws.vpc.v1alpha1 import vpc_pb2 as _vpc_pb2
