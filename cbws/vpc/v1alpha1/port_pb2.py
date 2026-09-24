@@ -26,7 +26,7 @@ from google.api import field_behavior_pb2 as google_dot_api_dot_field__behavior_
 from google.api import resource_pb2 as google_dot_api_dot_resource__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x63\x62ws/vpc/v1alpha1/port.proto\x12\x11\x63\x62ws.vpc.v1alpha1\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\"\xc0\x04\n\x04Port\x12\x18\n\x04name\x18\x01 \x01(\tB\x04\xe2\x41\x01\x05R\x04name\x12\x1c\n\x06parent\x18\x02 \x01(\tB\x04\xe2\x41\x01\x05R\x06parent\x12\x1a\n\x05owner\x18\x03 \x01(\tB\x04\xe2\x41\x01\x01R\x05owner\x12H\n\x0bip_families\x18\x04 \x03(\x0e\x32 .cbws.vpc.v1alpha1.Port.IpFamilyB\x05\xe2\x41\x02\x01\x05R\nipFamilies\x12\'\n\x0cipv4_address\x18\x05 \x01(\tB\x04\xe2\x41\x01\x03R\x0bipv4Address\x12\'\n\x0cipv6_address\x18\x06 \x01(\tB\x04\xe2\x41\x01\x03R\x0bipv6Address\x12%\n\x0bmac_address\x18\x07 \x01(\tB\x04\xe2\x41\x01\x03R\nmacAddress\x12\x39\n\x05state\x18\x08 \x01(\x0e\x32\x1d.cbws.vpc.v1alpha1.Port.StateB\x04\xe2\x41\x01\x03R\x05state\"M\n\x08IpFamily\x12\x19\n\x15IP_FAMILY_UNSPECIFIED\x10\x00\x12\x12\n\x0eIP_FAMILY_IPV4\x10\x01\x12\x12\n\x0eIP_FAMILY_IPV6\x10\x02\"0\n\x05State\x12\x15\n\x11STATE_UNSPECIFIED\x10\x00\x12\x10\n\x0cSTATE_ACTIVE\x10\x02:e\xea\x41\x62\n\x13vpc.cbws.cloud/Port\x12Kprojects/{project}/vpcs/{vpc}/privateNetworks/{privateNetwork}/ports/{port}\"\x9a\x01\n\x10ListPortsRequest\x12>\n\x06parent\x18\x01 \x01(\tB&\xe2\x41\x01\x02\xfa\x41\x1f\n\x1dvpc.cbws.cloud/PrivateNetworkR\x06parent\x12!\n\tpage_size\x18\x02 \x01(\x05\x42\x04\xe2\x41\x01\x01R\x08pageSize\x12#\n\npage_token\x18\x03 \x01(\tB\x04\xe2\x41\x01\x01R\tpageToken\"j\n\x11ListPortsResponse\x12-\n\x05ports\x18\x01 \x03(\x0b\x32\x17.cbws.vpc.v1alpha1.PortR\x05ports\x12&\n\x0fnext_page_token\x18\x02 \x01(\tR\rnextPageToken\"B\n\x0eGetPortRequest\x12\x30\n\x04name\x18\x01 \x01(\tB\x1c\xe2\x41\x01\x02\xfa\x41\x15\n\x13vpc.cbws.cloud/PortR\x04nameB\x88\x01\n\x15\x63om.cbws.vpc.v1alpha1B\tPortProtoP\x01\xa2\x02\x03\x43VX\xaa\x02\x11\x43\x62ws.Vpc.V1alpha1\xca\x02\x11\x43\x62ws\\Vpc\\V1alpha1\xe2\x02\x1d\x43\x62ws\\Vpc\\V1alpha1\\GPBMetadata\xea\x02\x13\x43\x62ws::Vpc::V1alpha1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x1c\x63\x62ws/vpc/v1alpha1/port.proto\x12\x11\x63\x62ws.vpc.v1alpha1\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\"\xe6\x04\n\x04Port\x12\x18\n\x04name\x18\x01 \x01(\tB\x04\xe2\x41\x01\x05R\x04name\x12\x1c\n\x06parent\x18\x02 \x01(\tB\x04\xe2\x41\x01\x05R\x06parent\x12P\n\x0fprivate_network\x18\t \x01(\tB\'\xe2\x41\x02\x02\x05\xfa\x41\x1f\n\x1dvpc.cbws.cloud/PrivateNetworkR\x0eprivateNetwork\x12\x1a\n\x05owner\x18\x03 \x01(\tB\x04\xe2\x41\x01\x01R\x05owner\x12H\n\x0bip_families\x18\x04 \x03(\x0e\x32 .cbws.vpc.v1alpha1.Port.IpFamilyB\x05\xe2\x41\x02\x01\x05R\nipFamilies\x12\'\n\x0cipv4_address\x18\x05 \x01(\tB\x04\xe2\x41\x01\x03R\x0bipv4Address\x12\'\n\x0cipv6_address\x18\x06 \x01(\tB\x04\xe2\x41\x01\x03R\x0bipv6Address\x12%\n\x0bmac_address\x18\x07 \x01(\tB\x04\xe2\x41\x01\x03R\nmacAddress\x12\x39\n\x05state\x18\x08 \x01(\x0e\x32\x1d.cbws.vpc.v1alpha1.Port.StateB\x04\xe2\x41\x01\x03R\x05state\"M\n\x08IpFamily\x12\x19\n\x15IP_FAMILY_UNSPECIFIED\x10\x00\x12\x12\n\x0eIP_FAMILY_IPV4\x10\x01\x12\x12\n\x0eIP_FAMILY_IPV6\x10\x02\"0\n\x05State\x12\x15\n\x11STATE_UNSPECIFIED\x10\x00\x12\x10\n\x0cSTATE_ACTIVE\x10\x02:9\xea\x41\x36\n\x13vpc.cbws.cloud/Port\x12\x1fprojects/{project}/ports/{port}\"x\n\x10ListPortsRequest\x12\x1c\n\x06parent\x18\x01 \x01(\tB\x04\xe2\x41\x01\x02R\x06parent\x12!\n\tpage_size\x18\x02 \x01(\x05\x42\x04\xe2\x41\x01\x01R\x08pageSize\x12#\n\npage_token\x18\x03 \x01(\tB\x04\xe2\x41\x01\x01R\tpageToken\"j\n\x11ListPortsResponse\x12-\n\x05ports\x18\x01 \x03(\x0b\x32\x17.cbws.vpc.v1alpha1.PortR\x05ports\x12&\n\x0fnext_page_token\x18\x02 \x01(\tR\rnextPageToken\"B\n\x0eGetPortRequest\x12\x30\n\x04name\x18\x01 \x01(\tB\x1c\xe2\x41\x01\x02\xfa\x41\x15\n\x13vpc.cbws.cloud/PortR\x04nameB\x88\x01\n\x15\x63om.cbws.vpc.v1alpha1B\tPortProtoP\x01\xa2\x02\x03\x43VX\xaa\x02\x11\x43\x62ws.Vpc.V1alpha1\xca\x02\x11\x43\x62ws\\Vpc\\V1alpha1\xe2\x02\x1d\x43\x62ws\\Vpc\\V1alpha1\\GPBMetadata\xea\x02\x13\x43\x62ws::Vpc::V1alpha1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -38,6 +38,8 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_PORT'].fields_by_name['name']._serialized_options = b'\342A\001\005'
   _globals['_PORT'].fields_by_name['parent']._loaded_options = None
   _globals['_PORT'].fields_by_name['parent']._serialized_options = b'\342A\001\005'
+  _globals['_PORT'].fields_by_name['private_network']._loaded_options = None
+  _globals['_PORT'].fields_by_name['private_network']._serialized_options = b'\342A\002\002\005\372A\037\n\035vpc.cbws.cloud/PrivateNetwork'
   _globals['_PORT'].fields_by_name['owner']._loaded_options = None
   _globals['_PORT'].fields_by_name['owner']._serialized_options = b'\342A\001\001'
   _globals['_PORT'].fields_by_name['ip_families']._loaded_options = None
@@ -51,9 +53,9 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_PORT'].fields_by_name['state']._loaded_options = None
   _globals['_PORT'].fields_by_name['state']._serialized_options = b'\342A\001\003'
   _globals['_PORT']._loaded_options = None
-  _globals['_PORT']._serialized_options = b'\352Ab\n\023vpc.cbws.cloud/Port\022Kprojects/{project}/vpcs/{vpc}/privateNetworks/{privateNetwork}/ports/{port}'
+  _globals['_PORT']._serialized_options = b'\352A6\n\023vpc.cbws.cloud/Port\022\037projects/{project}/ports/{port}'
   _globals['_LISTPORTSREQUEST'].fields_by_name['parent']._loaded_options = None
-  _globals['_LISTPORTSREQUEST'].fields_by_name['parent']._serialized_options = b'\342A\001\002\372A\037\n\035vpc.cbws.cloud/PrivateNetwork'
+  _globals['_LISTPORTSREQUEST'].fields_by_name['parent']._serialized_options = b'\342A\001\002'
   _globals['_LISTPORTSREQUEST'].fields_by_name['page_size']._loaded_options = None
   _globals['_LISTPORTSREQUEST'].fields_by_name['page_size']._serialized_options = b'\342A\001\001'
   _globals['_LISTPORTSREQUEST'].fields_by_name['page_token']._loaded_options = None
@@ -61,15 +63,15 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_GETPORTREQUEST'].fields_by_name['name']._loaded_options = None
   _globals['_GETPORTREQUEST'].fields_by_name['name']._serialized_options = b'\342A\001\002\372A\025\n\023vpc.cbws.cloud/Port'
   _globals['_PORT']._serialized_start=112
-  _globals['_PORT']._serialized_end=688
-  _globals['_PORT_IPFAMILY']._serialized_start=458
-  _globals['_PORT_IPFAMILY']._serialized_end=535
-  _globals['_PORT_STATE']._serialized_start=537
-  _globals['_PORT_STATE']._serialized_end=585
-  _globals['_LISTPORTSREQUEST']._serialized_start=691
-  _globals['_LISTPORTSREQUEST']._serialized_end=845
-  _globals['_LISTPORTSRESPONSE']._serialized_start=847
-  _globals['_LISTPORTSRESPONSE']._serialized_end=953
-  _globals['_GETPORTREQUEST']._serialized_start=955
-  _globals['_GETPORTREQUEST']._serialized_end=1021
+  _globals['_PORT']._serialized_end=726
+  _globals['_PORT_IPFAMILY']._serialized_start=540
+  _globals['_PORT_IPFAMILY']._serialized_end=617
+  _globals['_PORT_STATE']._serialized_start=619
+  _globals['_PORT_STATE']._serialized_end=667
+  _globals['_LISTPORTSREQUEST']._serialized_start=728
+  _globals['_LISTPORTSREQUEST']._serialized_end=848
+  _globals['_LISTPORTSRESPONSE']._serialized_start=850
+  _globals['_LISTPORTSRESPONSE']._serialized_end=956
+  _globals['_GETPORTREQUEST']._serialized_start=958
+  _globals['_GETPORTREQUEST']._serialized_end=1024
 # @@protoc_insertion_point(module_scope)

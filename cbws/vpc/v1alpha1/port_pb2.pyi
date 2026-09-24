@@ -10,7 +10,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Port(_message.Message):
-    __slots__ = ("name", "parent", "owner", "ip_families", "ipv4_address", "ipv6_address", "mac_address", "state")
+    __slots__ = ("name", "parent", "private_network", "owner", "ip_families", "ipv4_address", "ipv6_address", "mac_address", "state")
     class IpFamily(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         IP_FAMILY_UNSPECIFIED: _ClassVar[Port.IpFamily]
@@ -27,6 +27,7 @@ class Port(_message.Message):
     STATE_ACTIVE: Port.State
     NAME_FIELD_NUMBER: _ClassVar[int]
     PARENT_FIELD_NUMBER: _ClassVar[int]
+    PRIVATE_NETWORK_FIELD_NUMBER: _ClassVar[int]
     OWNER_FIELD_NUMBER: _ClassVar[int]
     IP_FAMILIES_FIELD_NUMBER: _ClassVar[int]
     IPV4_ADDRESS_FIELD_NUMBER: _ClassVar[int]
@@ -35,13 +36,14 @@ class Port(_message.Message):
     STATE_FIELD_NUMBER: _ClassVar[int]
     name: str
     parent: str
+    private_network: str
     owner: str
     ip_families: _containers.RepeatedScalarFieldContainer[Port.IpFamily]
     ipv4_address: str
     ipv6_address: str
     mac_address: str
     state: Port.State
-    def __init__(self, name: _Optional[str] = ..., parent: _Optional[str] = ..., owner: _Optional[str] = ..., ip_families: _Optional[_Iterable[_Union[Port.IpFamily, str]]] = ..., ipv4_address: _Optional[str] = ..., ipv6_address: _Optional[str] = ..., mac_address: _Optional[str] = ..., state: _Optional[_Union[Port.State, str]] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., parent: _Optional[str] = ..., private_network: _Optional[str] = ..., owner: _Optional[str] = ..., ip_families: _Optional[_Iterable[_Union[Port.IpFamily, str]]] = ..., ipv4_address: _Optional[str] = ..., ipv6_address: _Optional[str] = ..., mac_address: _Optional[str] = ..., state: _Optional[_Union[Port.State, str]] = ...) -> None: ...
 
 class ListPortsRequest(_message.Message):
     __slots__ = ("parent", "page_size", "page_token")
