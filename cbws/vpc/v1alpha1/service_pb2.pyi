@@ -1,3 +1,5 @@
+from cbws.iam.policy.v1alpha1 import policy_pb2 as _policy_pb2
+from cbws.iam.policy.v1alpha1 import request_response_pb2 as _request_response_pb2
 from cbws.vpc.v1alpha1 import port_pb2 as _port_pb2
 from cbws.vpc.v1alpha1 import privatenetwork_pb2 as _privatenetwork_pb2
 from cbws.vpc.v1alpha1 import subnet_pb2 as _subnet_pb2

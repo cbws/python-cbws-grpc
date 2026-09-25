@@ -2,6 +2,8 @@
 """Client and server classes corresponding to protobuf-defined services."""
 import grpc
 
+from cbws.iam.policy.v1alpha1 import policy_pb2 as cbws_dot_iam_dot_policy_dot_v1alpha1_dot_policy__pb2
+from cbws.iam.policy.v1alpha1 import request_response_pb2 as cbws_dot_iam_dot_policy_dot_v1alpha1_dot_request__response__pb2
 from cbws.vpc.v1alpha1 import port_pb2 as cbws_dot_vpc_dot_v1alpha1_dot_port__pb2
 from cbws.vpc.v1alpha1 import privatenetwork_pb2 as cbws_dot_vpc_dot_v1alpha1_dot_privatenetwork__pb2
 from cbws.vpc.v1alpha1 import subnet_pb2 as cbws_dot_vpc_dot_v1alpha1_dot_subnet__pb2
@@ -89,6 +91,21 @@ class VpcServiceStub(object):
                 '/cbws.vpc.v1alpha1.VpcService/GetPort',
                 request_serializer=cbws_dot_vpc_dot_v1alpha1_dot_port__pb2.GetPortRequest.SerializeToString,
                 response_deserializer=cbws_dot_vpc_dot_v1alpha1_dot_port__pb2.Port.FromString,
+                _registered_method=True)
+        self.GetPolicy = channel.unary_unary(
+                '/cbws.vpc.v1alpha1.VpcService/GetPolicy',
+                request_serializer=cbws_dot_iam_dot_policy_dot_v1alpha1_dot_request__response__pb2.GetPolicyRequest.SerializeToString,
+                response_deserializer=cbws_dot_iam_dot_policy_dot_v1alpha1_dot_policy__pb2.Policy.FromString,
+                _registered_method=True)
+        self.SetPolicy = channel.unary_unary(
+                '/cbws.vpc.v1alpha1.VpcService/SetPolicy',
+                request_serializer=cbws_dot_iam_dot_policy_dot_v1alpha1_dot_request__response__pb2.SetPolicyRequest.SerializeToString,
+                response_deserializer=cbws_dot_iam_dot_policy_dot_v1alpha1_dot_policy__pb2.Policy.FromString,
+                _registered_method=True)
+        self.TestPermissions = channel.unary_unary(
+                '/cbws.vpc.v1alpha1.VpcService/TestPermissions',
+                request_serializer=cbws_dot_iam_dot_policy_dot_v1alpha1_dot_request__response__pb2.TestPermissionsRequest.SerializeToString,
+                response_deserializer=cbws_dot_iam_dot_policy_dot_v1alpha1_dot_request__response__pb2.TestPermissionsResponse.FromString,
                 _registered_method=True)
 
 
@@ -205,6 +222,42 @@ class VpcServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def GetPolicy(self, request, context):
+        """Gets the IAM policy of a VPC or a private network. Requires
+        `vpc.cbws.cloud/Vpc/getIAMPolicy` on the VPC, or
+        `vpc.cbws.cloud/PrivateNetwork/getIAMPolicy` on the private network.
+
+        The `resource` is the resource name of a VPC, such as
+        `projects/my-project/vpcs/default`, or of a private network, such as
+        `projects/my-project/vpcs/default/privateNetworks/nl-ein-1`. A binding on
+        a VPC applies to every private network in it. A binding on a private
+        network applies to that network only, so a network can be shared with
+        other projects without sharing the rest of its VPC.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SetPolicy(self, request, context):
+        """Replaces the IAM policy of a VPC or a private network. Requires
+        `vpc.cbws.cloud/Vpc/setIAMPolicy` on the VPC, or
+        `vpc.cbws.cloud/PrivateNetwork/setIAMPolicy` on the private network. The
+        accepted resources are the same as for
+        [GetPolicy][cbws.vpc.v1alpha1.VpcService.GetPolicy].
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def TestPermissions(self, request, context):
+        """Returns which of the given permissions the caller has on a VPC or a
+        private network. The accepted resources are the same as for
+        [GetPolicy][cbws.vpc.v1alpha1.VpcService.GetPolicy].
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_VpcServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -267,6 +320,21 @@ def add_VpcServiceServicer_to_server(servicer, server):
                     servicer.GetPort,
                     request_deserializer=cbws_dot_vpc_dot_v1alpha1_dot_port__pb2.GetPortRequest.FromString,
                     response_serializer=cbws_dot_vpc_dot_v1alpha1_dot_port__pb2.Port.SerializeToString,
+            ),
+            'GetPolicy': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetPolicy,
+                    request_deserializer=cbws_dot_iam_dot_policy_dot_v1alpha1_dot_request__response__pb2.GetPolicyRequest.FromString,
+                    response_serializer=cbws_dot_iam_dot_policy_dot_v1alpha1_dot_policy__pb2.Policy.SerializeToString,
+            ),
+            'SetPolicy': grpc.unary_unary_rpc_method_handler(
+                    servicer.SetPolicy,
+                    request_deserializer=cbws_dot_iam_dot_policy_dot_v1alpha1_dot_request__response__pb2.SetPolicyRequest.FromString,
+                    response_serializer=cbws_dot_iam_dot_policy_dot_v1alpha1_dot_policy__pb2.Policy.SerializeToString,
+            ),
+            'TestPermissions': grpc.unary_unary_rpc_method_handler(
+                    servicer.TestPermissions,
+                    request_deserializer=cbws_dot_iam_dot_policy_dot_v1alpha1_dot_request__response__pb2.TestPermissionsRequest.FromString,
+                    response_serializer=cbws_dot_iam_dot_policy_dot_v1alpha1_dot_request__response__pb2.TestPermissionsResponse.SerializeToString,
             ),
     }
     generic_handler = grpc.method_handlers_generic_handler(
@@ -605,6 +673,87 @@ class VpcService(object):
             '/cbws.vpc.v1alpha1.VpcService/GetPort',
             cbws_dot_vpc_dot_v1alpha1_dot_port__pb2.GetPortRequest.SerializeToString,
             cbws_dot_vpc_dot_v1alpha1_dot_port__pb2.Port.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetPolicy(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/cbws.vpc.v1alpha1.VpcService/GetPolicy',
+            cbws_dot_iam_dot_policy_dot_v1alpha1_dot_request__response__pb2.GetPolicyRequest.SerializeToString,
+            cbws_dot_iam_dot_policy_dot_v1alpha1_dot_policy__pb2.Policy.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def SetPolicy(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/cbws.vpc.v1alpha1.VpcService/SetPolicy',
+            cbws_dot_iam_dot_policy_dot_v1alpha1_dot_request__response__pb2.SetPolicyRequest.SerializeToString,
+            cbws_dot_iam_dot_policy_dot_v1alpha1_dot_policy__pb2.Policy.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def TestPermissions(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/cbws.vpc.v1alpha1.VpcService/TestPermissions',
+            cbws_dot_iam_dot_policy_dot_v1alpha1_dot_request__response__pb2.TestPermissionsRequest.SerializeToString,
+            cbws_dot_iam_dot_policy_dot_v1alpha1_dot_request__response__pb2.TestPermissionsResponse.FromString,
             options,
             channel_credentials,
             insecure,
