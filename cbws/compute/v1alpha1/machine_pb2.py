@@ -26,7 +26,7 @@ from google.api import field_behavior_pb2 as google_dot_api_dot_field__behavior_
 from google.api import resource_pb2 as google_dot_api_dot_resource__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#cbws/compute/v1alpha1/machine.proto\x12\x15\x63\x62ws.compute.v1alpha1\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\"\xf7\x04\n\x07Machine\x12\x18\n\x04name\x18\x01 \x01(\tB\x04\xe2\x41\x01\x05R\x04name\x12\x1c\n\x06parent\x18\x02 \x01(\tB\x04\xe2\x41\x01\x05R\x06parent\x12\x18\n\x04type\x18\x03 \x01(\tB\x04\xe2\x41\x01\x05R\x04type\x12\x1a\n\x05image\x18\n \x01(\tB\x04\xe2\x41\x01\x02R\x05image\x12 \n\x08hostname\x18\x04 \x01(\tB\x04\xe2\x41\x01\x02R\x08hostname\x12\x1e\n\x07\x61\x64\x64ress\x18\x07 \x01(\tB\x04\xe2\x41\x01\x03R\x07\x61\x64\x64ress\x12\'\n\x0cipv6_address\x18\x11 \x01(\tB\x04\xe2\x41\x01\x03R\x0bipv6Address\x12 \n\x08ssh_keys\x18\t \x03(\tB\x05\xe2\x41\x02\x04\x05R\x07sshKeys\x12!\n\x08userdata\x18\x10 \x01(\tB\x05\xe2\x41\x02\x04\x05R\x08userdata\x12@\n\x05state\x18\x08 \x01(\x0e\x32$.cbws.compute.v1alpha1.Machine.StateB\x04\xe2\x41\x01\x03R\x05state\"\xc6\x01\n\x05State\x12\x15\n\x11STATE_UNSPECIFIED\x10\x00\x12\x16\n\x12STATE_PROVISIONING\x10\x01\x12\x11\n\rSTATE_STAGING\x10\x02\x12\x11\n\rSTATE_RUNNING\x10\x03\x12\x12\n\x0eSTATE_STOPPING\x10\x04\x12\x14\n\x10STATE_SUSPENDING\x10\x05\x12\x13\n\x0fSTATE_SUSPENDED\x10\x06\x12\x13\n\x0fSTATE_REPAIRING\x10\x07\x12\x14\n\x10STATE_TERMINATED\x10\x08:C\xea\x41@\n\x1a\x63ompute.cbws.cloud/Machine\x12\"projects/{project}/machines/{name}B\x9f\x01\n\x19\x63om.cbws.compute.v1alpha1B\x0cMachineProtoP\x01\xa2\x02\x03\x43\x43X\xaa\x02\x15\x43\x62ws.Compute.V1alpha1\xca\x02\x15\x43\x62ws\\Compute\\V1alpha1\xe2\x02!Cbws\\Compute\\V1alpha1\\GPBMetadata\xea\x02\x17\x43\x62ws::Compute::V1alpha1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n#cbws/compute/v1alpha1/machine.proto\x12\x15\x63\x62ws.compute.v1alpha1\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\"\xa6\x05\n\x07Machine\x12\x18\n\x04name\x18\x01 \x01(\tB\x04\xe2\x41\x01\x05R\x04name\x12\x1c\n\x06parent\x18\x02 \x01(\tB\x04\xe2\x41\x01\x05R\x06parent\x12\x18\n\x04type\x18\x03 \x01(\tB\x04\xe2\x41\x01\x05R\x04type\x12\x1a\n\x05image\x18\n \x01(\tB\x04\xe2\x41\x01\x02R\x05image\x12 \n\x08hostname\x18\x04 \x01(\tB\x04\xe2\x41\x01\x02R\x08hostname\x12\x1e\n\x07\x61\x64\x64ress\x18\x07 \x01(\tB\x04\xe2\x41\x01\x03R\x07\x61\x64\x64ress\x12\'\n\x0cipv6_address\x18\x11 \x01(\tB\x04\xe2\x41\x01\x03R\x0bipv6Address\x12 \n\x08ssh_keys\x18\t \x03(\tB\x05\xe2\x41\x02\x04\x05R\x07sshKeys\x12!\n\x08userdata\x18\x10 \x01(\tB\x05\xe2\x41\x02\x04\x05R\x08userdata\x12-\n\x0fservice_account\x18\x12 \x01(\tB\x04\xe2\x41\x01\x01R\x0eserviceAccount\x12@\n\x05state\x18\x08 \x01(\x0e\x32$.cbws.compute.v1alpha1.Machine.StateB\x04\xe2\x41\x01\x03R\x05state\"\xc6\x01\n\x05State\x12\x15\n\x11STATE_UNSPECIFIED\x10\x00\x12\x16\n\x12STATE_PROVISIONING\x10\x01\x12\x11\n\rSTATE_STAGING\x10\x02\x12\x11\n\rSTATE_RUNNING\x10\x03\x12\x12\n\x0eSTATE_STOPPING\x10\x04\x12\x14\n\x10STATE_SUSPENDING\x10\x05\x12\x13\n\x0fSTATE_SUSPENDED\x10\x06\x12\x13\n\x0fSTATE_REPAIRING\x10\x07\x12\x14\n\x10STATE_TERMINATED\x10\x08:C\xea\x41@\n\x1a\x63ompute.cbws.cloud/Machine\x12\"projects/{project}/machines/{name}B\x9f\x01\n\x19\x63om.cbws.compute.v1alpha1B\x0cMachineProtoP\x01\xa2\x02\x03\x43\x43X\xaa\x02\x15\x43\x62ws.Compute.V1alpha1\xca\x02\x15\x43\x62ws\\Compute\\V1alpha1\xe2\x02!Cbws\\Compute\\V1alpha1\\GPBMetadata\xea\x02\x17\x43\x62ws::Compute::V1alpha1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -52,12 +52,14 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_MACHINE'].fields_by_name['ssh_keys']._serialized_options = b'\342A\002\004\005'
   _globals['_MACHINE'].fields_by_name['userdata']._loaded_options = None
   _globals['_MACHINE'].fields_by_name['userdata']._serialized_options = b'\342A\002\004\005'
+  _globals['_MACHINE'].fields_by_name['service_account']._loaded_options = None
+  _globals['_MACHINE'].fields_by_name['service_account']._serialized_options = b'\342A\001\001'
   _globals['_MACHINE'].fields_by_name['state']._loaded_options = None
   _globals['_MACHINE'].fields_by_name['state']._serialized_options = b'\342A\001\003'
   _globals['_MACHINE']._loaded_options = None
   _globals['_MACHINE']._serialized_options = b'\352A@\n\032compute.cbws.cloud/Machine\022\"projects/{project}/machines/{name}'
   _globals['_MACHINE']._serialized_start=123
-  _globals['_MACHINE']._serialized_end=754
-  _globals['_MACHINE_STATE']._serialized_start=487
-  _globals['_MACHINE_STATE']._serialized_end=685
+  _globals['_MACHINE']._serialized_end=801
+  _globals['_MACHINE_STATE']._serialized_start=534
+  _globals['_MACHINE_STATE']._serialized_end=732
 # @@protoc_insertion_point(module_scope)

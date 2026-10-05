@@ -10,7 +10,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Machine(_message.Message):
-    __slots__ = ("name", "parent", "type", "image", "hostname", "address", "ipv6_address", "ssh_keys", "userdata", "state")
+    __slots__ = ("name", "parent", "type", "image", "hostname", "address", "ipv6_address", "ssh_keys", "userdata", "service_account", "state")
     class State(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         STATE_UNSPECIFIED: _ClassVar[Machine.State]
@@ -40,6 +40,7 @@ class Machine(_message.Message):
     IPV6_ADDRESS_FIELD_NUMBER: _ClassVar[int]
     SSH_KEYS_FIELD_NUMBER: _ClassVar[int]
     USERDATA_FIELD_NUMBER: _ClassVar[int]
+    SERVICE_ACCOUNT_FIELD_NUMBER: _ClassVar[int]
     STATE_FIELD_NUMBER: _ClassVar[int]
     name: str
     parent: str
@@ -50,5 +51,6 @@ class Machine(_message.Message):
     ipv6_address: str
     ssh_keys: _containers.RepeatedScalarFieldContainer[str]
     userdata: str
+    service_account: str
     state: Machine.State
-    def __init__(self, name: _Optional[str] = ..., parent: _Optional[str] = ..., type: _Optional[str] = ..., image: _Optional[str] = ..., hostname: _Optional[str] = ..., address: _Optional[str] = ..., ipv6_address: _Optional[str] = ..., ssh_keys: _Optional[_Iterable[str]] = ..., userdata: _Optional[str] = ..., state: _Optional[_Union[Machine.State, str]] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., parent: _Optional[str] = ..., type: _Optional[str] = ..., image: _Optional[str] = ..., hostname: _Optional[str] = ..., address: _Optional[str] = ..., ipv6_address: _Optional[str] = ..., ssh_keys: _Optional[_Iterable[str]] = ..., userdata: _Optional[str] = ..., service_account: _Optional[str] = ..., state: _Optional[_Union[Machine.State, str]] = ...) -> None: ...
