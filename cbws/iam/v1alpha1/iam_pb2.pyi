@@ -104,3 +104,35 @@ class GenerateAccessTokenResponse(_message.Message):
     access_token: str
     expire_time: _timestamp_pb2.Timestamp
     def __init__(self, access_token: _Optional[str] = ..., expire_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+
+class SignJwtRequest(_message.Message):
+    __slots__ = ("name", "payload")
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    PAYLOAD_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    payload: str
+    def __init__(self, name: _Optional[str] = ..., payload: _Optional[str] = ...) -> None: ...
+
+class SignJwtResponse(_message.Message):
+    __slots__ = ("key_id", "signed_jwt")
+    KEY_ID_FIELD_NUMBER: _ClassVar[int]
+    SIGNED_JWT_FIELD_NUMBER: _ClassVar[int]
+    key_id: str
+    signed_jwt: str
+    def __init__(self, key_id: _Optional[str] = ..., signed_jwt: _Optional[str] = ...) -> None: ...
+
+class SignBlobRequest(_message.Message):
+    __slots__ = ("name", "payload")
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    PAYLOAD_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    payload: bytes
+    def __init__(self, name: _Optional[str] = ..., payload: _Optional[bytes] = ...) -> None: ...
+
+class SignBlobResponse(_message.Message):
+    __slots__ = ("key_id", "signed_blob")
+    KEY_ID_FIELD_NUMBER: _ClassVar[int]
+    SIGNED_BLOB_FIELD_NUMBER: _ClassVar[int]
+    key_id: str
+    signed_blob: bytes
+    def __init__(self, key_id: _Optional[str] = ..., signed_blob: _Optional[bytes] = ...) -> None: ...

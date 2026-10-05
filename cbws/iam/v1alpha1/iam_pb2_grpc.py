@@ -48,6 +48,16 @@ class IAMServiceStub(object):
                 request_serializer=cbws_dot_iam_dot_v1alpha1_dot_iam__pb2.GenerateAccessTokenRequest.SerializeToString,
                 response_deserializer=cbws_dot_iam_dot_v1alpha1_dot_iam__pb2.GenerateAccessTokenResponse.FromString,
                 _registered_method=True)
+        self.SignJwt = channel.unary_unary(
+                '/cbws.iam.v1alpha1.IAMService/SignJwt',
+                request_serializer=cbws_dot_iam_dot_v1alpha1_dot_iam__pb2.SignJwtRequest.SerializeToString,
+                response_deserializer=cbws_dot_iam_dot_v1alpha1_dot_iam__pb2.SignJwtResponse.FromString,
+                _registered_method=True)
+        self.SignBlob = channel.unary_unary(
+                '/cbws.iam.v1alpha1.IAMService/SignBlob',
+                request_serializer=cbws_dot_iam_dot_v1alpha1_dot_iam__pb2.SignBlobRequest.SerializeToString,
+                response_deserializer=cbws_dot_iam_dot_v1alpha1_dot_iam__pb2.SignBlobResponse.FromString,
+                _registered_method=True)
         self.ListServiceAccountKeys = channel.unary_unary(
                 '/cbws.iam.v1alpha1.IAMService/ListServiceAccountKeys',
                 request_serializer=cbws_dot_iam_dot_v1alpha1_dot_iam__pb2.ListServiceAccountKeysRequest.SerializeToString,
@@ -130,6 +140,30 @@ class IAMServiceServicer(object):
         """Generates an OAuth 2.0 access token for a service account, valid for
         one hour. Requires `iam.cbws.xyz/ServiceAccount/generateAccessToken` on
         the service account.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SignJwt(self, request, context):
+        """Signs a JWT with one of the service account's system-managed keys, so
+        that it verifies against the account's published key set. Requires
+        `iam.cbws.xyz/ServiceAccount/signJwt` on the service account.
+
+        The JWT header is `{"alg":"RS256","kid":"<key_id>","typ":"JWT"}`. The
+        call fails with FAILED_PRECONDITION when the account has no
+        system-managed key that stays valid for at least another hour.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def SignBlob(self, request, context):
+        """Signs a blob with one of the service account's system-managed keys.
+        Requires `iam.cbws.xyz/ServiceAccount/signBlob` on the service account.
+
+        The call fails with FAILED_PRECONDITION when the account has no
+        system-managed key that stays valid for at least another hour.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -236,6 +270,16 @@ def add_IAMServiceServicer_to_server(servicer, server):
                     servicer.GenerateAccessToken,
                     request_deserializer=cbws_dot_iam_dot_v1alpha1_dot_iam__pb2.GenerateAccessTokenRequest.FromString,
                     response_serializer=cbws_dot_iam_dot_v1alpha1_dot_iam__pb2.GenerateAccessTokenResponse.SerializeToString,
+            ),
+            'SignJwt': grpc.unary_unary_rpc_method_handler(
+                    servicer.SignJwt,
+                    request_deserializer=cbws_dot_iam_dot_v1alpha1_dot_iam__pb2.SignJwtRequest.FromString,
+                    response_serializer=cbws_dot_iam_dot_v1alpha1_dot_iam__pb2.SignJwtResponse.SerializeToString,
+            ),
+            'SignBlob': grpc.unary_unary_rpc_method_handler(
+                    servicer.SignBlob,
+                    request_deserializer=cbws_dot_iam_dot_v1alpha1_dot_iam__pb2.SignBlobRequest.FromString,
+                    response_serializer=cbws_dot_iam_dot_v1alpha1_dot_iam__pb2.SignBlobResponse.SerializeToString,
             ),
             'ListServiceAccountKeys': grpc.unary_unary_rpc_method_handler(
                     servicer.ListServiceAccountKeys,
@@ -408,6 +452,60 @@ class IAMService(object):
             '/cbws.iam.v1alpha1.IAMService/GenerateAccessToken',
             cbws_dot_iam_dot_v1alpha1_dot_iam__pb2.GenerateAccessTokenRequest.SerializeToString,
             cbws_dot_iam_dot_v1alpha1_dot_iam__pb2.GenerateAccessTokenResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def SignJwt(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/cbws.iam.v1alpha1.IAMService/SignJwt',
+            cbws_dot_iam_dot_v1alpha1_dot_iam__pb2.SignJwtRequest.SerializeToString,
+            cbws_dot_iam_dot_v1alpha1_dot_iam__pb2.SignJwtResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def SignBlob(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/cbws.iam.v1alpha1.IAMService/SignBlob',
+            cbws_dot_iam_dot_v1alpha1_dot_iam__pb2.SignBlobRequest.SerializeToString,
+            cbws_dot_iam_dot_v1alpha1_dot_iam__pb2.SignBlobResponse.FromString,
             options,
             channel_credentials,
             insecure,
