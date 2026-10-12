@@ -1,16 +1,17 @@
 from google.api import field_behavior_pb2 as _field_behavior_pb2
 from google.api import resource_pb2 as _resource_pb2
+from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf.internal import enum_type_wrapper as _enum_type_wrapper
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
-from collections.abc import Iterable as _Iterable
+from collections.abc import Iterable as _Iterable, Mapping as _Mapping
 from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Machine(_message.Message):
-    __slots__ = ("name", "parent", "type", "image", "hostname", "address", "ipv6_address", "ssh_keys", "userdata", "service_account", "state")
+    __slots__ = ("name", "parent", "type", "image", "hostname", "address", "ipv6_address", "ssh_keys", "userdata", "service_account", "state", "create_time")
     class State(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         STATE_UNSPECIFIED: _ClassVar[Machine.State]
@@ -42,6 +43,7 @@ class Machine(_message.Message):
     USERDATA_FIELD_NUMBER: _ClassVar[int]
     SERVICE_ACCOUNT_FIELD_NUMBER: _ClassVar[int]
     STATE_FIELD_NUMBER: _ClassVar[int]
+    CREATE_TIME_FIELD_NUMBER: _ClassVar[int]
     name: str
     parent: str
     type: str
@@ -53,4 +55,5 @@ class Machine(_message.Message):
     userdata: str
     service_account: str
     state: Machine.State
-    def __init__(self, name: _Optional[str] = ..., parent: _Optional[str] = ..., type: _Optional[str] = ..., image: _Optional[str] = ..., hostname: _Optional[str] = ..., address: _Optional[str] = ..., ipv6_address: _Optional[str] = ..., ssh_keys: _Optional[_Iterable[str]] = ..., userdata: _Optional[str] = ..., service_account: _Optional[str] = ..., state: _Optional[_Union[Machine.State, str]] = ...) -> None: ...
+    create_time: _timestamp_pb2.Timestamp
+    def __init__(self, name: _Optional[str] = ..., parent: _Optional[str] = ..., type: _Optional[str] = ..., image: _Optional[str] = ..., hostname: _Optional[str] = ..., address: _Optional[str] = ..., ipv6_address: _Optional[str] = ..., ssh_keys: _Optional[_Iterable[str]] = ..., userdata: _Optional[str] = ..., service_account: _Optional[str] = ..., state: _Optional[_Union[Machine.State, str]] = ..., create_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
