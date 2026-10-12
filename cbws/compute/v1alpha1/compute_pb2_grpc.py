@@ -90,6 +90,21 @@ class ComputeServiceStub(object):
                 request_serializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.GetImageRequest.SerializeToString,
                 response_deserializer=cbws_dot_compute_dot_v1alpha1_dot_image__pb2.Image.FromString,
                 _registered_method=True)
+        self.ListImageFamilies = channel.unary_unary(
+                '/cbws.compute.v1alpha1.ComputeService/ListImageFamilies',
+                request_serializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.ListImageFamiliesRequest.SerializeToString,
+                response_deserializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.ListImageFamiliesResponse.FromString,
+                _registered_method=True)
+        self.GetImageFamily = channel.unary_unary(
+                '/cbws.compute.v1alpha1.ComputeService/GetImageFamily',
+                request_serializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.GetImageFamilyRequest.SerializeToString,
+                response_deserializer=cbws_dot_compute_dot_v1alpha1_dot_image__pb2.ImageFamily.FromString,
+                _registered_method=True)
+        self.GetImageFromFamily = channel.unary_unary(
+                '/cbws.compute.v1alpha1.ComputeService/GetImageFromFamily',
+                request_serializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.GetImageFromFamilyRequest.SerializeToString,
+                response_deserializer=cbws_dot_compute_dot_v1alpha1_dot_image__pb2.Image.FromString,
+                _registered_method=True)
 
 
 class ComputeServiceServicer(object):
@@ -199,6 +214,28 @@ class ComputeServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def ListImageFamilies(self, request, context):
+        """Lists the image families in a project.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetImageFamily(self, request, context):
+        """Gets an image family.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetImageFromFamily(self, request, context):
+        """Returns the image a machine of the given type would boot from the family
+        right now.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
 
 def add_ComputeServiceServicer_to_server(servicer, server):
     rpc_method_handlers = {
@@ -270,6 +307,21 @@ def add_ComputeServiceServicer_to_server(servicer, server):
             'GetImage': grpc.unary_unary_rpc_method_handler(
                     servicer.GetImage,
                     request_deserializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.GetImageRequest.FromString,
+                    response_serializer=cbws_dot_compute_dot_v1alpha1_dot_image__pb2.Image.SerializeToString,
+            ),
+            'ListImageFamilies': grpc.unary_unary_rpc_method_handler(
+                    servicer.ListImageFamilies,
+                    request_deserializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.ListImageFamiliesRequest.FromString,
+                    response_serializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.ListImageFamiliesResponse.SerializeToString,
+            ),
+            'GetImageFamily': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetImageFamily,
+                    request_deserializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.GetImageFamilyRequest.FromString,
+                    response_serializer=cbws_dot_compute_dot_v1alpha1_dot_image__pb2.ImageFamily.SerializeToString,
+            ),
+            'GetImageFromFamily': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetImageFromFamily,
+                    request_deserializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.GetImageFromFamilyRequest.FromString,
                     response_serializer=cbws_dot_compute_dot_v1alpha1_dot_image__pb2.Image.SerializeToString,
             ),
     }
@@ -652,6 +704,87 @@ class ComputeService(object):
             target,
             '/cbws.compute.v1alpha1.ComputeService/GetImage',
             cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.GetImageRequest.SerializeToString,
+            cbws_dot_compute_dot_v1alpha1_dot_image__pb2.Image.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def ListImageFamilies(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/cbws.compute.v1alpha1.ComputeService/ListImageFamilies',
+            cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.ListImageFamiliesRequest.SerializeToString,
+            cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.ListImageFamiliesResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetImageFamily(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/cbws.compute.v1alpha1.ComputeService/GetImageFamily',
+            cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.GetImageFamilyRequest.SerializeToString,
+            cbws_dot_compute_dot_v1alpha1_dot_image__pb2.ImageFamily.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetImageFromFamily(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/cbws.compute.v1alpha1.ComputeService/GetImageFromFamily',
+            cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.GetImageFromFamilyRequest.SerializeToString,
             cbws_dot_compute_dot_v1alpha1_dot_image__pb2.Image.FromString,
             options,
             channel_credentials,

@@ -15,3 +15,11 @@ class Image(_message.Message):
     parent: str
     family: str
     def __init__(self, name: _Optional[str] = ..., parent: _Optional[str] = ..., family: _Optional[str] = ...) -> None: ...
+
+class ImageFamily(_message.Message):
+    __slots__ = ("name", "parent")
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    PARENT_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    parent: str
+    def __init__(self, name: _Optional[str] = ..., parent: _Optional[str] = ...) -> None: ...

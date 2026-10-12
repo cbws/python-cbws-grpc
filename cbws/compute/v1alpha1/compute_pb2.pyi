@@ -249,3 +249,35 @@ class GetImageRequest(_message.Message):
     name: str
     read_mask: _field_mask_pb2.FieldMask
     def __init__(self, name: _Optional[str] = ..., read_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
+
+class ListImageFamiliesRequest(_message.Message):
+    __slots__ = ("parent", "page_size", "page_token")
+    PARENT_FIELD_NUMBER: _ClassVar[int]
+    PAGE_SIZE_FIELD_NUMBER: _ClassVar[int]
+    PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
+    parent: str
+    page_size: int
+    page_token: str
+    def __init__(self, parent: _Optional[str] = ..., page_size: _Optional[int] = ..., page_token: _Optional[str] = ...) -> None: ...
+
+class ListImageFamiliesResponse(_message.Message):
+    __slots__ = ("image_families", "next_page_token")
+    IMAGE_FAMILIES_FIELD_NUMBER: _ClassVar[int]
+    NEXT_PAGE_TOKEN_FIELD_NUMBER: _ClassVar[int]
+    image_families: _containers.RepeatedCompositeFieldContainer[_image_pb2.ImageFamily]
+    next_page_token: str
+    def __init__(self, image_families: _Optional[_Iterable[_Union[_image_pb2.ImageFamily, _Mapping]]] = ..., next_page_token: _Optional[str] = ...) -> None: ...
+
+class GetImageFamilyRequest(_message.Message):
+    __slots__ = ("name",)
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    def __init__(self, name: _Optional[str] = ...) -> None: ...
+
+class GetImageFromFamilyRequest(_message.Message):
+    __slots__ = ("name", "machine_type")
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    MACHINE_TYPE_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    machine_type: str
+    def __init__(self, name: _Optional[str] = ..., machine_type: _Optional[str] = ...) -> None: ...
