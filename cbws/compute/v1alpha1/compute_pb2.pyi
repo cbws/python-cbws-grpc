@@ -7,6 +7,7 @@ from google.api import field_behavior_pb2 as _field_behavior_pb2
 from google.api import resource_pb2 as _resource_pb2
 from google.longrunning import operations_pb2 as _operations_pb2
 from google.protobuf import field_mask_pb2 as _field_mask_pb2
+from google.protobuf import timestamp_pb2 as _timestamp_pb2
 from google.protobuf.internal import containers as _containers
 from google.protobuf import descriptor as _descriptor
 from google.protobuf import message as _message
@@ -74,12 +75,16 @@ class CreateMachineResponse(_message.Message):
     def __init__(self) -> None: ...
 
 class CreateMachineMetadata(_message.Message):
-    __slots__ = ("state", "machine")
+    __slots__ = ("state", "machine", "create_time", "end_time")
     STATE_FIELD_NUMBER: _ClassVar[int]
     MACHINE_FIELD_NUMBER: _ClassVar[int]
+    CREATE_TIME_FIELD_NUMBER: _ClassVar[int]
+    END_TIME_FIELD_NUMBER: _ClassVar[int]
     state: _machine_pb2.Machine.State
     machine: _machine_pb2.Machine
-    def __init__(self, state: _Optional[_Union[_machine_pb2.Machine.State, str]] = ..., machine: _Optional[_Union[_machine_pb2.Machine, _Mapping]] = ...) -> None: ...
+    create_time: _timestamp_pb2.Timestamp
+    end_time: _timestamp_pb2.Timestamp
+    def __init__(self, state: _Optional[_Union[_machine_pb2.Machine.State, str]] = ..., machine: _Optional[_Union[_machine_pb2.Machine, _Mapping]] = ..., create_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., end_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class StopMachineRequest(_message.Message):
     __slots__ = ("name",)
@@ -92,8 +97,12 @@ class StopMachineResponse(_message.Message):
     def __init__(self) -> None: ...
 
 class StopMachineMetadata(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
+    __slots__ = ("create_time", "end_time")
+    CREATE_TIME_FIELD_NUMBER: _ClassVar[int]
+    END_TIME_FIELD_NUMBER: _ClassVar[int]
+    create_time: _timestamp_pb2.Timestamp
+    end_time: _timestamp_pb2.Timestamp
+    def __init__(self, create_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., end_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class StartMachineRequest(_message.Message):
     __slots__ = ("name",)
@@ -106,8 +115,12 @@ class StartMachineResponse(_message.Message):
     def __init__(self) -> None: ...
 
 class StartMachineMetadata(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
+    __slots__ = ("create_time", "end_time")
+    CREATE_TIME_FIELD_NUMBER: _ClassVar[int]
+    END_TIME_FIELD_NUMBER: _ClassVar[int]
+    create_time: _timestamp_pb2.Timestamp
+    end_time: _timestamp_pb2.Timestamp
+    def __init__(self, create_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., end_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class ResetMachineRequest(_message.Message):
     __slots__ = ("name",)
@@ -120,8 +133,12 @@ class ResetMachineResponse(_message.Message):
     def __init__(self) -> None: ...
 
 class ResetMachineMetadata(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
+    __slots__ = ("create_time", "end_time")
+    CREATE_TIME_FIELD_NUMBER: _ClassVar[int]
+    END_TIME_FIELD_NUMBER: _ClassVar[int]
+    create_time: _timestamp_pb2.Timestamp
+    end_time: _timestamp_pb2.Timestamp
+    def __init__(self, create_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., end_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class ReinstallMachineRequest(_message.Message):
     __slots__ = ("name", "image")
@@ -136,8 +153,12 @@ class ReinstallMachineResponse(_message.Message):
     def __init__(self) -> None: ...
 
 class ReinstallMachineMetadata(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
+    __slots__ = ("create_time", "end_time")
+    CREATE_TIME_FIELD_NUMBER: _ClassVar[int]
+    END_TIME_FIELD_NUMBER: _ClassVar[int]
+    create_time: _timestamp_pb2.Timestamp
+    end_time: _timestamp_pb2.Timestamp
+    def __init__(self, create_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., end_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class ResizeMachineRequest(_message.Message):
     __slots__ = ("name", "type")
@@ -152,8 +173,12 @@ class ResizeMachineResponse(_message.Message):
     def __init__(self) -> None: ...
 
 class ResizeMachineMetadata(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
+    __slots__ = ("create_time", "end_time")
+    CREATE_TIME_FIELD_NUMBER: _ClassVar[int]
+    END_TIME_FIELD_NUMBER: _ClassVar[int]
+    create_time: _timestamp_pb2.Timestamp
+    end_time: _timestamp_pb2.Timestamp
+    def __init__(self, create_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., end_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class DeleteMachineRequest(_message.Message):
     __slots__ = ("name",)
@@ -162,8 +187,12 @@ class DeleteMachineRequest(_message.Message):
     def __init__(self, name: _Optional[str] = ...) -> None: ...
 
 class DeleteMachineMetadata(_message.Message):
-    __slots__ = ()
-    def __init__(self) -> None: ...
+    __slots__ = ("create_time", "end_time")
+    CREATE_TIME_FIELD_NUMBER: _ClassVar[int]
+    END_TIME_FIELD_NUMBER: _ClassVar[int]
+    create_time: _timestamp_pb2.Timestamp
+    end_time: _timestamp_pb2.Timestamp
+    def __init__(self, create_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., end_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
 
 class ListMachineTypesRequest(_message.Message):
     __slots__ = ("parent", "page_size", "page_token", "read_mask")
