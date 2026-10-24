@@ -22,10 +22,11 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from google.api import field_behavior_pb2 as google_dot_api_dot_field__behavior__pb2
 from google.api import resource_pb2 as google_dot_api_dot_resource__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n<cbws/service_management/service_usage/v1alpha1/service.proto\x12.cbws.service_management.service_usage.v1alpha1\x1a\x19google/api/resource.proto\"\xb3\x02\n\x07Service\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x16\n\x06parent\x18\x02 \x01(\tR\x06parent\x12U\n\x06\x63onfig\x18\x03 \x01(\x0b\x32=.cbws.service_management.service_usage.v1alpha1.ServiceConfigR\x06\x63onfig\x12R\n\x05state\x18\x04 \x01(\x0e\x32<.cbws.service_management.service_usage.v1alpha1.ServiceStateR\x05state:Q\xea\x41N\n\x1dserviceusage.cbws.xyz/Service\x12-projects/{project}/services/{service_account}\"9\n\rServiceConfig\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n\x05title\x18\x02 \x01(\tR\x05title*d\n\x0cServiceState\x12\x1d\n\x19SERVICE_STATE_UNSPECIFIED\x10\x00\x12\x1a\n\x16SERVICE_STATE_DISABLED\x10\x01\x12\x19\n\x15SERVICE_STATE_ENABLED\x10\x02\x42\xcf\x02\n2com.cbws.service_management.service_usage.v1alpha1B\x0cServiceProtoP\x01Z8github.com/cbws/go-cbws-grpc/cbws/service-usage/v1alpha1\xa2\x02\x03\x43SS\xaa\x02,Cbws.ServiceManagement.ServiceUsage.V1alpha1\xca\x02,Cbws\\ServiceManagement\\ServiceUsage\\V1alpha1\xe2\x02\x38\x43\x62ws\\ServiceManagement\\ServiceUsage\\V1alpha1\\GPBMetadata\xea\x02/Cbws::ServiceManagement::ServiceUsage::V1alpha1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n<cbws/service_management/service_usage/v1alpha1/service.proto\x12.cbws.service_management.service_usage.v1alpha1\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\"\xc3\x02\n\x07Service\x12\x18\n\x04name\x18\x01 \x01(\tB\x04\xe2\x41\x01\x03R\x04name\x12\x1c\n\x06parent\x18\x02 \x01(\tB\x04\xe2\x41\x01\x03R\x06parent\x12[\n\x06\x63onfig\x18\x03 \x01(\x0b\x32=.cbws.service_management.service_usage.v1alpha1.ServiceConfigB\x04\xe2\x41\x01\x03R\x06\x63onfig\x12X\n\x05state\x18\x04 \x01(\x0e\x32<.cbws.service_management.service_usage.v1alpha1.ServiceStateB\x04\xe2\x41\x01\x03R\x05state:I\xea\x41\x46\n\x1dserviceusage.cbws.xyz/Service\x12%projects/{project}/services/{service}\"9\n\rServiceConfig\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x14\n\x05title\x18\x02 \x01(\tR\x05title*d\n\x0cServiceState\x12\x1d\n\x19SERVICE_STATE_UNSPECIFIED\x10\x00\x12\x1a\n\x16SERVICE_STATE_DISABLED\x10\x01\x12\x19\n\x15SERVICE_STATE_ENABLED\x10\x02\x42\xcf\x02\n2com.cbws.service_management.service_usage.v1alpha1B\x0cServiceProtoP\x01Z8github.com/cbws/go-cbws-grpc/cbws/service-usage/v1alpha1\xa2\x02\x03\x43SS\xaa\x02,Cbws.ServiceManagement.ServiceUsage.V1alpha1\xca\x02,Cbws\\ServiceManagement\\ServiceUsage\\V1alpha1\xe2\x02\x38\x43\x62ws\\ServiceManagement\\ServiceUsage\\V1alpha1\\GPBMetadata\xea\x02/Cbws::ServiceManagement::ServiceUsage::V1alpha1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,12 +34,20 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'cbws.service_management.ser
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n2com.cbws.service_management.service_usage.v1alpha1B\014ServiceProtoP\001Z8github.com/cbws/go-cbws-grpc/cbws/service-usage/v1alpha1\242\002\003CSS\252\002,Cbws.ServiceManagement.ServiceUsage.V1alpha1\312\002,Cbws\\ServiceManagement\\ServiceUsage\\V1alpha1\342\0028Cbws\\ServiceManagement\\ServiceUsage\\V1alpha1\\GPBMetadata\352\002/Cbws::ServiceManagement::ServiceUsage::V1alpha1'
+  _globals['_SERVICE'].fields_by_name['name']._loaded_options = None
+  _globals['_SERVICE'].fields_by_name['name']._serialized_options = b'\342A\001\003'
+  _globals['_SERVICE'].fields_by_name['parent']._loaded_options = None
+  _globals['_SERVICE'].fields_by_name['parent']._serialized_options = b'\342A\001\003'
+  _globals['_SERVICE'].fields_by_name['config']._loaded_options = None
+  _globals['_SERVICE'].fields_by_name['config']._serialized_options = b'\342A\001\003'
+  _globals['_SERVICE'].fields_by_name['state']._loaded_options = None
+  _globals['_SERVICE'].fields_by_name['state']._serialized_options = b'\342A\001\003'
   _globals['_SERVICE']._loaded_options = None
-  _globals['_SERVICE']._serialized_options = b'\352AN\n\035serviceusage.cbws.xyz/Service\022-projects/{project}/services/{service_account}'
-  _globals['_SERVICESTATE']._serialized_start=508
-  _globals['_SERVICESTATE']._serialized_end=608
-  _globals['_SERVICE']._serialized_start=140
-  _globals['_SERVICE']._serialized_end=447
-  _globals['_SERVICECONFIG']._serialized_start=449
-  _globals['_SERVICECONFIG']._serialized_end=506
+  _globals['_SERVICE']._serialized_options = b'\352AF\n\035serviceusage.cbws.xyz/Service\022%projects/{project}/services/{service}'
+  _globals['_SERVICESTATE']._serialized_start=557
+  _globals['_SERVICESTATE']._serialized_end=657
+  _globals['_SERVICE']._serialized_start=173
+  _globals['_SERVICE']._serialized_end=496
+  _globals['_SERVICECONFIG']._serialized_start=498
+  _globals['_SERVICECONFIG']._serialized_end=555
 # @@protoc_insertion_point(module_scope)

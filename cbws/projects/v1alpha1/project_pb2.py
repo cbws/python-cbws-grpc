@@ -22,10 +22,11 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from google.api import field_behavior_pb2 as google_dot_api_dot_field__behavior__pb2
 from google.api import resource_pb2 as google_dot_api_dot_resource__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$cbws/projects/v1alpha1/project.proto\x12\x16\x63\x62ws.projects.v1alpha1\x1a\x19google/api/resource.proto\"\xb5\x01\n\x07Project\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12!\n\x0c\x64isplay_name\x18\x02 \x01(\tR\x0b\x64isplayName\x12\"\n\x0corganization\x18\x03 \x01(\tR\x0corganization\x12\x1b\n\tunique_id\x18\x04 \x01(\tR\x08uniqueId:2\xea\x41/\n\x19projects.cbws.xyz/Project\x12\x12projects/{project}B\xd9\x01\n\x1a\x63om.cbws.projects.v1alpha1B\x0cProjectProtoP\x01Z3github.com/cbws/go-cbws-grpc/cbws/projects/v1alpha1\xa2\x02\x03\x43PX\xaa\x02\x16\x43\x62ws.Projects.V1alpha1\xca\x02\x16\x43\x62ws\\Projects\\V1alpha1\xe2\x02\"Cbws\\Projects\\V1alpha1\\GPBMetadata\xea\x02\x18\x43\x62ws::Projects::V1alpha1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n$cbws/projects/v1alpha1/project.proto\x12\x16\x63\x62ws.projects.v1alpha1\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\"\xc7\x01\n\x07Project\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\'\n\x0c\x64isplay_name\x18\x02 \x01(\tB\x04\xe2\x41\x01\x01R\x0b\x64isplayName\x12(\n\x0corganization\x18\x03 \x01(\tB\x04\xe2\x41\x01\x03R\x0corganization\x12!\n\tunique_id\x18\x04 \x01(\tB\x04\xe2\x41\x01\x03R\x08uniqueId:2\xea\x41/\n\x19projects.cbws.xyz/Project\x12\x12projects/{project}B\xd9\x01\n\x1a\x63om.cbws.projects.v1alpha1B\x0cProjectProtoP\x01Z3github.com/cbws/go-cbws-grpc/cbws/projects/v1alpha1\xa2\x02\x03\x43PX\xaa\x02\x16\x43\x62ws.Projects.V1alpha1\xca\x02\x16\x43\x62ws\\Projects\\V1alpha1\xe2\x02\"Cbws\\Projects\\V1alpha1\\GPBMetadata\xea\x02\x18\x43\x62ws::Projects::V1alpha1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -33,8 +34,14 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'cbws.projects.v1alpha1.proj
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\032com.cbws.projects.v1alpha1B\014ProjectProtoP\001Z3github.com/cbws/go-cbws-grpc/cbws/projects/v1alpha1\242\002\003CPX\252\002\026Cbws.Projects.V1alpha1\312\002\026Cbws\\Projects\\V1alpha1\342\002\"Cbws\\Projects\\V1alpha1\\GPBMetadata\352\002\030Cbws::Projects::V1alpha1'
+  _globals['_PROJECT'].fields_by_name['display_name']._loaded_options = None
+  _globals['_PROJECT'].fields_by_name['display_name']._serialized_options = b'\342A\001\001'
+  _globals['_PROJECT'].fields_by_name['organization']._loaded_options = None
+  _globals['_PROJECT'].fields_by_name['organization']._serialized_options = b'\342A\001\003'
+  _globals['_PROJECT'].fields_by_name['unique_id']._loaded_options = None
+  _globals['_PROJECT'].fields_by_name['unique_id']._serialized_options = b'\342A\001\003'
   _globals['_PROJECT']._loaded_options = None
   _globals['_PROJECT']._serialized_options = b'\352A/\n\031projects.cbws.xyz/Project\022\022projects/{project}'
-  _globals['_PROJECT']._serialized_start=92
-  _globals['_PROJECT']._serialized_end=273
+  _globals['_PROJECT']._serialized_start=125
+  _globals['_PROJECT']._serialized_end=324
 # @@protoc_insertion_point(module_scope)

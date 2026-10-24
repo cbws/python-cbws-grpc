@@ -22,11 +22,12 @@ _runtime_version.ValidateProtobufRuntimeVersion(
 _sym_db = _symbol_database.Default()
 
 
+from google.api import field_behavior_pb2 as google_dot_api_dot_field__behavior__pb2
 from google.api import resource_pb2 as google_dot_api_dot_resource__pb2
 from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'cbws/iam/v1alpha1/service_account.proto\x12\x11\x63\x62ws.iam.v1alpha1\x1a\x19google/api/resource.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\xf1\x01\n\x0eServiceAccount\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x1d\n\nproject_id\x18\x02 \x01(\tR\tprojectId\x12\x1b\n\tunique_id\x18\x04 \x01(\tR\x08uniqueId\x12\x14\n\x05\x65mail\x18\x05 \x01(\tR\x05\x65mail\x12!\n\x0c\x64isplay_name\x18\x06 \x01(\tR\x0b\x64isplayName:V\xea\x41S\n\x1biam.cbws.xyz/ServiceAccount\x12\x34projects/{project}/serviceAccounts/{service_account}\"\xe1\x04\n\x11ServiceAccountKey\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x43\n\x08key_type\x18\x02 \x01(\x0e\x32(.cbws.iam.v1alpha1.ServiceAccountKeyTypeR\x07keyType\x12Y\n\x10private_key_type\x18\x03 \x01(\x0e\x32/.cbws.iam.v1alpha1.ServiceAccountPrivateKeyTypeR\x0eprivateKeyType\x12R\n\rkey_algorithm\x18\x04 \x01(\x0e\x32-.cbws.iam.v1alpha1.ServiceAccountKeyAlgorithmR\x0ckeyAlgorithm\x12(\n\x10private_key_data\x18\x05 \x01(\x0cR\x0eprivateKeyData\x12&\n\x0fpublic_key_data\x18\x06 \x01(\x0cR\rpublicKeyData\x12\x44\n\x10valid_after_time\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.TimestampR\x0evalidAfterTime\x12\x46\n\x11valid_before_time\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.TimestampR\x0fvalidBeforeTime:d\xea\x41\x61\n\x1eiam.cbws.xyz/ServiceAccountKey\x12?projects/{project}/serviceAccounts/{service_account}/keys/{key}*\x99\x01\n\x15ServiceAccountKeyType\x12(\n$SERVICE_ACCOUNT_KEY_TYPE_UNSPECIFIED\x10\x00\x12)\n%SERVICE_ACCOUNT_KEY_TYPE_USER_MANAGED\x10\x01\x12+\n\'SERVICE_ACCOUNT_KEY_TYPE_SYSTEM_MANAGED\x10\x02*\xcf\x01\n\x1aServiceAccountKeyAlgorithm\x12-\n)SERVICE_ACCOUNT_KEY_ALGORITHM_UNSPECIFIED\x10\x00\x12*\n&SERVICE_ACCOUNT_KEY_ALGORITHM_RSA_1024\x10\x01\x12*\n&SERVICE_ACCOUNT_KEY_ALGORITHM_RSA_2048\x10\x02\x12*\n&SERVICE_ACCOUNT_KEY_ALGORITHM_RSA_4096\x10\x03*\x87\x01\n\x1cServiceAccountPrivateKeyType\x12\x30\n,SERVICE_ACCOUNT_PRIVATE_KEY_TYPE_UNSPECIFIED\x10\x00\x12\x35\n1SERVICE_ACCOUNT_PRIVATE_KEY_TYPE_CREDENTIALS_FILE\x10\x02\x42\xc2\x01\n\x15\x63om.cbws.iam.v1alpha1B\x13ServiceAccountProtoP\x01Z.github.com/cbws/go-cbws-grpc/cbws/iam/v1alpha1\xa2\x02\x03\x43IX\xaa\x02\x11\x43\x62ws.Iam.V1alpha1\xca\x02\x11\x43\x62ws\\Iam\\V1alpha1\xe2\x02\x1d\x43\x62ws\\Iam\\V1alpha1\\GPBMetadata\xea\x02\x13\x43\x62ws::Iam::V1alpha1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\'cbws/iam/v1alpha1/service_account.proto\x12\x11\x63\x62ws.iam.v1alpha1\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x89\x02\n\x0eServiceAccount\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12#\n\nproject_id\x18\x02 \x01(\tB\x04\xe2\x41\x01\x03R\tprojectId\x12!\n\tunique_id\x18\x04 \x01(\tB\x04\xe2\x41\x01\x03R\x08uniqueId\x12\x1a\n\x05\x65mail\x18\x05 \x01(\tB\x04\xe2\x41\x01\x03R\x05\x65mail\x12\'\n\x0c\x64isplay_name\x18\x06 \x01(\tB\x04\xe2\x41\x01\x01R\x0b\x64isplayName:V\xea\x41S\n\x1biam.cbws.xyz/ServiceAccount\x12\x34projects/{project}/serviceAccounts/{service_account}\"\xe1\x04\n\x11ServiceAccountKey\x12\x12\n\x04name\x18\x01 \x01(\tR\x04name\x12\x43\n\x08key_type\x18\x02 \x01(\x0e\x32(.cbws.iam.v1alpha1.ServiceAccountKeyTypeR\x07keyType\x12Y\n\x10private_key_type\x18\x03 \x01(\x0e\x32/.cbws.iam.v1alpha1.ServiceAccountPrivateKeyTypeR\x0eprivateKeyType\x12R\n\rkey_algorithm\x18\x04 \x01(\x0e\x32-.cbws.iam.v1alpha1.ServiceAccountKeyAlgorithmR\x0ckeyAlgorithm\x12(\n\x10private_key_data\x18\x05 \x01(\x0cR\x0eprivateKeyData\x12&\n\x0fpublic_key_data\x18\x06 \x01(\x0cR\rpublicKeyData\x12\x44\n\x10valid_after_time\x18\x07 \x01(\x0b\x32\x1a.google.protobuf.TimestampR\x0evalidAfterTime\x12\x46\n\x11valid_before_time\x18\x08 \x01(\x0b\x32\x1a.google.protobuf.TimestampR\x0fvalidBeforeTime:d\xea\x41\x61\n\x1eiam.cbws.xyz/ServiceAccountKey\x12?projects/{project}/serviceAccounts/{service_account}/keys/{key}*\x99\x01\n\x15ServiceAccountKeyType\x12(\n$SERVICE_ACCOUNT_KEY_TYPE_UNSPECIFIED\x10\x00\x12)\n%SERVICE_ACCOUNT_KEY_TYPE_USER_MANAGED\x10\x01\x12+\n\'SERVICE_ACCOUNT_KEY_TYPE_SYSTEM_MANAGED\x10\x02*\xcf\x01\n\x1aServiceAccountKeyAlgorithm\x12-\n)SERVICE_ACCOUNT_KEY_ALGORITHM_UNSPECIFIED\x10\x00\x12*\n&SERVICE_ACCOUNT_KEY_ALGORITHM_RSA_1024\x10\x01\x12*\n&SERVICE_ACCOUNT_KEY_ALGORITHM_RSA_2048\x10\x02\x12*\n&SERVICE_ACCOUNT_KEY_ALGORITHM_RSA_4096\x10\x03*\x87\x01\n\x1cServiceAccountPrivateKeyType\x12\x30\n,SERVICE_ACCOUNT_PRIVATE_KEY_TYPE_UNSPECIFIED\x10\x00\x12\x35\n1SERVICE_ACCOUNT_PRIVATE_KEY_TYPE_CREDENTIALS_FILE\x10\x02\x42\xc2\x01\n\x15\x63om.cbws.iam.v1alpha1B\x13ServiceAccountProtoP\x01Z.github.com/cbws/go-cbws-grpc/cbws/iam/v1alpha1\xa2\x02\x03\x43IX\xaa\x02\x11\x43\x62ws.Iam.V1alpha1\xca\x02\x11\x43\x62ws\\Iam\\V1alpha1\xe2\x02\x1d\x43\x62ws\\Iam\\V1alpha1\\GPBMetadata\xea\x02\x13\x43\x62ws::Iam::V1alpha1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -34,18 +35,26 @@ _builder.BuildTopDescriptorsAndMessages(DESCRIPTOR, 'cbws.iam.v1alpha1.service_a
 if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._loaded_options = None
   _globals['DESCRIPTOR']._serialized_options = b'\n\025com.cbws.iam.v1alpha1B\023ServiceAccountProtoP\001Z.github.com/cbws/go-cbws-grpc/cbws/iam/v1alpha1\242\002\003CIX\252\002\021Cbws.Iam.V1alpha1\312\002\021Cbws\\Iam\\V1alpha1\342\002\035Cbws\\Iam\\V1alpha1\\GPBMetadata\352\002\023Cbws::Iam::V1alpha1'
+  _globals['_SERVICEACCOUNT'].fields_by_name['project_id']._loaded_options = None
+  _globals['_SERVICEACCOUNT'].fields_by_name['project_id']._serialized_options = b'\342A\001\003'
+  _globals['_SERVICEACCOUNT'].fields_by_name['unique_id']._loaded_options = None
+  _globals['_SERVICEACCOUNT'].fields_by_name['unique_id']._serialized_options = b'\342A\001\003'
+  _globals['_SERVICEACCOUNT'].fields_by_name['email']._loaded_options = None
+  _globals['_SERVICEACCOUNT'].fields_by_name['email']._serialized_options = b'\342A\001\003'
+  _globals['_SERVICEACCOUNT'].fields_by_name['display_name']._loaded_options = None
+  _globals['_SERVICEACCOUNT'].fields_by_name['display_name']._serialized_options = b'\342A\001\001'
   _globals['_SERVICEACCOUNT']._loaded_options = None
   _globals['_SERVICEACCOUNT']._serialized_options = b'\352AS\n\033iam.cbws.xyz/ServiceAccount\0224projects/{project}/serviceAccounts/{service_account}'
   _globals['_SERVICEACCOUNTKEY']._loaded_options = None
   _globals['_SERVICEACCOUNTKEY']._serialized_options = b'\352Aa\n\036iam.cbws.xyz/ServiceAccountKey\022?projects/{project}/serviceAccounts/{service_account}/keys/{key}'
-  _globals['_SERVICEACCOUNTKEYTYPE']._serialized_start=979
-  _globals['_SERVICEACCOUNTKEYTYPE']._serialized_end=1132
-  _globals['_SERVICEACCOUNTKEYALGORITHM']._serialized_start=1135
-  _globals['_SERVICEACCOUNTKEYALGORITHM']._serialized_end=1342
-  _globals['_SERVICEACCOUNTPRIVATEKEYTYPE']._serialized_start=1345
-  _globals['_SERVICEACCOUNTPRIVATEKEYTYPE']._serialized_end=1480
-  _globals['_SERVICEACCOUNT']._serialized_start=123
-  _globals['_SERVICEACCOUNT']._serialized_end=364
-  _globals['_SERVICEACCOUNTKEY']._serialized_start=367
-  _globals['_SERVICEACCOUNTKEY']._serialized_end=976
+  _globals['_SERVICEACCOUNTKEYTYPE']._serialized_start=1036
+  _globals['_SERVICEACCOUNTKEYTYPE']._serialized_end=1189
+  _globals['_SERVICEACCOUNTKEYALGORITHM']._serialized_start=1192
+  _globals['_SERVICEACCOUNTKEYALGORITHM']._serialized_end=1399
+  _globals['_SERVICEACCOUNTPRIVATEKEYTYPE']._serialized_start=1402
+  _globals['_SERVICEACCOUNTPRIVATEKEYTYPE']._serialized_end=1537
+  _globals['_SERVICEACCOUNT']._serialized_start=156
+  _globals['_SERVICEACCOUNT']._serialized_end=421
+  _globals['_SERVICEACCOUNTKEY']._serialized_start=424
+  _globals['_SERVICEACCOUNTKEY']._serialized_end=1033
 # @@protoc_insertion_point(module_scope)

@@ -34,7 +34,7 @@ from google.longrunning import operations_pb2 as google_dot_longrunning_dot_oper
 from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%cbws/projects/v1alpha1/projects.proto\x12\x16\x63\x62ws.projects.v1alpha1\x1a\'cbws/iam/options/v1alpha1/options.proto\x1a%cbws/iam/policy/v1alpha1/policy.proto\x1a/cbws/iam/policy/v1alpha1/request_response.proto\x1a$cbws/projects/v1alpha1/project.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\x1a#google/longrunning/operations.proto\x1a google/protobuf/field_mask.proto\"\xb5\x01\n\x14\x43reateProjectRequest\x12H\n\x06parent\x18\x01 \x01(\tB0\xe2\x41\x01\x02\xfa\x41)\n\'organizations.cloudbear.nl/OrganizationR\x06parent\x12\x18\n\x04name\x18\x02 \x01(\tB\x04\xe2\x41\x01\x02R\x04name\x12\x39\n\x07project\x18\x03 \x01(\x0b\x32\x1f.cbws.projects.v1alpha1.ProjectR\x07project\"Q\n\x13ListProjectsRequest\x12\x1b\n\tpage_size\x18\x02 \x01(\x05R\x08pageSize\x12\x1d\n\npage_token\x18\x03 \x01(\tR\tpageToken\"{\n\x14ListProjectsResponse\x12;\n\x08projects\x18\x01 \x03(\x0b\x32\x1f.cbws.projects.v1alpha1.ProjectR\x08projects\x12&\n\x0fnext_page_token\x18\x02 \x01(\tR\rnextPageToken\"K\n\x11GetProjectRequest\x12\x36\n\x04name\x18\x01 \x01(\tB\"\xe2\x41\x01\x02\xfa\x41\x1b\n\x19projects.cbws.xyz/ProjectR\x04name\"\x94\x01\n\x14UpdateProjectRequest\x12?\n\x07project\x18\x01 \x01(\x0b\x32\x1f.cbws.projects.v1alpha1.ProjectB\x04\xe2\x41\x01\x02R\x07project\x12;\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskR\nupdateMask\"N\n\x14\x44\x65leteProjectRequest\x12\x36\n\x04name\x18\x01 \x01(\tB\"\xe2\x41\x01\x02\xfa\x41\x1b\n\x19projects.cbws.xyz/ProjectR\x04name\"\x17\n\x15\x44\x65leteProjectMetadata2\xf3\n\n\x0fProjectsService\x12\x92\x01\n\rCreateProject\x12,.cbws.projects.v1alpha1.CreateProjectRequest\x1a\x1f.cbws.projects.v1alpha1.Project\"2\x82\xb3\x1b\x07Project\x8a\xb3\x1b\x06\x63reate\x82\xd3\xe4\x93\x02\x17\"\x12/v1alpha1/projects:\x01*\x12\x8c\x01\n\x0cListProjects\x12+.cbws.projects.v1alpha1.ListProjectsRequest\x1a,.cbws.projects.v1alpha1.ListProjectsResponse\"!\xda\x41\x04name\x82\xd3\xe4\x93\x02\x14\x12\x12/v1alpha1/projects\x12\x96\x01\n\nGetProject\x12).cbws.projects.v1alpha1.GetProjectRequest\x1a\x1f.cbws.projects.v1alpha1.Project\"<\xda\x41\x04name\x82\xb3\x1b\x07Project\x8a\xb3\x1b\x03get\x82\xd3\xe4\x93\x02\x1d\x12\x1b/v1alpha1/{name=projects/*}\x12\xa3\x01\n\rUpdateProject\x12,.cbws.projects.v1alpha1.UpdateProjectRequest\x1a\x1f.cbws.projects.v1alpha1.Project\"C\x82\xb3\x1b\x07Project\x8a\xb3\x1b\x06update\x82\xd3\xe4\x93\x02(\"#/v1alpha1/{project.name=projects/*}:\x01*\x12\xe6\x01\n\rDeleteProject\x12,.cbws.projects.v1alpha1.DeleteProjectRequest\x1a\x1d.google.longrunning.Operation\"\x87\x01\xca\x41\x45\n\x15google.protobuf.Empty\x12,cbws.projects.v1alpha1.DeleteProjectMetadata\xda\x41\x04name\x82\xb3\x1b\x07Project\x8a\xb3\x1b\x06\x64\x65lete\x82\xd3\xe4\x93\x02\x1d*\x1b/v1alpha1/{name=projects/*}\x12\x8c\x01\n\tGetPolicy\x12*.cbws.iam.policy.v1alpha1.GetPolicyRequest\x1a .cbws.iam.policy.v1alpha1.Policy\"1\xda\x41\x08resource\x82\xd3\xe4\x93\x02 \"\x1e/v1alpha1/{resource}:getPolicy\x12\x96\x01\n\tSetPolicy\x12*.cbws.iam.policy.v1alpha1.SetPolicyRequest\x1a .cbws.iam.policy.v1alpha1.Policy\";\xda\x41\x0fresource,policy\x82\xd3\xe4\x93\x02#\"\x1e/v1alpha1/{resource}:setPolicy:\x01*\x12\xbe\x01\n\x0fTestPermissions\x12\x30.cbws.iam.policy.v1alpha1.TestPermissionsRequest\x1a\x31.cbws.iam.policy.v1alpha1.TestPermissionsResponse\"F\xda\x41\x14resource,permissions\x82\xd3\xe4\x93\x02)\"$/v1alpha1/{resource}:testPermissions:\x01*\x1a+\xca\x41\x11projects.cbws.xyz\xfa\xb2\x1b\x13\n\x11projects.cbws.xyzB\xda\x01\n\x1a\x63om.cbws.projects.v1alpha1B\rProjectsProtoP\x01Z3github.com/cbws/go-cbws-grpc/cbws/projects/v1alpha1\xa2\x02\x03\x43PX\xaa\x02\x16\x43\x62ws.Projects.V1alpha1\xca\x02\x16\x43\x62ws\\Projects\\V1alpha1\xe2\x02\"Cbws\\Projects\\V1alpha1\\GPBMetadata\xea\x02\x18\x43\x62ws::Projects::V1alpha1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n%cbws/projects/v1alpha1/projects.proto\x12\x16\x63\x62ws.projects.v1alpha1\x1a\'cbws/iam/options/v1alpha1/options.proto\x1a%cbws/iam/policy/v1alpha1/policy.proto\x1a/cbws/iam/policy/v1alpha1/request_response.proto\x1a$cbws/projects/v1alpha1/project.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\x1a#google/longrunning/operations.proto\x1a google/protobuf/field_mask.proto\"\xbb\x01\n\x14\x43reateProjectRequest\x12H\n\x06parent\x18\x01 \x01(\tB0\xe2\x41\x01\x02\xfa\x41)\n\'organizations.cloudbear.nl/OrganizationR\x06parent\x12\x18\n\x04name\x18\x02 \x01(\tB\x04\xe2\x41\x01\x02R\x04name\x12?\n\x07project\x18\x03 \x01(\x0b\x32\x1f.cbws.projects.v1alpha1.ProjectB\x04\xe2\x41\x01\x01R\x07project\"]\n\x13ListProjectsRequest\x12!\n\tpage_size\x18\x02 \x01(\x05\x42\x04\xe2\x41\x01\x01R\x08pageSize\x12#\n\npage_token\x18\x03 \x01(\tB\x04\xe2\x41\x01\x01R\tpageToken\"{\n\x14ListProjectsResponse\x12;\n\x08projects\x18\x01 \x03(\x0b\x32\x1f.cbws.projects.v1alpha1.ProjectR\x08projects\x12&\n\x0fnext_page_token\x18\x02 \x01(\tR\rnextPageToken\"K\n\x11GetProjectRequest\x12\x36\n\x04name\x18\x01 \x01(\tB\"\xe2\x41\x01\x02\xfa\x41\x1b\n\x19projects.cbws.xyz/ProjectR\x04name\"\x9a\x01\n\x14UpdateProjectRequest\x12?\n\x07project\x18\x01 \x01(\x0b\x32\x1f.cbws.projects.v1alpha1.ProjectB\x04\xe2\x41\x01\x02R\x07project\x12\x41\n\x0bupdate_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe2\x41\x01\x02R\nupdateMask\"N\n\x14\x44\x65leteProjectRequest\x12\x36\n\x04name\x18\x01 \x01(\tB\"\xe2\x41\x01\x02\xfa\x41\x1b\n\x19projects.cbws.xyz/ProjectR\x04name\"\x17\n\x15\x44\x65leteProjectMetadata2\xee\n\n\x0fProjectsService\x12\x92\x01\n\rCreateProject\x12,.cbws.projects.v1alpha1.CreateProjectRequest\x1a\x1f.cbws.projects.v1alpha1.Project\"2\x82\xb3\x1b\x07Project\x8a\xb3\x1b\x06\x63reate\x82\xd3\xe4\x93\x02\x17\"\x12/v1alpha1/projects:\x01*\x12\x85\x01\n\x0cListProjects\x12+.cbws.projects.v1alpha1.ListProjectsRequest\x1a,.cbws.projects.v1alpha1.ListProjectsResponse\"\x1a\x82\xd3\xe4\x93\x02\x14\x12\x12/v1alpha1/projects\x12\x96\x01\n\nGetProject\x12).cbws.projects.v1alpha1.GetProjectRequest\x1a\x1f.cbws.projects.v1alpha1.Project\"<\xda\x41\x04name\x82\xb3\x1b\x07Project\x8a\xb3\x1b\x03get\x82\xd3\xe4\x93\x02\x1d\x12\x1b/v1alpha1/{name=projects/*}\x12\xa3\x01\n\rUpdateProject\x12,.cbws.projects.v1alpha1.UpdateProjectRequest\x1a\x1f.cbws.projects.v1alpha1.Project\"C\x82\xb3\x1b\x07Project\x8a\xb3\x1b\x06update\x82\xd3\xe4\x93\x02(\"#/v1alpha1/{project.name=projects/*}:\x01*\x12\xe6\x01\n\rDeleteProject\x12,.cbws.projects.v1alpha1.DeleteProjectRequest\x1a\x1d.google.longrunning.Operation\"\x87\x01\xca\x41\x45\n\x15google.protobuf.Empty\x12,cbws.projects.v1alpha1.DeleteProjectMetadata\xda\x41\x04name\x82\xb3\x1b\x07Project\x8a\xb3\x1b\x06\x64\x65lete\x82\xd3\xe4\x93\x02\x1d*\x1b/v1alpha1/{name=projects/*}\x12\x8c\x01\n\tGetPolicy\x12*.cbws.iam.policy.v1alpha1.GetPolicyRequest\x1a .cbws.iam.policy.v1alpha1.Policy\"1\xda\x41\x08resource\x82\xd3\xe4\x93\x02 \"\x1e/v1alpha1/{resource}:getPolicy\x12\x96\x01\n\tSetPolicy\x12*.cbws.iam.policy.v1alpha1.SetPolicyRequest\x1a .cbws.iam.policy.v1alpha1.Policy\";\xda\x41\x0fresource,policy\x82\xd3\xe4\x93\x02#\"\x1e/v1alpha1/{resource}:setPolicy:\x01*\x12\xbe\x01\n\x0fTestPermissions\x12\x30.cbws.iam.policy.v1alpha1.TestPermissionsRequest\x1a\x31.cbws.iam.policy.v1alpha1.TestPermissionsResponse\"F\xda\x41\x14resource,permissions\x82\xd3\xe4\x93\x02)\"$/v1alpha1/{resource}:testPermissions:\x01*\x1a-\xca\x41\x13projects.cbws.cloud\xfa\xb2\x1b\x13\n\x11projects.cbws.xyzB\xda\x01\n\x1a\x63om.cbws.projects.v1alpha1B\rProjectsProtoP\x01Z3github.com/cbws/go-cbws-grpc/cbws/projects/v1alpha1\xa2\x02\x03\x43PX\xaa\x02\x16\x43\x62ws.Projects.V1alpha1\xca\x02\x16\x43\x62ws\\Projects\\V1alpha1\xe2\x02\"Cbws\\Projects\\V1alpha1\\GPBMetadata\xea\x02\x18\x43\x62ws::Projects::V1alpha1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -46,18 +46,26 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_CREATEPROJECTREQUEST'].fields_by_name['parent']._serialized_options = b'\342A\001\002\372A)\n\'organizations.cloudbear.nl/Organization'
   _globals['_CREATEPROJECTREQUEST'].fields_by_name['name']._loaded_options = None
   _globals['_CREATEPROJECTREQUEST'].fields_by_name['name']._serialized_options = b'\342A\001\002'
+  _globals['_CREATEPROJECTREQUEST'].fields_by_name['project']._loaded_options = None
+  _globals['_CREATEPROJECTREQUEST'].fields_by_name['project']._serialized_options = b'\342A\001\001'
+  _globals['_LISTPROJECTSREQUEST'].fields_by_name['page_size']._loaded_options = None
+  _globals['_LISTPROJECTSREQUEST'].fields_by_name['page_size']._serialized_options = b'\342A\001\001'
+  _globals['_LISTPROJECTSREQUEST'].fields_by_name['page_token']._loaded_options = None
+  _globals['_LISTPROJECTSREQUEST'].fields_by_name['page_token']._serialized_options = b'\342A\001\001'
   _globals['_GETPROJECTREQUEST'].fields_by_name['name']._loaded_options = None
   _globals['_GETPROJECTREQUEST'].fields_by_name['name']._serialized_options = b'\342A\001\002\372A\033\n\031projects.cbws.xyz/Project'
   _globals['_UPDATEPROJECTREQUEST'].fields_by_name['project']._loaded_options = None
   _globals['_UPDATEPROJECTREQUEST'].fields_by_name['project']._serialized_options = b'\342A\001\002'
+  _globals['_UPDATEPROJECTREQUEST'].fields_by_name['update_mask']._loaded_options = None
+  _globals['_UPDATEPROJECTREQUEST'].fields_by_name['update_mask']._serialized_options = b'\342A\001\002'
   _globals['_DELETEPROJECTREQUEST'].fields_by_name['name']._loaded_options = None
   _globals['_DELETEPROJECTREQUEST'].fields_by_name['name']._serialized_options = b'\342A\001\002\372A\033\n\031projects.cbws.xyz/Project'
   _globals['_PROJECTSSERVICE']._loaded_options = None
-  _globals['_PROJECTSSERVICE']._serialized_options = b'\312A\021projects.cbws.xyz\372\262\033\023\n\021projects.cbws.xyz'
+  _globals['_PROJECTSSERVICE']._serialized_options = b'\312A\023projects.cbws.cloud\372\262\033\023\n\021projects.cbws.xyz'
   _globals['_PROJECTSSERVICE'].methods_by_name['CreateProject']._loaded_options = None
   _globals['_PROJECTSSERVICE'].methods_by_name['CreateProject']._serialized_options = b'\202\263\033\007Project\212\263\033\006create\202\323\344\223\002\027\"\022/v1alpha1/projects:\001*'
   _globals['_PROJECTSSERVICE'].methods_by_name['ListProjects']._loaded_options = None
-  _globals['_PROJECTSSERVICE'].methods_by_name['ListProjects']._serialized_options = b'\332A\004name\202\323\344\223\002\024\022\022/v1alpha1/projects'
+  _globals['_PROJECTSSERVICE'].methods_by_name['ListProjects']._serialized_options = b'\202\323\344\223\002\024\022\022/v1alpha1/projects'
   _globals['_PROJECTSSERVICE'].methods_by_name['GetProject']._loaded_options = None
   _globals['_PROJECTSSERVICE'].methods_by_name['GetProject']._serialized_options = b'\332A\004name\202\263\033\007Project\212\263\033\003get\202\323\344\223\002\035\022\033/v1alpha1/{name=projects/*}'
   _globals['_PROJECTSSERVICE'].methods_by_name['UpdateProject']._loaded_options = None
@@ -71,19 +79,19 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_PROJECTSSERVICE'].methods_by_name['TestPermissions']._loaded_options = None
   _globals['_PROJECTSSERVICE'].methods_by_name['TestPermissions']._serialized_options = b'\332A\024resource,permissions\202\323\344\223\002)\"$/v1alpha1/{resource}:testPermissions:\001*'
   _globals['_CREATEPROJECTREQUEST']._serialized_start=419
-  _globals['_CREATEPROJECTREQUEST']._serialized_end=600
-  _globals['_LISTPROJECTSREQUEST']._serialized_start=602
-  _globals['_LISTPROJECTSREQUEST']._serialized_end=683
-  _globals['_LISTPROJECTSRESPONSE']._serialized_start=685
-  _globals['_LISTPROJECTSRESPONSE']._serialized_end=808
-  _globals['_GETPROJECTREQUEST']._serialized_start=810
-  _globals['_GETPROJECTREQUEST']._serialized_end=885
-  _globals['_UPDATEPROJECTREQUEST']._serialized_start=888
-  _globals['_UPDATEPROJECTREQUEST']._serialized_end=1036
-  _globals['_DELETEPROJECTREQUEST']._serialized_start=1038
-  _globals['_DELETEPROJECTREQUEST']._serialized_end=1116
-  _globals['_DELETEPROJECTMETADATA']._serialized_start=1118
-  _globals['_DELETEPROJECTMETADATA']._serialized_end=1141
-  _globals['_PROJECTSSERVICE']._serialized_start=1144
-  _globals['_PROJECTSSERVICE']._serialized_end=2539
+  _globals['_CREATEPROJECTREQUEST']._serialized_end=606
+  _globals['_LISTPROJECTSREQUEST']._serialized_start=608
+  _globals['_LISTPROJECTSREQUEST']._serialized_end=701
+  _globals['_LISTPROJECTSRESPONSE']._serialized_start=703
+  _globals['_LISTPROJECTSRESPONSE']._serialized_end=826
+  _globals['_GETPROJECTREQUEST']._serialized_start=828
+  _globals['_GETPROJECTREQUEST']._serialized_end=903
+  _globals['_UPDATEPROJECTREQUEST']._serialized_start=906
+  _globals['_UPDATEPROJECTREQUEST']._serialized_end=1060
+  _globals['_DELETEPROJECTREQUEST']._serialized_start=1062
+  _globals['_DELETEPROJECTREQUEST']._serialized_end=1140
+  _globals['_DELETEPROJECTMETADATA']._serialized_start=1142
+  _globals['_DELETEPROJECTMETADATA']._serialized_end=1165
+  _globals['_PROJECTSSERVICE']._serialized_start=1168
+  _globals['_PROJECTSSERVICE']._serialized_end=2558
 # @@protoc_insertion_point(module_scope)
