@@ -26,7 +26,7 @@ from google.api import field_behavior_pb2 as google_dot_api_dot_field__behavior_
 from google.api import resource_pb2 as google_dot_api_dot_resource__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n(cbws/compute/v1alpha1/machine_type.proto\x12\x15\x63\x62ws.compute.v1alpha1\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\"\xc5\x03\n\x0bMachineType\x12\x18\n\x04name\x18\x01 \x01(\tB\x04\xe2\x41\x01\x03R\x04name\x12\x18\n\x04zone\x18\x03 \x01(\tB\x04\xe2\x41\x01\x03R\x04zone\x12\x16\n\x03\x63pu\x18\x04 \x01(\x05\x42\x04\xe2\x41\x01\x03R\x03\x63pu\x12!\n\tmemory_mb\x18\x05 \x01(\x05\x42\x04\xe2\x41\x01\x03R\x08memoryMb\x12\x30\n\x11\x65phemeral_disk_gb\x18\x06 \x01(\x05\x42\x04\xe2\x41\x01\x03R\x0f\x65phemeralDiskGb\x12Q\n\x0cstock_status\x18\x07 \x01(\x0e\x32..cbws.compute.v1alpha1.MachineType.StockStatusR\x0bstockStatus\"\x81\x01\n\x0bStockStatus\x12\x1c\n\x18STOCK_STATUS_UNSPECIFIED\x10\x00\x12\x19\n\x15STOCK_STATUS_IN_STOCK\x10\x01\x12\x1a\n\x16STOCK_STATUS_LOW_STOCK\x10\x02\x12\x1d\n\x19STOCK_STATUS_OUT_OF_STOCK\x10\x03:>\xea\x41;\n\x1e\x63ompute.cbws.cloud/MachineType\x12\x19zones/{zone}/types/{name}B\xa3\x01\n\x19\x63om.cbws.compute.v1alpha1B\x10MachineTypeProtoP\x01\xa2\x02\x03\x43\x43X\xaa\x02\x15\x43\x62ws.Compute.V1alpha1\xca\x02\x15\x43\x62ws\\Compute\\V1alpha1\xe2\x02!Cbws\\Compute\\V1alpha1\\GPBMetadata\xea\x02\x17\x43\x62ws::Compute::V1alpha1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n(cbws/compute/v1alpha1/machine_type.proto\x12\x15\x63\x62ws.compute.v1alpha1\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\"\xd1\x03\n\x0bMachineType\x12\x18\n\x04name\x18\x01 \x01(\tB\x04\xe2\x41\x01\x03R\x04name\x12\x18\n\x04zone\x18\x03 \x01(\tB\x04\xe2\x41\x01\x03R\x04zone\x12\x16\n\x03\x63pu\x18\x04 \x01(\x05\x42\x04\xe2\x41\x01\x03R\x03\x63pu\x12!\n\tmemory_mb\x18\x05 \x01(\x05\x42\x04\xe2\x41\x01\x03R\x08memoryMb\x12\x30\n\x11\x65phemeral_disk_gb\x18\x06 \x01(\x05\x42\x04\xe2\x41\x01\x03R\x0f\x65phemeralDiskGb\x12W\n\x0cstock_status\x18\x07 \x01(\x0e\x32..cbws.compute.v1alpha1.MachineType.StockStatusB\x04\xe2\x41\x01\x03R\x0bstockStatus\"\x81\x01\n\x0bStockStatus\x12\x1c\n\x18STOCK_STATUS_UNSPECIFIED\x10\x00\x12\x19\n\x15STOCK_STATUS_IN_STOCK\x10\x01\x12\x1a\n\x16STOCK_STATUS_LOW_STOCK\x10\x02\x12\x1d\n\x19STOCK_STATUS_OUT_OF_STOCK\x10\x03:>\xea\x41;\n\x1e\x63ompute.cbws.cloud/MachineType\x12\x19zones/{zone}/types/{name}J\x04\x08\x02\x10\x03\x42\xa3\x01\n\x19\x63om.cbws.compute.v1alpha1B\x10MachineTypeProtoP\x01\xa2\x02\x03\x43\x43X\xaa\x02\x15\x43\x62ws.Compute.V1alpha1\xca\x02\x15\x43\x62ws\\Compute\\V1alpha1\xe2\x02!Cbws\\Compute\\V1alpha1\\GPBMetadata\xea\x02\x17\x43\x62ws::Compute::V1alpha1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -44,10 +44,12 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_MACHINETYPE'].fields_by_name['memory_mb']._serialized_options = b'\342A\001\003'
   _globals['_MACHINETYPE'].fields_by_name['ephemeral_disk_gb']._loaded_options = None
   _globals['_MACHINETYPE'].fields_by_name['ephemeral_disk_gb']._serialized_options = b'\342A\001\003'
+  _globals['_MACHINETYPE'].fields_by_name['stock_status']._loaded_options = None
+  _globals['_MACHINETYPE'].fields_by_name['stock_status']._serialized_options = b'\342A\001\003'
   _globals['_MACHINETYPE']._loaded_options = None
   _globals['_MACHINETYPE']._serialized_options = b'\352A;\n\036compute.cbws.cloud/MachineType\022\031zones/{zone}/types/{name}'
   _globals['_MACHINETYPE']._serialized_start=128
-  _globals['_MACHINETYPE']._serialized_end=581
-  _globals['_MACHINETYPE_STOCKSTATUS']._serialized_start=388
-  _globals['_MACHINETYPE_STOCKSTATUS']._serialized_end=517
+  _globals['_MACHINETYPE']._serialized_end=593
+  _globals['_MACHINETYPE_STOCKSTATUS']._serialized_start=394
+  _globals['_MACHINETYPE_STOCKSTATUS']._serialized_end=523
 # @@protoc_insertion_point(module_scope)
