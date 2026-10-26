@@ -1,6 +1,7 @@
 from cbws.compute.v1alpha1 import image_pb2 as _image_pb2
 from cbws.compute.v1alpha1 import machine_pb2 as _machine_pb2
 from cbws.compute.v1alpha1 import machine_type_pb2 as _machine_type_pb2
+from cbws.iam.options.v1alpha1 import options_pb2 as _options_pb2
 from google.api import annotations_pb2 as _annotations_pb2
 from google.api import client_pb2 as _client_pb2
 from google.api import field_behavior_pb2 as _field_behavior_pb2
