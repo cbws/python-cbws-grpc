@@ -37,18 +37,20 @@ SERVICE_ACCOUNT_PRIVATE_KEY_TYPE_UNSPECIFIED: ServiceAccountPrivateKeyType
 SERVICE_ACCOUNT_PRIVATE_KEY_TYPE_CREDENTIALS_FILE: ServiceAccountPrivateKeyType
 
 class ServiceAccount(_message.Message):
-    __slots__ = ("name", "project_id", "unique_id", "email", "display_name")
+    __slots__ = ("name", "project_id", "unique_id", "email", "display_name", "description")
     NAME_FIELD_NUMBER: _ClassVar[int]
     PROJECT_ID_FIELD_NUMBER: _ClassVar[int]
     UNIQUE_ID_FIELD_NUMBER: _ClassVar[int]
     EMAIL_FIELD_NUMBER: _ClassVar[int]
     DISPLAY_NAME_FIELD_NUMBER: _ClassVar[int]
+    DESCRIPTION_FIELD_NUMBER: _ClassVar[int]
     name: str
     project_id: str
     unique_id: str
     email: str
     display_name: str
-    def __init__(self, name: _Optional[str] = ..., project_id: _Optional[str] = ..., unique_id: _Optional[str] = ..., email: _Optional[str] = ..., display_name: _Optional[str] = ...) -> None: ...
+    description: str
+    def __init__(self, name: _Optional[str] = ..., project_id: _Optional[str] = ..., unique_id: _Optional[str] = ..., email: _Optional[str] = ..., display_name: _Optional[str] = ..., description: _Optional[str] = ...) -> None: ...
 
 class ServiceAccountKey(_message.Message):
     __slots__ = ("name", "key_type", "private_key_type", "key_algorithm", "private_key_data", "public_key_data", "valid_after_time", "valid_before_time")
