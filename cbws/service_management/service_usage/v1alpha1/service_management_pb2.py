@@ -29,9 +29,10 @@ from google.api import client_pb2 as google_dot_api_dot_client__pb2
 from google.api import field_behavior_pb2 as google_dot_api_dot_field__behavior__pb2
 from google.api import resource_pb2 as google_dot_api_dot_resource__pb2
 from google.longrunning import operations_pb2 as google_dot_longrunning_dot_operations__pb2
+from google.protobuf import field_mask_pb2 as google_dot_protobuf_dot_field__mask__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nGcbws/service_management/service_usage/v1alpha1/service_management.proto\x12.cbws.service_management.service_usage.v1alpha1\x1a\'cbws/iam/options/v1alpha1/options.proto\x1a<cbws/service_management/service_usage/v1alpha1/service.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\x1a#google/longrunning/operations.proto\"Q\n\x13ListServicesRequest\x12:\n\x06parent\x18\x01 \x01(\tB\"\xe2\x41\x01\x02\xfa\x41\x1b\n\x19projects.cbws.xyz/ProjectR\x06parent\"k\n\x14ListServicesResponse\x12S\n\x08services\x18\x01 \x03(\x0b\x32\x37.cbws.service_management.service_usage.v1alpha1.ServiceR\x08services\"R\n\x14\x45nableServiceRequest\x12:\n\x04name\x18\x01 \x01(\tB&\xe2\x41\x01\x02\xfa\x41\x1f\n\x1dserviceusage.cbws.xyz/ServiceR\x04name\"\x17\n\x15\x45nableServiceMetadata\"\x17\n\x15\x45nableServiceResponse\"\x97\x01\n\x15\x44isableServiceRequest\x12:\n\x04name\x18\x01 \x01(\tB&\xe2\x41\x01\x02\xfa\x41\x1f\n\x1dserviceusage.cbws.xyz/ServiceR\x04name\x12\x42\n\x1a\x64isable_dependent_services\x18\x02 \x01(\x08\x42\x04\xe2\x41\x01\x01R\x18\x64isableDependentServices\"\x18\n\x16\x44isableServiceMetadata\"\x18\n\x16\x44isableServiceResponse2\xf6\x07\n\x13ServiceUsageService\x12\xe5\x01\n\x0cListServices\x12\x43.cbws.service_management.service_usage.v1alpha1.ListServicesRequest\x1a\x44.cbws.service_management.service_usage.v1alpha1.ListServicesResponse\"J\xda\x41\x06parent\x82\xb3\x1b\x07Service\x8a\xb3\x1b\x04list\x82\xd3\xe4\x93\x02(\x12&/v1alpha1/{parent=projects/*}/services\x12\xdb\x02\n\rEnableService\x12\x44.cbws.service_management.service_usage.v1alpha1.EnableServiceRequest\x1a\x1d.google.longrunning.Operation\"\xe4\x01\xca\x41\x8c\x01\nDcbws.service_management.service_usage.v1alpha1.EnableServiceResponse\x12\x44\x63\x62ws.service_management.service_usage.v1alpha1.EnableServiceMetadata\xda\x41\x04name\x82\xb3\x1b\x07Service\x8a\xb3\x1b\x06\x65nable\x82\xd3\xe4\x93\x02\x32\"-/v1alpha1/{name=projects/*/services/*}:enable:\x01*\x12\xe1\x02\n\x0e\x44isableService\x12\x45.cbws.service_management.service_usage.v1alpha1.DisableServiceRequest\x1a\x1d.google.longrunning.Operation\"\xe8\x01\xca\x41\x8e\x01\nEcbws.service_management.service_usage.v1alpha1.DisableServiceResponse\x12\x45\x63\x62ws.service_management.service_usage.v1alpha1.DisableServiceMetadata\xda\x41\x04name\x82\xb3\x1b\x07Service\x8a\xb3\x1b\x07\x64isable\x82\xd3\xe4\x93\x02\x33\"./v1alpha1/{name=projects/*/services/*}:disable:\x01*\x1a\x35\xca\x41\x17serviceusage.cbws.cloud\xfa\xb2\x1b\x17\n\x15serviceusage.cbws.xyzB\xd9\x02\n2com.cbws.service_management.service_usage.v1alpha1B\x16ServiceManagementProtoP\x01Z8github.com/cbws/go-cbws-grpc/cbws/service-usage/v1alpha1\xa2\x02\x03\x43SS\xaa\x02,Cbws.ServiceManagement.ServiceUsage.V1alpha1\xca\x02,Cbws\\ServiceManagement\\ServiceUsage\\V1alpha1\xe2\x02\x38\x43\x62ws\\ServiceManagement\\ServiceUsage\\V1alpha1\\GPBMetadata\xea\x02/Cbws::ServiceManagement::ServiceUsage::V1alpha1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\nGcbws/service_management/service_usage/v1alpha1/service_management.proto\x12.cbws.service_management.service_usage.v1alpha1\x1a\'cbws/iam/options/v1alpha1/options.proto\x1a<cbws/service_management/service_usage/v1alpha1/service.proto\x1a\x1cgoogle/api/annotations.proto\x1a\x17google/api/client.proto\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\x1a#google/longrunning/operations.proto\x1a google/protobuf/field_mask.proto\"\x90\x01\n\x13ListServicesRequest\x12:\n\x06parent\x18\x01 \x01(\tB\"\xe2\x41\x01\x02\xfa\x41\x1b\n\x19projects.cbws.xyz/ProjectR\x06parent\x12=\n\tread_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe2\x41\x01\x01R\x08readMask\"k\n\x14ListServicesResponse\x12S\n\x08services\x18\x01 \x03(\x0b\x32\x37.cbws.service_management.service_usage.v1alpha1.ServiceR\x08services\"\x8e\x01\n\x11GetServiceRequest\x12:\n\x04name\x18\x01 \x01(\tB&\xe2\x41\x01\x02\xfa\x41\x1f\n\x1dserviceusage.cbws.xyz/ServiceR\x04name\x12=\n\tread_mask\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.FieldMaskB\x04\xe2\x41\x01\x01R\x08readMask\"R\n\x14\x45nableServiceRequest\x12:\n\x04name\x18\x01 \x01(\tB&\xe2\x41\x01\x02\xfa\x41\x1f\n\x1dserviceusage.cbws.xyz/ServiceR\x04name\"\x17\n\x15\x45nableServiceMetadata\"\x17\n\x15\x45nableServiceResponse\"\x97\x01\n\x15\x44isableServiceRequest\x12:\n\x04name\x18\x01 \x01(\tB&\xe2\x41\x01\x02\xfa\x41\x1f\n\x1dserviceusage.cbws.xyz/ServiceR\x04name\x12\x42\n\x1a\x64isable_dependent_services\x18\x02 \x01(\x08\x42\x04\xe2\x41\x01\x01R\x18\x64isableDependentServices\"\x18\n\x16\x44isableServiceMetadata\"\x18\n\x16\x44isableServiceResponse2\xb8\t\n\x13ServiceUsageService\x12\xe5\x01\n\x0cListServices\x12\x43.cbws.service_management.service_usage.v1alpha1.ListServicesRequest\x1a\x44.cbws.service_management.service_usage.v1alpha1.ListServicesResponse\"J\xda\x41\x06parent\x82\xb3\x1b\x07Service\x8a\xb3\x1b\x04list\x82\xd3\xe4\x93\x02(\x12&/v1alpha1/{parent=projects/*}/services\x12\xbf\x01\n\nGetService\x12\x41.cbws.service_management.service_usage.v1alpha1.GetServiceRequest\x1a\x37.cbws.service_management.service_usage.v1alpha1.Service\"5\xda\x41\x04name\x82\xd3\xe4\x93\x02(\x12&/v1alpha1/{name=projects/*/services/*}\x12\xdb\x02\n\rEnableService\x12\x44.cbws.service_management.service_usage.v1alpha1.EnableServiceRequest\x1a\x1d.google.longrunning.Operation\"\xe4\x01\xca\x41\x8c\x01\nDcbws.service_management.service_usage.v1alpha1.EnableServiceResponse\x12\x44\x63\x62ws.service_management.service_usage.v1alpha1.EnableServiceMetadata\xda\x41\x04name\x82\xb3\x1b\x07Service\x8a\xb3\x1b\x06\x65nable\x82\xd3\xe4\x93\x02\x32\"-/v1alpha1/{name=projects/*/services/*}:enable:\x01*\x12\xe1\x02\n\x0e\x44isableService\x12\x45.cbws.service_management.service_usage.v1alpha1.DisableServiceRequest\x1a\x1d.google.longrunning.Operation\"\xe8\x01\xca\x41\x8e\x01\nEcbws.service_management.service_usage.v1alpha1.DisableServiceResponse\x12\x45\x63\x62ws.service_management.service_usage.v1alpha1.DisableServiceMetadata\xda\x41\x04name\x82\xb3\x1b\x07Service\x8a\xb3\x1b\x07\x64isable\x82\xd3\xe4\x93\x02\x33\"./v1alpha1/{name=projects/*/services/*}:disable:\x01*\x1a\x35\xca\x41\x17serviceusage.cbws.cloud\xfa\xb2\x1b\x17\n\x15serviceusage.cbws.xyzB\xd9\x02\n2com.cbws.service_management.service_usage.v1alpha1B\x16ServiceManagementProtoP\x01Z8github.com/cbws/go-cbws-grpc/cbws/service-usage/v1alpha1\xa2\x02\x03\x43SS\xaa\x02,Cbws.ServiceManagement.ServiceUsage.V1alpha1\xca\x02,Cbws\\ServiceManagement\\ServiceUsage\\V1alpha1\xe2\x02\x38\x43\x62ws\\ServiceManagement\\ServiceUsage\\V1alpha1\\GPBMetadata\xea\x02/Cbws::ServiceManagement::ServiceUsage::V1alpha1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -41,6 +42,12 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'\n2com.cbws.service_management.service_usage.v1alpha1B\026ServiceManagementProtoP\001Z8github.com/cbws/go-cbws-grpc/cbws/service-usage/v1alpha1\242\002\003CSS\252\002,Cbws.ServiceManagement.ServiceUsage.V1alpha1\312\002,Cbws\\ServiceManagement\\ServiceUsage\\V1alpha1\342\0028Cbws\\ServiceManagement\\ServiceUsage\\V1alpha1\\GPBMetadata\352\002/Cbws::ServiceManagement::ServiceUsage::V1alpha1'
   _globals['_LISTSERVICESREQUEST'].fields_by_name['parent']._loaded_options = None
   _globals['_LISTSERVICESREQUEST'].fields_by_name['parent']._serialized_options = b'\342A\001\002\372A\033\n\031projects.cbws.xyz/Project'
+  _globals['_LISTSERVICESREQUEST'].fields_by_name['read_mask']._loaded_options = None
+  _globals['_LISTSERVICESREQUEST'].fields_by_name['read_mask']._serialized_options = b'\342A\001\001'
+  _globals['_GETSERVICEREQUEST'].fields_by_name['name']._loaded_options = None
+  _globals['_GETSERVICEREQUEST'].fields_by_name['name']._serialized_options = b'\342A\001\002\372A\037\n\035serviceusage.cbws.xyz/Service'
+  _globals['_GETSERVICEREQUEST'].fields_by_name['read_mask']._loaded_options = None
+  _globals['_GETSERVICEREQUEST'].fields_by_name['read_mask']._serialized_options = b'\342A\001\001'
   _globals['_ENABLESERVICEREQUEST'].fields_by_name['name']._loaded_options = None
   _globals['_ENABLESERVICEREQUEST'].fields_by_name['name']._serialized_options = b'\342A\001\002\372A\037\n\035serviceusage.cbws.xyz/Service'
   _globals['_DISABLESERVICEREQUEST'].fields_by_name['name']._loaded_options = None
@@ -51,26 +58,30 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_SERVICEUSAGESERVICE']._serialized_options = b'\312A\027serviceusage.cbws.cloud\372\262\033\027\n\025serviceusage.cbws.xyz'
   _globals['_SERVICEUSAGESERVICE'].methods_by_name['ListServices']._loaded_options = None
   _globals['_SERVICEUSAGESERVICE'].methods_by_name['ListServices']._serialized_options = b'\332A\006parent\202\263\033\007Service\212\263\033\004list\202\323\344\223\002(\022&/v1alpha1/{parent=projects/*}/services'
+  _globals['_SERVICEUSAGESERVICE'].methods_by_name['GetService']._loaded_options = None
+  _globals['_SERVICEUSAGESERVICE'].methods_by_name['GetService']._serialized_options = b'\332A\004name\202\323\344\223\002(\022&/v1alpha1/{name=projects/*/services/*}'
   _globals['_SERVICEUSAGESERVICE'].methods_by_name['EnableService']._loaded_options = None
   _globals['_SERVICEUSAGESERVICE'].methods_by_name['EnableService']._serialized_options = b'\312A\214\001\nDcbws.service_management.service_usage.v1alpha1.EnableServiceResponse\022Dcbws.service_management.service_usage.v1alpha1.EnableServiceMetadata\332A\004name\202\263\033\007Service\212\263\033\006enable\202\323\344\223\0022\"-/v1alpha1/{name=projects/*/services/*}:enable:\001*'
   _globals['_SERVICEUSAGESERVICE'].methods_by_name['DisableService']._loaded_options = None
   _globals['_SERVICEUSAGESERVICE'].methods_by_name['DisableService']._serialized_options = b'\312A\216\001\nEcbws.service_management.service_usage.v1alpha1.DisableServiceResponse\022Ecbws.service_management.service_usage.v1alpha1.DisableServiceMetadata\332A\004name\202\263\033\007Service\212\263\033\007disable\202\323\344\223\0023\"./v1alpha1/{name=projects/*/services/*}:disable:\001*'
-  _globals['_LISTSERVICESREQUEST']._serialized_start=378
-  _globals['_LISTSERVICESREQUEST']._serialized_end=459
-  _globals['_LISTSERVICESRESPONSE']._serialized_start=461
-  _globals['_LISTSERVICESRESPONSE']._serialized_end=568
-  _globals['_ENABLESERVICEREQUEST']._serialized_start=570
-  _globals['_ENABLESERVICEREQUEST']._serialized_end=652
-  _globals['_ENABLESERVICEMETADATA']._serialized_start=654
-  _globals['_ENABLESERVICEMETADATA']._serialized_end=677
-  _globals['_ENABLESERVICERESPONSE']._serialized_start=679
-  _globals['_ENABLESERVICERESPONSE']._serialized_end=702
-  _globals['_DISABLESERVICEREQUEST']._serialized_start=705
-  _globals['_DISABLESERVICEREQUEST']._serialized_end=856
-  _globals['_DISABLESERVICEMETADATA']._serialized_start=858
-  _globals['_DISABLESERVICEMETADATA']._serialized_end=882
-  _globals['_DISABLESERVICERESPONSE']._serialized_start=884
-  _globals['_DISABLESERVICERESPONSE']._serialized_end=908
-  _globals['_SERVICEUSAGESERVICE']._serialized_start=911
-  _globals['_SERVICEUSAGESERVICE']._serialized_end=1925
+  _globals['_LISTSERVICESREQUEST']._serialized_start=413
+  _globals['_LISTSERVICESREQUEST']._serialized_end=557
+  _globals['_LISTSERVICESRESPONSE']._serialized_start=559
+  _globals['_LISTSERVICESRESPONSE']._serialized_end=666
+  _globals['_GETSERVICEREQUEST']._serialized_start=669
+  _globals['_GETSERVICEREQUEST']._serialized_end=811
+  _globals['_ENABLESERVICEREQUEST']._serialized_start=813
+  _globals['_ENABLESERVICEREQUEST']._serialized_end=895
+  _globals['_ENABLESERVICEMETADATA']._serialized_start=897
+  _globals['_ENABLESERVICEMETADATA']._serialized_end=920
+  _globals['_ENABLESERVICERESPONSE']._serialized_start=922
+  _globals['_ENABLESERVICERESPONSE']._serialized_end=945
+  _globals['_DISABLESERVICEREQUEST']._serialized_start=948
+  _globals['_DISABLESERVICEREQUEST']._serialized_end=1099
+  _globals['_DISABLESERVICEMETADATA']._serialized_start=1101
+  _globals['_DISABLESERVICEMETADATA']._serialized_end=1125
+  _globals['_DISABLESERVICERESPONSE']._serialized_start=1127
+  _globals['_DISABLESERVICERESPONSE']._serialized_end=1151
+  _globals['_SERVICEUSAGESERVICE']._serialized_start=1154
+  _globals['_SERVICEUSAGESERVICE']._serialized_end=2362
 # @@protoc_insertion_point(module_scope)

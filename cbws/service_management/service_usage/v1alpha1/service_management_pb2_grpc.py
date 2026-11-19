@@ -3,11 +3,12 @@
 import grpc
 
 from cbws.service_management.service_usage.v1alpha1 import service_management_pb2 as cbws_dot_service__management_dot_service__usage_dot_v1alpha1_dot_service__management__pb2
+from cbws.service_management.service_usage.v1alpha1 import service_pb2 as cbws_dot_service__management_dot_service__usage_dot_v1alpha1_dot_service__pb2
 from google.longrunning import operations_pb2 as google_dot_longrunning_dot_operations__pb2
 
 
 class ServiceUsageServiceStub(object):
-    """Lists, enables and disables the CBWS services of a project.
+    """Lists, describes, enables and disables the CBWS services of a project.
 
     A service must be enabled in a project before its API can be used for the
     project's resources.
@@ -24,6 +25,11 @@ class ServiceUsageServiceStub(object):
                 request_serializer=cbws_dot_service__management_dot_service__usage_dot_v1alpha1_dot_service__management__pb2.ListServicesRequest.SerializeToString,
                 response_deserializer=cbws_dot_service__management_dot_service__usage_dot_v1alpha1_dot_service__management__pb2.ListServicesResponse.FromString,
                 _registered_method=True)
+        self.GetService = channel.unary_unary(
+                '/cbws.service_management.service_usage.v1alpha1.ServiceUsageService/GetService',
+                request_serializer=cbws_dot_service__management_dot_service__usage_dot_v1alpha1_dot_service__management__pb2.GetServiceRequest.SerializeToString,
+                response_deserializer=cbws_dot_service__management_dot_service__usage_dot_v1alpha1_dot_service__pb2.Service.FromString,
+                _registered_method=True)
         self.EnableService = channel.unary_unary(
                 '/cbws.service_management.service_usage.v1alpha1.ServiceUsageService/EnableService',
                 request_serializer=cbws_dot_service__management_dot_service__usage_dot_v1alpha1_dot_service__management__pb2.EnableServiceRequest.SerializeToString,
@@ -37,7 +43,7 @@ class ServiceUsageServiceStub(object):
 
 
 class ServiceUsageServiceServicer(object):
-    """Lists, enables and disables the CBWS services of a project.
+    """Lists, describes, enables and disables the CBWS services of a project.
 
     A service must be enabled in a project before its API can be used for the
     project's resources.
@@ -50,6 +56,19 @@ class ServiceUsageServiceServicer(object):
         The list holds every service that is enabled in the project, and every
         service the caller has `servicemanagement.cbws.xyz/Service/bind` on,
         with its state. So the list can differ between callers.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def GetService(self, request, context):
+        """Gets a service of a project. Requires `serviceusage.cbws.xyz/Service/get`
+        on the project.
+
+        The service must be enabled in the project, or the caller must have
+        `servicemanagement.cbws.xyz/Service/bind` on it, the same as for
+        [ListServices][cbws.service_management.service_usage.v1alpha1.ServiceUsageService.ListServices].
+        Otherwise the call fails with NOT_FOUND, also when the service exists.
         """
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
@@ -96,6 +115,11 @@ def add_ServiceUsageServiceServicer_to_server(servicer, server):
                     request_deserializer=cbws_dot_service__management_dot_service__usage_dot_v1alpha1_dot_service__management__pb2.ListServicesRequest.FromString,
                     response_serializer=cbws_dot_service__management_dot_service__usage_dot_v1alpha1_dot_service__management__pb2.ListServicesResponse.SerializeToString,
             ),
+            'GetService': grpc.unary_unary_rpc_method_handler(
+                    servicer.GetService,
+                    request_deserializer=cbws_dot_service__management_dot_service__usage_dot_v1alpha1_dot_service__management__pb2.GetServiceRequest.FromString,
+                    response_serializer=cbws_dot_service__management_dot_service__usage_dot_v1alpha1_dot_service__pb2.Service.SerializeToString,
+            ),
             'EnableService': grpc.unary_unary_rpc_method_handler(
                     servicer.EnableService,
                     request_deserializer=cbws_dot_service__management_dot_service__usage_dot_v1alpha1_dot_service__management__pb2.EnableServiceRequest.FromString,
@@ -115,7 +139,7 @@ def add_ServiceUsageServiceServicer_to_server(servicer, server):
 
  # This class is part of an EXPERIMENTAL API.
 class ServiceUsageService(object):
-    """Lists, enables and disables the CBWS services of a project.
+    """Lists, describes, enables and disables the CBWS services of a project.
 
     A service must be enabled in a project before its API can be used for the
     project's resources.
@@ -138,6 +162,33 @@ class ServiceUsageService(object):
             '/cbws.service_management.service_usage.v1alpha1.ServiceUsageService/ListServices',
             cbws_dot_service__management_dot_service__usage_dot_v1alpha1_dot_service__management__pb2.ListServicesRequest.SerializeToString,
             cbws_dot_service__management_dot_service__usage_dot_v1alpha1_dot_service__management__pb2.ListServicesResponse.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def GetService(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/cbws.service_management.service_usage.v1alpha1.ServiceUsageService/GetService',
+            cbws_dot_service__management_dot_service__usage_dot_v1alpha1_dot_service__management__pb2.GetServiceRequest.SerializeToString,
+            cbws_dot_service__management_dot_service__usage_dot_v1alpha1_dot_service__pb2.Service.FromString,
             options,
             channel_credentials,
             insecure,
