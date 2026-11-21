@@ -98,12 +98,14 @@ class GenerateAccessTokenRequest(_message.Message):
     def __init__(self, name: _Optional[str] = ..., scope: _Optional[_Iterable[str]] = ..., lifetime: _Optional[_Union[_duration_pb2.Duration, _Mapping]] = ...) -> None: ...
 
 class GenerateAccessTokenResponse(_message.Message):
-    __slots__ = ("access_token", "expire_time")
+    __slots__ = ("access_token", "expire_time", "token_id")
     ACCESS_TOKEN_FIELD_NUMBER: _ClassVar[int]
     EXPIRE_TIME_FIELD_NUMBER: _ClassVar[int]
+    TOKEN_ID_FIELD_NUMBER: _ClassVar[int]
     access_token: str
     expire_time: _timestamp_pb2.Timestamp
-    def __init__(self, access_token: _Optional[str] = ..., expire_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+    token_id: str
+    def __init__(self, access_token: _Optional[str] = ..., expire_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., token_id: _Optional[str] = ...) -> None: ...
 
 class SignJwtRequest(_message.Message):
     __slots__ = ("name", "payload")
