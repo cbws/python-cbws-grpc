@@ -11,7 +11,7 @@ from typing import ClassVar as _ClassVar, Optional as _Optional, Union as _Union
 DESCRIPTOR: _descriptor.FileDescriptor
 
 class Machine(_message.Message):
-    __slots__ = ("name", "parent", "type", "image", "hostname", "address", "ipv6_address", "ssh_keys", "userdata", "service_account", "state", "create_time")
+    __slots__ = ("name", "uid", "parent", "type", "image", "hostname", "address", "ipv6_address", "ssh_keys", "userdata", "service_account", "state", "create_time")
     class State(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
         __slots__ = ()
         STATE_UNSPECIFIED: _ClassVar[Machine.State]
@@ -33,6 +33,7 @@ class Machine(_message.Message):
     STATE_REPAIRING: Machine.State
     STATE_TERMINATED: Machine.State
     NAME_FIELD_NUMBER: _ClassVar[int]
+    UID_FIELD_NUMBER: _ClassVar[int]
     PARENT_FIELD_NUMBER: _ClassVar[int]
     TYPE_FIELD_NUMBER: _ClassVar[int]
     IMAGE_FIELD_NUMBER: _ClassVar[int]
@@ -45,6 +46,7 @@ class Machine(_message.Message):
     STATE_FIELD_NUMBER: _ClassVar[int]
     CREATE_TIME_FIELD_NUMBER: _ClassVar[int]
     name: str
+    uid: str
     parent: str
     type: str
     image: str
@@ -56,4 +58,4 @@ class Machine(_message.Message):
     service_account: str
     state: Machine.State
     create_time: _timestamp_pb2.Timestamp
-    def __init__(self, name: _Optional[str] = ..., parent: _Optional[str] = ..., type: _Optional[str] = ..., image: _Optional[str] = ..., hostname: _Optional[str] = ..., address: _Optional[str] = ..., ipv6_address: _Optional[str] = ..., ssh_keys: _Optional[_Iterable[str]] = ..., userdata: _Optional[str] = ..., service_account: _Optional[str] = ..., state: _Optional[_Union[Machine.State, str]] = ..., create_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+    def __init__(self, name: _Optional[str] = ..., uid: _Optional[str] = ..., parent: _Optional[str] = ..., type: _Optional[str] = ..., image: _Optional[str] = ..., hostname: _Optional[str] = ..., address: _Optional[str] = ..., ipv6_address: _Optional[str] = ..., ssh_keys: _Optional[_Iterable[str]] = ..., userdata: _Optional[str] = ..., service_account: _Optional[str] = ..., state: _Optional[_Union[Machine.State, str]] = ..., create_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
