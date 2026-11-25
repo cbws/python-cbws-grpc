@@ -24,9 +24,10 @@ _sym_db = _symbol_database.Default()
 
 from google.api import field_behavior_pb2 as google_dot_api_dot_field__behavior__pb2
 from google.api import resource_pb2 as google_dot_api_dot_resource__pb2
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n1cbws/compute/v1alpha1/machine_agent_service.proto\x12\x15\x63\x62ws.compute.v1alpha1\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\"V\n\x16GetMachineAgentRequest\x12<\n\x04name\x18\x01 \x01(\tB(\xe2\x41\x01\x02\xfa\x41!\n\x1f\x63ompute.cbws.cloud/MachineAgentR\x04nameB\xab\x01\n\x19\x63om.cbws.compute.v1alpha1B\x18MachineAgentServiceProtoP\x01\xa2\x02\x03\x43\x43X\xaa\x02\x15\x43\x62ws.Compute.V1alpha1\xca\x02\x15\x43\x62ws\\Compute\\V1alpha1\xe2\x02!Cbws\\Compute\\V1alpha1\\GPBMetadata\xea\x02\x17\x43\x62ws::Compute::V1alpha1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n1cbws/compute/v1alpha1/machine_agent_service.proto\x12\x15\x63\x62ws.compute.v1alpha1\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"V\n\x16GetMachineAgentRequest\x12<\n\x04name\x18\x01 \x01(\tB(\xe2\x41\x01\x02\xfa\x41!\n\x1f\x63ompute.cbws.cloud/MachineAgentR\x04name\"{\n!RequestMachineAgentForwardRequest\x12<\n\x04name\x18\x01 \x01(\tB(\xe2\x41\x01\x02\xfa\x41!\n\x1f\x63ompute.cbws.cloud/MachineAgentR\x04name\x12\x18\n\x04port\x18\x02 \x01(\x05\x42\x04\xe2\x41\x01\x02R\x04port\"s\n\"RequestMachineAgentForwardResponse\x12\x10\n\x03url\x18\x01 \x01(\tR\x03url\x12;\n\x0b\x65xpire_time\x18\x02 \x01(\x0b\x32\x1a.google.protobuf.TimestampR\nexpireTimeB\xab\x01\n\x19\x63om.cbws.compute.v1alpha1B\x18MachineAgentServiceProtoP\x01\xa2\x02\x03\x43\x43X\xaa\x02\x15\x43\x62ws.Compute.V1alpha1\xca\x02\x15\x43\x62ws\\Compute\\V1alpha1\xe2\x02!Cbws\\Compute\\V1alpha1\\GPBMetadata\xea\x02\x17\x43\x62ws::Compute::V1alpha1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -36,6 +37,14 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['DESCRIPTOR']._serialized_options = b'\n\031com.cbws.compute.v1alpha1B\030MachineAgentServiceProtoP\001\242\002\003CCX\252\002\025Cbws.Compute.V1alpha1\312\002\025Cbws\\Compute\\V1alpha1\342\002!Cbws\\Compute\\V1alpha1\\GPBMetadata\352\002\027Cbws::Compute::V1alpha1'
   _globals['_GETMACHINEAGENTREQUEST'].fields_by_name['name']._loaded_options = None
   _globals['_GETMACHINEAGENTREQUEST'].fields_by_name['name']._serialized_options = b'\342A\001\002\372A!\n\037compute.cbws.cloud/MachineAgent'
-  _globals['_GETMACHINEAGENTREQUEST']._serialized_start=136
-  _globals['_GETMACHINEAGENTREQUEST']._serialized_end=222
+  _globals['_REQUESTMACHINEAGENTFORWARDREQUEST'].fields_by_name['name']._loaded_options = None
+  _globals['_REQUESTMACHINEAGENTFORWARDREQUEST'].fields_by_name['name']._serialized_options = b'\342A\001\002\372A!\n\037compute.cbws.cloud/MachineAgent'
+  _globals['_REQUESTMACHINEAGENTFORWARDREQUEST'].fields_by_name['port']._loaded_options = None
+  _globals['_REQUESTMACHINEAGENTFORWARDREQUEST'].fields_by_name['port']._serialized_options = b'\342A\001\002'
+  _globals['_GETMACHINEAGENTREQUEST']._serialized_start=169
+  _globals['_GETMACHINEAGENTREQUEST']._serialized_end=255
+  _globals['_REQUESTMACHINEAGENTFORWARDREQUEST']._serialized_start=257
+  _globals['_REQUESTMACHINEAGENTFORWARDREQUEST']._serialized_end=380
+  _globals['_REQUESTMACHINEAGENTFORWARDRESPONSE']._serialized_start=382
+  _globals['_REQUESTMACHINEAGENTFORWARDRESPONSE']._serialized_end=497
 # @@protoc_insertion_point(module_scope)
