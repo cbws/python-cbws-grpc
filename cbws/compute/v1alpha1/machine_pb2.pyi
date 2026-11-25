@@ -32,6 +32,14 @@ class Machine(_message.Message):
     STATE_SUSPENDED: Machine.State
     STATE_REPAIRING: Machine.State
     STATE_TERMINATED: Machine.State
+    class AgentInstallation(int, metaclass=_enum_type_wrapper.EnumTypeWrapper):
+        __slots__ = ()
+        AGENT_INSTALLATION_UNSPECIFIED: _ClassVar[Machine.AgentInstallation]
+        AGENT_INSTALLATION_ENABLED: _ClassVar[Machine.AgentInstallation]
+        AGENT_INSTALLATION_DISABLED: _ClassVar[Machine.AgentInstallation]
+    AGENT_INSTALLATION_UNSPECIFIED: Machine.AgentInstallation
+    AGENT_INSTALLATION_ENABLED: Machine.AgentInstallation
+    AGENT_INSTALLATION_DISABLED: Machine.AgentInstallation
     NAME_FIELD_NUMBER: _ClassVar[int]
     UID_FIELD_NUMBER: _ClassVar[int]
     PARENT_FIELD_NUMBER: _ClassVar[int]
