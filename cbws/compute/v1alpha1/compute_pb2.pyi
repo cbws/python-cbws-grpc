@@ -281,6 +281,38 @@ class GetImageRequest(_message.Message):
     read_mask: _field_mask_pb2.FieldMask
     def __init__(self, name: _Optional[str] = ..., read_mask: _Optional[_Union[_field_mask_pb2.FieldMask, _Mapping]] = ...) -> None: ...
 
+class CreateImageRequest(_message.Message):
+    __slots__ = ("parent", "image_id", "image")
+    PARENT_FIELD_NUMBER: _ClassVar[int]
+    IMAGE_ID_FIELD_NUMBER: _ClassVar[int]
+    IMAGE_FIELD_NUMBER: _ClassVar[int]
+    parent: str
+    image_id: str
+    image: _image_pb2.Image
+    def __init__(self, parent: _Optional[str] = ..., image_id: _Optional[str] = ..., image: _Optional[_Union[_image_pb2.Image, _Mapping]] = ...) -> None: ...
+
+class CreateImageMetadata(_message.Message):
+    __slots__ = ("create_time", "end_time")
+    CREATE_TIME_FIELD_NUMBER: _ClassVar[int]
+    END_TIME_FIELD_NUMBER: _ClassVar[int]
+    create_time: _timestamp_pb2.Timestamp
+    end_time: _timestamp_pb2.Timestamp
+    def __init__(self, create_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., end_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+
+class DeleteImageRequest(_message.Message):
+    __slots__ = ("name",)
+    NAME_FIELD_NUMBER: _ClassVar[int]
+    name: str
+    def __init__(self, name: _Optional[str] = ...) -> None: ...
+
+class DeleteImageMetadata(_message.Message):
+    __slots__ = ("create_time", "end_time")
+    CREATE_TIME_FIELD_NUMBER: _ClassVar[int]
+    END_TIME_FIELD_NUMBER: _ClassVar[int]
+    create_time: _timestamp_pb2.Timestamp
+    end_time: _timestamp_pb2.Timestamp
+    def __init__(self, create_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ..., end_time: _Optional[_Union[_timestamp_pb2.Timestamp, _Mapping]] = ...) -> None: ...
+
 class ListImageFamiliesRequest(_message.Message):
     __slots__ = ("parent", "page_size", "page_token")
     PARENT_FIELD_NUMBER: _ClassVar[int]

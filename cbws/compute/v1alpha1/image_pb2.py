@@ -24,9 +24,10 @@ _sym_db = _symbol_database.Default()
 
 from google.api import field_behavior_pb2 as google_dot_api_dot_field__behavior__pb2
 from google.api import resource_pb2 as google_dot_api_dot_resource__pb2
+from google.protobuf import timestamp_pb2 as google_dot_protobuf_dot_timestamp__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!cbws/compute/v1alpha1/image.proto\x12\x15\x63\x62ws.compute.v1alpha1\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\"\x9e\x01\n\x05Image\x12\x18\n\x04name\x18\x01 \x01(\tB\x04\xe2\x41\x01\x05R\x04name\x12\x1c\n\x06parent\x18\x02 \x01(\tB\x04\xe2\x41\x01\x03R\x06parent\x12\x1c\n\x06\x66\x61mily\x18\x03 \x01(\tB\x04\xe2\x41\x01\x05R\x06\x66\x61mily:?\xea\x41<\n\x18\x63ompute.cbws.cloud/Image\x12 projects/{project}/images/{name}\"\x90\x01\n\x0bImageFamily\x12\x18\n\x04name\x18\x01 \x01(\tB\x04\xe2\x41\x01\x05R\x04name\x12\x1c\n\x06parent\x18\x02 \x01(\tB\x04\xe2\x41\x01\x03R\x06parent:I\xea\x41\x46\n\x1e\x63ompute.cbws.cloud/ImageFamily\x12$projects/{project}/families/{family}B\x9d\x01\n\x19\x63om.cbws.compute.v1alpha1B\nImageProtoP\x01\xa2\x02\x03\x43\x43X\xaa\x02\x15\x43\x62ws.Compute.V1alpha1\xca\x02\x15\x43\x62ws\\Compute\\V1alpha1\xe2\x02!Cbws\\Compute\\V1alpha1\\GPBMetadata\xea\x02\x17\x43\x62ws::Compute::V1alpha1b\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n!cbws/compute/v1alpha1/image.proto\x12\x15\x63\x62ws.compute.v1alpha1\x1a\x1fgoogle/api/field_behavior.proto\x1a\x19google/api/resource.proto\x1a\x1fgoogle/protobuf/timestamp.proto\"\x8c\x04\n\x05Image\x12\x18\n\x04name\x18\x01 \x01(\tB\x04\xe2\x41\x01\x05R\x04name\x12\x1c\n\x06parent\x18\x02 \x01(\tB\x04\xe2\x41\x01\x03R\x06parent\x12\x1c\n\x06\x66\x61mily\x18\x03 \x01(\tB\x04\xe2\x41\x01\x05R\x06\x66\x61mily\x12>\n\x05state\x18\x04 \x01(\x0e\x32\".cbws.compute.v1alpha1.Image.StateB\x04\xe2\x41\x01\x03R\x05state\x12\x41\n\x0b\x63reate_time\x18\x05 \x01(\x0b\x32\x1a.google.protobuf.TimestampB\x04\xe2\x41\x01\x03R\ncreateTime\x12J\n\x0esource_machine\x18\x06 \x01(\tB#\xe2\x41\x01\x05\xfa\x41\x1c\n\x1a\x63ompute.cbws.cloud/MachineR\rsourceMachine\x12\x32\n\x12source_machine_uid\x18\x07 \x01(\tB\x04\xe2\x41\x01\x03R\x10sourceMachineUid\"i\n\x05State\x12\x15\n\x11STATE_UNSPECIFIED\x10\x00\x12\x12\n\x0eSTATE_CREATING\x10\x01\x12\x0f\n\x0bSTATE_READY\x10\x02\x12\x10\n\x0cSTATE_FAILED\x10\x03\x12\x12\n\x0eSTATE_DELETING\x10\x04:?\xea\x41<\n\x18\x63ompute.cbws.cloud/Image\x12 projects/{project}/images/{name}\"\x90\x01\n\x0bImageFamily\x12\x18\n\x04name\x18\x01 \x01(\tB\x04\xe2\x41\x01\x05R\x04name\x12\x1c\n\x06parent\x18\x02 \x01(\tB\x04\xe2\x41\x01\x03R\x06parent:I\xea\x41\x46\n\x1e\x63ompute.cbws.cloud/ImageFamily\x12$projects/{project}/families/{family}B\x9d\x01\n\x19\x63om.cbws.compute.v1alpha1B\nImageProtoP\x01\xa2\x02\x03\x43\x43X\xaa\x02\x15\x43\x62ws.Compute.V1alpha1\xca\x02\x15\x43\x62ws\\Compute\\V1alpha1\xe2\x02!Cbws\\Compute\\V1alpha1\\GPBMetadata\xea\x02\x17\x43\x62ws::Compute::V1alpha1b\x06proto3')
 
 _globals = globals()
 _builder.BuildMessageAndEnumDescriptors(DESCRIPTOR, _globals)
@@ -40,6 +41,14 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_IMAGE'].fields_by_name['parent']._serialized_options = b'\342A\001\003'
   _globals['_IMAGE'].fields_by_name['family']._loaded_options = None
   _globals['_IMAGE'].fields_by_name['family']._serialized_options = b'\342A\001\005'
+  _globals['_IMAGE'].fields_by_name['state']._loaded_options = None
+  _globals['_IMAGE'].fields_by_name['state']._serialized_options = b'\342A\001\003'
+  _globals['_IMAGE'].fields_by_name['create_time']._loaded_options = None
+  _globals['_IMAGE'].fields_by_name['create_time']._serialized_options = b'\342A\001\003'
+  _globals['_IMAGE'].fields_by_name['source_machine']._loaded_options = None
+  _globals['_IMAGE'].fields_by_name['source_machine']._serialized_options = b'\342A\001\005\372A\034\n\032compute.cbws.cloud/Machine'
+  _globals['_IMAGE'].fields_by_name['source_machine_uid']._loaded_options = None
+  _globals['_IMAGE'].fields_by_name['source_machine_uid']._serialized_options = b'\342A\001\003'
   _globals['_IMAGE']._loaded_options = None
   _globals['_IMAGE']._serialized_options = b'\352A<\n\030compute.cbws.cloud/Image\022 projects/{project}/images/{name}'
   _globals['_IMAGEFAMILY'].fields_by_name['name']._loaded_options = None
@@ -48,8 +57,10 @@ if not _descriptor._USE_C_DESCRIPTORS:
   _globals['_IMAGEFAMILY'].fields_by_name['parent']._serialized_options = b'\342A\001\003'
   _globals['_IMAGEFAMILY']._loaded_options = None
   _globals['_IMAGEFAMILY']._serialized_options = b'\352AF\n\036compute.cbws.cloud/ImageFamily\022$projects/{project}/families/{family}'
-  _globals['_IMAGE']._serialized_start=121
-  _globals['_IMAGE']._serialized_end=279
-  _globals['_IMAGEFAMILY']._serialized_start=282
-  _globals['_IMAGEFAMILY']._serialized_end=426
+  _globals['_IMAGE']._serialized_start=154
+  _globals['_IMAGE']._serialized_end=678
+  _globals['_IMAGE_STATE']._serialized_start=508
+  _globals['_IMAGE_STATE']._serialized_end=613
+  _globals['_IMAGEFAMILY']._serialized_start=681
+  _globals['_IMAGEFAMILY']._serialized_end=825
 # @@protoc_insertion_point(module_scope)

@@ -90,6 +90,16 @@ class ComputeServiceStub(object):
                 request_serializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.GetImageRequest.SerializeToString,
                 response_deserializer=cbws_dot_compute_dot_v1alpha1_dot_image__pb2.Image.FromString,
                 _registered_method=True)
+        self.CreateImage = channel.unary_unary(
+                '/cbws.compute.v1alpha1.ComputeService/CreateImage',
+                request_serializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.CreateImageRequest.SerializeToString,
+                response_deserializer=google_dot_longrunning_dot_operations__pb2.Operation.FromString,
+                _registered_method=True)
+        self.DeleteImage = channel.unary_unary(
+                '/cbws.compute.v1alpha1.ComputeService/DeleteImage',
+                request_serializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.DeleteImageRequest.SerializeToString,
+                response_deserializer=google_dot_longrunning_dot_operations__pb2.Operation.FromString,
+                _registered_method=True)
         self.ListImageFamilies = channel.unary_unary(
                 '/cbws.compute.v1alpha1.ComputeService/ListImageFamilies',
                 request_serializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.ListImageFamiliesRequest.SerializeToString,
@@ -214,6 +224,28 @@ class ComputeServiceServicer(object):
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
 
+    def CreateImage(self, request, context):
+        """Makes an image from the disk of a stopped machine. The image appears in
+        `STATE_CREATING` as soon as the operation starts and becomes
+        `STATE_READY` when it completes. Copying the disk takes minutes per GB.
+        Only machines on machine types that support it can be imaged.
+
+        Requires `compute.cbws.cloud/Image/create` on the project and
+        `compute.cbws.cloud/Machine/createImage` on the source machine.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
+    def DeleteImage(self, request, context):
+        """Deletes an image made from a machine. Machines built from it keep running,
+        but cannot be reinstalled from it, and its name can be used again at once.
+        An image still in `STATE_CREATING` cannot be deleted.
+        """
+        context.set_code(grpc.StatusCode.UNIMPLEMENTED)
+        context.set_details('Method not implemented!')
+        raise NotImplementedError('Method not implemented!')
+
     def ListImageFamilies(self, request, context):
         """Lists the image families in a project.
         """
@@ -308,6 +340,16 @@ def add_ComputeServiceServicer_to_server(servicer, server):
                     servicer.GetImage,
                     request_deserializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.GetImageRequest.FromString,
                     response_serializer=cbws_dot_compute_dot_v1alpha1_dot_image__pb2.Image.SerializeToString,
+            ),
+            'CreateImage': grpc.unary_unary_rpc_method_handler(
+                    servicer.CreateImage,
+                    request_deserializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.CreateImageRequest.FromString,
+                    response_serializer=google_dot_longrunning_dot_operations__pb2.Operation.SerializeToString,
+            ),
+            'DeleteImage': grpc.unary_unary_rpc_method_handler(
+                    servicer.DeleteImage,
+                    request_deserializer=cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.DeleteImageRequest.FromString,
+                    response_serializer=google_dot_longrunning_dot_operations__pb2.Operation.SerializeToString,
             ),
             'ListImageFamilies': grpc.unary_unary_rpc_method_handler(
                     servicer.ListImageFamilies,
@@ -705,6 +747,60 @@ class ComputeService(object):
             '/cbws.compute.v1alpha1.ComputeService/GetImage',
             cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.GetImageRequest.SerializeToString,
             cbws_dot_compute_dot_v1alpha1_dot_image__pb2.Image.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def CreateImage(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/cbws.compute.v1alpha1.ComputeService/CreateImage',
+            cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.CreateImageRequest.SerializeToString,
+            google_dot_longrunning_dot_operations__pb2.Operation.FromString,
+            options,
+            channel_credentials,
+            insecure,
+            call_credentials,
+            compression,
+            wait_for_ready,
+            timeout,
+            metadata,
+            _registered_method=True)
+
+    @staticmethod
+    def DeleteImage(request,
+            target,
+            options=(),
+            channel_credentials=None,
+            call_credentials=None,
+            insecure=False,
+            compression=None,
+            wait_for_ready=None,
+            timeout=None,
+            metadata=None):
+        return grpc.experimental.unary_unary(
+            request,
+            target,
+            '/cbws.compute.v1alpha1.ComputeService/DeleteImage',
+            cbws_dot_compute_dot_v1alpha1_dot_compute__pb2.DeleteImageRequest.SerializeToString,
+            google_dot_longrunning_dot_operations__pb2.Operation.FromString,
             options,
             channel_credentials,
             insecure,
